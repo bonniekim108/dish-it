@@ -35,6 +35,8 @@ gem 'rails_12factor', group: :production
 # preloads angular templates
 gem 'angular-rails-templates'
 
+gem 'foundation-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
