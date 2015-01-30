@@ -17,9 +17,12 @@
 //
 //  don't with angular
 //# require jquery_ujs
+//= require foundation
 //
 //# load angular and other files in vendor folder
 //= require angular
 //= require angular-rails-templates
 //
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
