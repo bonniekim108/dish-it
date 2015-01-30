@@ -1,5 +1,9 @@
-<header>HEADER</header>
-<div class="wrap">
-  <ui-view></ui-view>
-</div>
-<footer>FOOTER</footer>
+<p>This is shell.html, it is our "layout" page for our angular app specified in the "shell" state.  When we use ui-router for angular routing, which we are, state's are basically angular routes.  Refer to the code in 'app-module.js'.</p>
+
+<p>All of our angular "sub-states" of the shell state will rendered between these tags:</p>
+<pre>&ltui-view&gt&lt/ui-view&gt</pre>
+
+ <ui-view></ui-view>
+
+<p>Hi, we're back in shell.html now...  Making all states sub-states of "shell", is a great way to ensure that only authenticated users are using the app.  This is ensured by the "resolve" property of the state definition in app-module.js</p>
+
