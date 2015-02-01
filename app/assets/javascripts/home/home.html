@@ -1,14 +1,5 @@
-<p>Hi, I'm the home.html page and I'm being shown because the angular app is currently in the "shell.home" state, which is the same as the "/#/home" url.  I often will be referred to as the "home" view.</p>
-
-<p>I'm the default state and will always be shown after a user logs in or if the user types something crazy in the address bar.</p>
-
-<p class="test-peachpuff">To help stay organized, I'm styled by a stylesheet named "home.scss" that can be found in the stylesheets folder.  This &ltp&gt tag has a background color of peachpuff because I have a class of test-peachpuff set on me.</p>
-
-<p>Also, any data I need will come from the HomeController which is defined in the "home-controller.js" file.  The "home-controller.js" file can be found along side myself in the "home" folder. There will be a seperate folder to hold the controller(s) and view(s) for each feature.  Note that there is no ng-controller attribute set anywhere in my html. So how does angular know to use HomeController?  It's set as one of the key's in the state definition inside app-module.js!  Note that there is another key (controllerAs) specifying that the controller will be referenced as "vm" inside the view. The following is displaying a property from the controller called testString.</p>
-
-<h4>{{vm.testString}}</h4>
-
-<p>The html to do this looks like this:</p>
-<p>&lth4&gt\{vm.testString}&lt/h4&gt - except with DOUBLE braces</p>
-
-
+<h1>Home (a.k.a. landing) Page</h1>
+<a ui-sref="shell.register">Register</a> |
+<a ui-sref="shell.battle">Battle</a> |
+<a ui-sref="shell.winners">Winners</a> |
+<a ui-sref="shell.about">About</a>
