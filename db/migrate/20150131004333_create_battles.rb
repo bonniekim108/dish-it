@@ -4,7 +4,7 @@ class CreateBattles < ActiveRecord::Migration
       t.string :year_month
 
       t.timestamps null: false
-      add_column :battles, :name, :string
+      add_column :battles, :name, :string    
     end
   end
 end
