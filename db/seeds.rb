@@ -9,3 +9,8 @@
 #--- Load counties table where Dish@It does business
 County.create(name: 'Los Angeles', UTC_offset: -8)
 County.create(name: 'Orange', UTC_offset: -8)
+
+#--- Load users table
+
+
+#--- Load battles table
