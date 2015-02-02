@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   before(:all) do
-    @valid_user = User.create(
+    @valid_user = User.new(
       name: 'Francesca Flowers',
       email: 'fran@flowers.com',
       password: 'abc-123',
       password_confirmation: 'abc-123')
+    @valid_user.county = County.first
+    @valid_user.save
   end
 
-  it 'is valid with a name, valid email, a valid password & matching password_confirmation' do
+  it 'is valid with a name, valid email, county, a valid password & matching password_confirmation' do
     expect(@valid_user).to be_valid
   end
 
@@ -47,6 +49,12 @@ RSpec.describe User, :type => :model do
     user = User.new(name: nil)
     user.valid?
     expect(user.errors[:name]).to include("can't be blank")
+  end
+
+  it 'is invalid without a county' do
+    user = User.new(county: nil)
+    user.valid?
+    expect(user.errors[:county]).to include("can't be blank")
   end
 
   it 'is invalid without a valid email format' do
