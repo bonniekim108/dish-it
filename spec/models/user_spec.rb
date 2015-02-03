@@ -4,6 +4,7 @@ RSpec.describe User, :type => :model do
 
   it 'has a valid model' do
     user = build(:user)
+    expect(user).to be_valid
   end
 
   it 'is invalid without a county' do
