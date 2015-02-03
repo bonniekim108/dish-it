@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :county, presence: true
 
-  def is_admin?
-    is_admin: false
-  end
+  
 end
 
