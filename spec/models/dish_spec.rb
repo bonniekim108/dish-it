@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Dish, :type => :model do
 
-  it 'has a valid model' do
+  it 'has a valid factory' do
     dish = build(:dish)
   end
 

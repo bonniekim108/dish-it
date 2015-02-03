@@ -2,8 +2,8 @@ FactoryGirl.define do
 
   factory :dish do
     name { Faker::Lorem.word }
-    cuisine { CuisineLookup.first }
-    # battle { Battle.new() }
+    cuisine "American"
+    battle
   end
 
 end

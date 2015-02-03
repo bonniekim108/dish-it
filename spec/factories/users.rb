@@ -6,7 +6,7 @@ FactoryGirl.define do
     password               'abc-123'
     password_confirmation  'abc-123'
     is_admin               false
-    county                 { |u| u.association(:county) }
+    county
   end
 
 end

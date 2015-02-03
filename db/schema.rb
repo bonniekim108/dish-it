@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150203033356) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.integer  "battle_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "name"
@@ -61,6 +62,8 @@ ActiveRecord::Schema.define(version: 20150203033356) do
     t.string   "yelp_rating_photo_url"
     t.string   "yelp_photo_url"
   end
+
+  add_index "restaurants", ["battle_id"], name: "index_restaurants_on_battle_id", using: :btree
 
   create_table "suggestion_boxes", force: :cascade do |t|
     t.datetime "created_at", null: false

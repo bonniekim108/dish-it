@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Battle, :type => :model do
-  
+
+  it "has a valid factory" do
+    battle = build(:battle)
+    expect(battle).to be_valid
+  end
+
   it 'is invalid without a year_month'
   it 'is invalid without year_month being a valid date'
   it 'is invalid without year_month being a valid date with a day equal to the last day of the month'
