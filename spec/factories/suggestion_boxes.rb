@@ -9,4 +9,8 @@ FactoryGirl.define do
     end
   end
 
+  factory :suggestion_box_without_suggestions, parent: :suggestion_box do
+    
+  end
+
 end

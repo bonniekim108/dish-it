@@ -5,4 +5,8 @@ RSpec.describe SuggestionBox, :type => :model do
     sug_box = build(:suggestion_box)
     expect(sug_box).to be_valid
   end
+  it "is valid without any suggestions" do
+    sug_box = build(:suggestion_box_without_suggestions)
+    expect(sug_box).to be_valid
+  end
 end
