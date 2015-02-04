@@ -15,8 +15,9 @@ FactoryGirl.define do
 
   end
 
-  factory :battle_without_restaurants_or_trash, parent: :battle do
+  factory :battle_without_restaurants_or_trash, parent: :battle do |b|
     year_month { Date.new(2015, 2, -1) }
+    dish { build(:dish, :battle => b) }
   end
 
 end

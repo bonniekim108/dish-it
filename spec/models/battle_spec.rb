@@ -20,8 +20,9 @@ RSpec.describe Battle, :type => :model do
   end
 
   it 'is invalid without a dish' do
-    @battle.dish = nil
-    expect(@battle).to be_invalid
+    battle = create(:battle)
+    battle.dish = nil
+    expect(battle).to be_invalid
   end
   it 'is valid without any restaurants or trash_talks' do
     battle = build(:battle_without_restaurants_or_trash)
