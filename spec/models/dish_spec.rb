@@ -4,6 +4,7 @@ RSpec.describe Dish, :type => :model do
 
   it 'has a valid factory' do
     dish = build(:dish)
+    expect(dish).to be_valid
   end
 
   it 'is invalid without a name' do
