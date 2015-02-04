@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203033356) do
+ActiveRecord::Schema.define(version: 20150202165101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,13 +54,8 @@ ActiveRecord::Schema.define(version: 20150203033356) do
 
   create_table "restaurants", force: :cascade do |t|
     t.integer  "battle_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "name"
-    t.string   "location"
-    t.string   "phone"
-    t.string   "yelp_rating_photo_url"
-    t.string   "yelp_photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "restaurants", ["battle_id"], name: "index_restaurants_on_battle_id", using: :btree
