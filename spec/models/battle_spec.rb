@@ -25,7 +25,7 @@ RSpec.describe Battle, :type => :model do
     expect(battle).to be_invalid
   end
   it 'is valid without any restaurants or trash_talks' do
-    battle = build(:battle_without_restaurants_or_trash)
+    battle = create(:battle_without_restaurants_or_trash)
     expect(battle).to be_valid
   end
   it 'is invalid without a display_mode method' do
