@@ -6,11 +6,11 @@
   .controller('ShellController', [
     '$state',
     '$rootScope',
-    // 'currentUser',
-    function($state, $rootScope) {
-      var self = this;
+    'UserService',
+    function($state, $rootScope, UserService) {
+      var vm = this;
 
-      // $rootScope.currentUser = currentUser;
+      vm.name = UserService.name;
 
     }
   ]);

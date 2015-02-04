@@ -1,16 +1,29 @@
 (function() {
   'use strict';
 
-  angular.module('app.services', []) #returns the app module
+  angular.module('app') // returns the app module
 
-  .factory('UserService', ['$http', function($http) {
+  .factory('UserService', ['$resource', function($resource) {
     
     var serviceInstance = {};
 
+    serviceInstance.name = "bonnie"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return serviceInstance;
-
-
-
-
+}]);
 
   })();
