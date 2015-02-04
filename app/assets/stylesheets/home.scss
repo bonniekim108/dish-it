@@ -1,3 +1,21 @@
 body {
-	color: black; 
+	background-image: 
+		linear-gradient(
+			to top, 
+			#2a77a4, #EFEFEF); 
 }
+
+.logo-img	 {
+  display: block;
+  // text-indent: -9999px;
+  width: 800px;
+  height: 200px;
+  position: relative; 
+
+  background-image: url("dishit1.svg"); 
+  background-repeat: no-repeat; 
+  background-size: 500px 200px; 
+  left: 0; 
+  right: 0; 
+}
+
