@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe SuggestionBox, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a valid factory' do
+    sug_box = build(:suggestion_box)
+    expect(sug_box).to be_valid
+  end
 end
