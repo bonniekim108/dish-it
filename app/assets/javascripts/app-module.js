@@ -85,33 +85,15 @@
   'UserService',
   'UserResource',
   function (UserService, UserResource) {
-
-
     if (dishItToken) {
-      UserResource.getUser({token: dishItToken}, function(data) {
-        console.log(data);
+      UserResource.getUser({token: dishItToken}, function(user) {
+        UserService.currentUser = user;
+      }, function(error) {
+        UserService.currentUser = null;
       });
-
-
     } else {
       UserService.currentUser = null;
-
-
-      var params = {user:
-        {
-          email: 'jim@email.com',
-          name: 'jim',
-          password: 'abc123',
-          password_confirmation: 'abc123',
-          county: 1
-        }
-      };
-
-      UserResource.signup(params, function (data) {
-        console.log(data);
-      });
     }
-
   }
   ]);  // .run
 

@@ -3,24 +3,26 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  #--- Every request will call the index action, thus calling authorize.
-  #--- `authorize will  request will call the index action, thus calling authorize.
+  def index
+    # Slide the token expiraton if exists and not already expired
+    if current_user && session[:dishItToken] && (session[:expires_at] > Date.today)
+      session[:expires_at] = Date.today + 14.days
+    else
+      session[:dishItToken] = nil
+    end
+  end
 
+  def current_user
+    @current_user ||= User.find_by(:token, session[:dishItToken]) if session[:dishItToken]
+  end
+  helper_method :current_user
 
-  # def index
-  # end
+  def authorize
+    current_user
+  end
 
-  # def current_user
-  #   @current_user ||= User.find(session[:carf_user_id]) if session[:carf_user_id]
-  # end
-  # helper_method :current_user
-
-  # def authorize
-  #   return current_user.exists?
-  # end
-
-  # def authorize_admin
-  #   current_user && current_user.admin?
-  # end
+  def authorize_admin
+    current_user && current_user.is_admin
+  end
 
 end
