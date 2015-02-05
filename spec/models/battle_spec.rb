@@ -39,8 +39,8 @@ RSpec.describe Battle, :type => :model do
     today = Date.today
     @battle.year_month = today.end_of_month
     before_eom = (@battle.year_month.day - today.day)
-    if (today.month = @battle.year_month.month) and (before_eom > 13)
-      expect(@battle.display_mode).to eq('future')
+    if before_eom > 13
+      expect(@battle.display_mode).to eq('nominating')
     else
       puts "UNABLE TO DETERMINE VALIDITY OF THIS NEXT TEST"
       expect(true).to eq(true)
@@ -50,7 +50,7 @@ RSpec.describe Battle, :type => :model do
     today = Date.today
     @battle.year_month = today.end_of_month
     before_eom = (@battle.year_month.day - today.day)
-    if (today.month = @battle.year_month.month) and before_eom.between?(7, 13)
+    if before_eom.between?(7, 13)
       expect(@battle.display_mode).to eq('great_eight')
     else
       puts "UNABLE TO DETERMINE VALIDITY OF THIS NEXT TEST"
@@ -61,7 +61,7 @@ RSpec.describe Battle, :type => :model do
     today = Date.today
     @battle.year_month = today.end_of_month
     before_eom = (@battle.year_month.day - today.day)
-    if (today.month = @battle.year_month.month) and before_eom.between?(0, 6)
+    if before_eom.between?(0, 6)
       expect(@battle.display_mode).to eq('final_four')
     else
       puts "UNABLE TO DETERMINE VALIDITY OF THIS NEXT TEST"
