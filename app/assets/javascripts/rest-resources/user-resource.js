@@ -15,8 +15,8 @@
           // other methods in rails UsersController
           'getUser': {
                         method: 'GET',
-                        url: '/api/get-user/:token',
-                        params:{token: '@token'},
+                        url: '/api/get-user',
+                        // params:{token: '@token'},
                         headers : {'Content-Type' : 'application/json'}
                       }
         }

@@ -6,7 +6,7 @@
     'ngAnimate',
     'ui.router',
     'templates'
-  ])
+    ])
 
   // set up the app's routes
   .config([
@@ -20,10 +20,10 @@
 
       $stateProvider
 
-        .state('shell', {
-          abstract: true,
-          url: '',
-          templateUrl: 'shell/shell.html',
+      .state('shell', {
+        abstract: true,
+        url: '',
+        templateUrl: 'shell/shell.html',
           // template: "<p>test</p>",
           controller: 'ShellController',
           controllerAs: 'shell'
@@ -35,50 +35,58 @@
           // }
         })
 
-        .state('shell.home', {
-          url: '/home',
-          templateUrl: 'home/home.html',
-          controller: 'HomeController',
-          controllerAs: 'vm'
-        })
+      .state('shell.home', {
+        url: '/home',
+        templateUrl: 'home/home.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
 
-        .state('shell.register', {
-          url: '/register',
-          templateUrl: 'register/register.html',
-          controller: 'RegisterController',
-          controllerAs: 'vm'
-        })
+      .state('shell.register', {
+        url: '/register',
+        templateUrl: 'register/register.html',
+        controller: 'RegisterController',
+        controllerAs: 'vm'
+      })
 
-        .state('shell.winners', {
-          url: '/winners',
-          templateUrl: 'winners/winners.html',
-          controller: 'WinnersController',
-          controllerAs: 'vm'
-        })
+      .state('shell.winners', {
+        url: '/winners',
+        templateUrl: 'winners/winners.html',
+        controller: 'WinnersController',
+        controllerAs: 'vm'
+      })
 
-        .state('shell.about', {
-          url: '/about',
-          templateUrl: 'about/about.html'
-        })
+      .state('shell.about', {
+        url: '/about',
+        templateUrl: 'about/about.html'
+      })
 
-        .state('shell.battle', {
-          url: '/battle',
-          templateUrl: 'battle/battle.html',
-          controller: 'BattleController',
-          controllerAs: 'vm'
-        })
+      .state('shell.battle', {
+        url: '/battle',
+        templateUrl: 'battle/battle.html',
+        controller: 'BattleController',
+        controllerAs: 'vm'
+      })
 
-        .state('shell.restaurant', {
-          url: '/restaurant/:id',
-          templateUrl: 'restaurant/restaurant.html',
-          controller: 'RestaurantController',
-          controllerAs: 'vm'
-        })
+      .state('shell.restaurant', {
+        url: '/restaurant/:id',
+        templateUrl: 'restaurant/restaurant.html',
+        controller: 'RestaurantController',
+        controllerAs: 'vm'
+      })
 
       ;  // $stateProvider chaining
 
       $urlRouterProvider.otherwise('/home');
 
-  }]);  // .config
+  }])  // .config
+
+  .run([
+    'UserService',
+    'UserResource',
+    function (UserService, UserResource) {
+      UserResource.getUser(function(data) {console.log(data)});
+    }
+  ]);  // .run
 
 })();

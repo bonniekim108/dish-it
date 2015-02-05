@@ -14,6 +14,6 @@
 	<%= yield %>
 
 	<%= javascript_include_tag 'application' %>
-
+  <script>var dishItToken = '<%= session[:dish_it_token] %>';</script>
 </body>
 </html>
