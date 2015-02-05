@@ -7,7 +7,7 @@
     
     var serviceInstance = {};
 
-    serviceInstance.name = "bonnie"
+    serviceInstance.name = 'bonnie';
 
 
 
