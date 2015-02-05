@@ -7,7 +7,7 @@
 
     var service = {};
 
-    // Loads a user from the db and sets a token in the session
+    // Loads a user from the db and sets a token in the cookie
     // 'params' json has a root key of 'login' and these keys: email & password
     service.login = function (params) {
       UserResource.login(params, function (user) {
@@ -17,7 +17,7 @@
       });
     };
 
-    // Creates a user in the db and sets a token in the session
+    // Creates a user in the db and sets a token in the cookie
     // 'params' json has a root key of 'signup' and these keys: name, email, county (id), password & password_confirmation
     service.signup = function (params) {
       UserResource.login(params, function (user) {

@@ -85,8 +85,8 @@
   'UserService',
   'UserResource',
   function (UserService, UserResource) {
-    if (dishItToken) {
-      UserResource.getUser({token: dishItToken}, function(user) {
+    if (dishItToken != '') {
+      UserResource.loginToken({token: dishItToken}, function(user) {
         UserService.currentUser = user;
       }, function(error) {
         UserService.currentUser = null;
@@ -94,6 +94,14 @@
     } else {
       UserService.currentUser = null;
     }
+
+    // UserResource.logout();
+
+// UserResource.loginEmail({login:{email: 'jim@email.com', password: 'abc123'}}, function(user){
+//   UserService.currentUser = user;
+// })
+
+
   }
   ]);  // .run
 

@@ -7,16 +7,22 @@
     function ($resource) {
       var Resource = $resource('/api/users', null,
       {
-        'getUser': {
+        'loginToken': {
           method: 'POST',
-          url: '/api/get-user',
+          url: '/api/login_token',
           // 'params' json has a single key of 'token'
           headers : {'Content-Type' : 'application/json'}
         },
-        'login': {
+        'loginEmail': {
           method: 'POST',
-          url: '/api/login',
+          url: '/api/login_email',
           // 'params' json has a root key of 'login' and these keys: email & password
+          headers : {'Content-Type' : 'application/json'}
+        },
+        'logout': {
+          method: 'GET',
+          url: '/api/logout',
+          // no 'params' are passed
           headers : {'Content-Type' : 'application/json'}
         },
         'signup': {
