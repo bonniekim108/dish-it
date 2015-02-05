@@ -14,9 +14,9 @@
           // 'update':   {method: 'PUT'},
           // other methods in rails UsersController
           'getUser': {
-                        method: 'GET',
+                        method: 'POST',
                         url: '/api/get-user',
-                        // params:{token: '@token'},
+                        params:{token: '@token'},
                         headers : {'Content-Type' : 'application/json'}
                       }
         }

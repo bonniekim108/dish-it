@@ -81,12 +81,26 @@
 
   }])  // .config
 
-  .run([
-    'UserService',
-    'UserResource',
-    function (UserService, UserResource) {
-      UserResource.getUser(function(data) {console.log(data)});
+.run([
+  'UserService',
+  'UserResource',
+  function (UserService, UserResource) {
+    if (dishItToken) {
+      UserResource.getUser({token: dishItToken}, function(data) {
+        console.log(data);
+      });
+
+
+    } else {
+      UserService.currentUser = null;
+
+      UserResource.getUser({token: 'dishItTokenPassedIn'}, function(data) {
+        console.log(data);
+      });
+
+
     }
+  }
   ]);  // .run
 
 })();
