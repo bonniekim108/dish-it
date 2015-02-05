@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RailsAngularPostgresql</title>
+	<title>Dish-It</title>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= csrf_meta_tags %>
 
@@ -14,6 +14,6 @@
 	<%= yield %>
 
 	<%= javascript_include_tag 'application' %>
-
+  <script>var dishItToken = '<%= session[:dish_it_token] %>';</script>
 </body>
 </html>

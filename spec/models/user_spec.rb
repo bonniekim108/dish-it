@@ -18,6 +18,11 @@ RSpec.describe User, :type => :model do
     expect(user.errors).to have_key(:name)
   end
 
+  it "responds to token, which is a string" do
+    user = build(:user, token: 'x1y2z3')
+    expect(user).to be_valid
+  end
+
   it 'has is_admin set to false by default' do
     user = build(:user)
     expect(user.is_admin).to eq(false)
