@@ -2,5 +2,10 @@ class Battle < ActiveRecord::Base
   has_one :dish
   has_many :restaurants
   has_many :trash_talks
-  has_many :users, through: :restaurants
+
+  def display_mode
+  end
+
+  validates :year_month, presence: true
+  validates :dish, presence: true
 end

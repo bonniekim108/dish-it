@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe CuisineLookup, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a valid factory' do
+    cuisine = build(:cuisine_lookup)
+    expect(cuisine).to be_valid
+  end
+  it 'is invalid without a name' do
+    cuisine = build(:cuisine_lookup, name: nil)
+    expect(cuisine).to be_invalid
+  end
 end

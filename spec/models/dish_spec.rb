@@ -1,5 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Dish, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'has a valid factory' do
+    dish = build(:dish)
+    expect(dish).to be_valid
+  end
+
+  it 'is invalid without a name' do
+    dish = build(:dish, name: nil)
+    expect(dish).to be_invalid
+  end
+
+  it 'is invalid without a cuisine' do
+    dish = build(:dish, cuisine: nil)
+    expect(dish).to be_invalid
+  end
+
 end

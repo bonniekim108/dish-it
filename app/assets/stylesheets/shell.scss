@@ -9,11 +9,9 @@ header {
   height: 60px;
   border-bottom: solid #2a77a4;
   z-index: 1;
-
   a.active {
     display: none; 
   }
-
 }
 
 .logo {
@@ -36,7 +34,6 @@ header {
   bottom: 0;
   box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.50);
   overflow: scroll; 
-
 }
 
 // footer {
