@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find_by(token: params[:token])
     if @user
       cookies[:dish_it_token] = { value: params[:token], expires: 14.days.from_now }
-      render json: @user, status: :ok
+      render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :ok
     else
       cookies.delete(:dish_it_token)
       render plain: 'invalid-token', status: :bad_request
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:login][:email])
     if @user && @user.authenticate(params[:login][:password])
       set_token(@user)
-      render json: @user, status: :ok
+      render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :ok
     else
       render plain: 'invalid-credentials', status: :bad_request
     end      
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user.county = County.find(params[:signup][:county])
     if @user.valid?
       set_token(@user)
-      render json: @user, status: :created
+      render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :created
     else
       render plain: @user.errors.full_messages.to_sentence, status: :bad_request
     end

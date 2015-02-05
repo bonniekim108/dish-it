@@ -11,11 +11,11 @@ County.create(name: 'Los Angeles', UTC_offset: -8)
 County.create(name: 'Orange', UTC_offset: -8)
 
 # #--- Load cuisine_lookups table
-# CuisineLookup.create(name: 'American')
-# CuisineLookup.create(name: 'Asian')
-# CuisineLookup.create(name: 'Italian')
-# CuisineLookup.create(name: 'Mexican')
-# CuisineLookup.create(name: 'Other')
+CuisineLookup.create(name: 'American')
+CuisineLookup.create(name: 'Asian')
+CuisineLookup.create(name: 'Italian')
+CuisineLookup.create(name: 'Mexican')
+CuisineLookup.create(name: 'Other')
 
 
 # #--- Load users table
