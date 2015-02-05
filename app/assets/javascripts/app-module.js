@@ -42,10 +42,10 @@
         controllerAs: 'vm'
       })
 
-      .state('shell.register', {
-        url: '/register',
-        templateUrl: 'register/register.html',
-        controller: 'RegisterController',
+      .state('shell.signup', {
+        url: '/signup',
+        templateUrl: 'signup/signup.html',
+        controller: 'SignupController',
         controllerAs: 'vm'
       })
 

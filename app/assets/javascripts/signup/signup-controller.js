@@ -3,7 +3,7 @@
 
   angular.module('app')
 
-  .controller('RegisterController', [
+  .controller('SignupController', [
     // inject other services here
     function() {
       var vm = this;
