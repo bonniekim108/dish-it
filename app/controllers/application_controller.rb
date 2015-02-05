@@ -1,26 +1,28 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  # For APIs, you may want to use :null_cookies instead.
   protect_from_forgery with: :exception
 
-  #--- Every request will call the index action, thus calling authorize.
-  #--- `authorize will  request will call the index action, thus calling authorize.
+  def index
+    # Slide the token expiraton if exists and not already expired
+    if current_user && cookies[:dish_it_token]
+      cookies[:dish_it_token] = { value: cookies[:dish_it_token], expires: 14.days.from_now }
+    else
+      cookies.delete(:dish_it_token)
+    end
+  end
 
+  def current_user
+    @current_user ||= User.find_by(token: cookies[:dish_it_token]) if cookies[:dish_it_token]
+  end
+  helper_method :current_user
 
-  # def index
-  # end
+  def authorize
+    current_user
+  end
 
-  # def current_user
-  #   @current_user ||= User.find(session[:carf_user_id]) if session[:carf_user_id]
-  # end
-  # helper_method :current_user
-
-  # def authorize
-  #   return current_user.exists?
-  # end
-
-  # def authorize_admin
-  #   current_user && current_user.admin?
-  # end
+  def authorize_admin
+    current_user && current_user.is_admin
+  end
 
 end

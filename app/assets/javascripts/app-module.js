@@ -42,10 +42,10 @@
         controllerAs: 'vm'
       })
 
-      .state('shell.register', {
-        url: '/register',
-        templateUrl: 'register/register.html',
-        controller: 'RegisterController',
+      .state('shell.signup', {
+        url: '/signup',
+        templateUrl: 'signup/signup.html',
+        controller: 'SignupController',
         controllerAs: 'vm'
       })
 
@@ -85,21 +85,23 @@
   'UserService',
   'UserResource',
   function (UserService, UserResource) {
-    if (dishItToken) {
-      UserResource.getUser({token: dishItToken}, function(data) {
-        console.log(data);
+    if (dishItToken != '') {
+      UserResource.loginToken({token: dishItToken}, function(user) {
+        UserService.currentUser = user;
+      }, function(error) {
+        UserService.currentUser = null;
       });
-
-
     } else {
       UserService.currentUser = null;
-
-      UserResource.getUser({token: 'dishItTokenPassedIn'}, function(data) {
-        console.log(data);
-      });
-
-
     }
+
+    // UserResource.logout();
+
+// UserResource.loginEmail({login:{email: 'jim@email.com', password: 'abc123'}}, function(user){
+//   UserService.currentUser = user;
+// })
+
+
   }
   ]);  // .run
 

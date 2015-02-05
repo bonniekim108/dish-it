@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dish-It</title>
+	<title>dishIT</title>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= csrf_meta_tags %>
+
+	 <%= favicon_link_tag 'favicon3.ico' %> 
 
 
 </head>
@@ -14,6 +16,6 @@
 	<%= yield %>
 
 	<%= javascript_include_tag 'application' %>
-  <script>var dishItToken = '<%= session[:dish_it_token] %>';</script>
+  <script>var dishItToken = '<%= cookies[:dish_it_token] %>';</script>
 </body>
 </html>
