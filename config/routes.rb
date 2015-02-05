@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 
   #----- user api routes -----#
-  post '/api/get-user' => 'users#get_user'
-  post '/api/login' => 'users#login'
+  post '/api/login_token' => 'users#login_token'
+  post '/api/login_email' => 'users#login_email'
   post '/api/signup' => 'users#signup'
 
 

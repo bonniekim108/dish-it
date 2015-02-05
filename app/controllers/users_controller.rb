@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   respond_to :json
 
-  def get_user
+  def login_token
     @user = User.find_by(token: params[:token])
     if @user
       session[:expires_at] = Date.today + 14.days
@@ -12,13 +12,13 @@ class UsersController < ApplicationController
     end      
   end
 
-  def login
+  def login_email
     @user = User.find_by(email: params[:login][:email])
     if @user && @user.authenticate(params[:login][:password])
       set_token(@user)
       render json: @user, status: :ok
     else
-      render plain: 'invalid-token', status: :bad_request
+      render plain: 'invalid-credentials', status: :bad_request
     end      
   end
 
