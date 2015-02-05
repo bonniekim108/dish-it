@@ -3,26 +3,32 @@
 
   angular.module('app') // returns the app module
 
-  .factory('SessionService', ['$http', function($http) {
+  .factory('SessionService', ['UserResource', 'UserService', function(UserResource, UserService) {
 
     var service = {};
 
-    // service.isAuthenticated
+    // Loads a user from the db and sets a token in the session
+    // 'params' json has a root key of 'login' and these keys: email & password
+    service.login = function (params) {
+      UserResource.login(params, function (user) {
 
+      }, function (error) {
+        
+      });
+    };
 
+    // Creates a user in the db and sets a token in the session
+    // 'params' json has a root key of 'signup' and these keys: name, email, county (id), password & password_confirmation
+    service.signup = function (params) {
+      UserResource.login(params, function (user) {
 
+      }, function (error) {
 
-
-
-
-
-
-
-
-
-
+      });
+    };
 
     return service;
+
   }]);
 
 })();
