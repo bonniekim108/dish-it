@@ -1,5 +1,7 @@
+@import 'colors';
+
 body {
-	color: #2a77a4; 
+	color: $prime-blue; 
 	background-image: url("background1.jpg");
   	background-size: cover;
 }
@@ -24,7 +26,7 @@ body {
 }
 
 .homelink {
-	color: #2a77a4;
+	color: $prime-blue;
 	display: block; 
 	position: relative; 
 	left: 175px; 
@@ -47,7 +49,7 @@ body {
 }
 
 a {
-	color: #2a77a4; 
+	color: $prime-blue; 
 	font-family: futura; 
 	font-size: 20px; 
 	padding: 25px; 
@@ -55,6 +57,6 @@ a {
 }
 
 a.battle {
-	color: #BF4b37; 
+	color: $prime-red; 
 }
 

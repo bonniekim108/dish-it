@@ -1,13 +1,13 @@
 @import 'colors';
 
 header {
-  background-color: #EFEFEF;
+  background-color: $main-back;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
-  border-bottom: solid #2a77a4;
+  border-bottom: solid $prime-blue;
   z-index: 1;
   a.active {
     display: none; 
@@ -26,7 +26,7 @@ header {
 }
 
 .wrap {
-  background-color: #EFEFEF;
+  background-color: $main-back;
   position: absolute;
   top: 60px;
   left: 0;
