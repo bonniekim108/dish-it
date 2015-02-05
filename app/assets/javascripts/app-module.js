@@ -95,7 +95,7 @@
       UserService.currentUser = null;
     }
 
-    UserResource.logout();
+    // UserResource.logout();
 
 // UserResource.loginEmail({login:{email: 'jim@email.com', password: 'abc123'}}, function(user){
 //   UserService.currentUser = user;

@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   def login_token
     @user = User.find_by(token: params[:token])
     if @user
-      session[:expires_at] = Date.today + 14.days
+      cookies[:dish_it_token] = { value: params[:token], expires: 14.days.from_now }
       render json: @user, status: :ok
     else
-      session[:dish_it_token] = nil
+      cookies.delete(:dish_it_token)
       render plain: 'invalid-token', status: :bad_request
     end      
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if user
       user.token = nil
       user.save
-      session[:dish_it_token] = nil
+      cookies.delete(:dish_it_token)
     end
     render json: '{}', status: :ok
   end
@@ -49,8 +49,7 @@ class UsersController < ApplicationController
     token = SecureRandom.base64
     user.token = token
     user.save
-    session[:dish_it_token] = token
-    session[:expires_at] = Date.today + 14.days
+    cookies[:dish_it_token] = { value: token, expires: 14.days.from_now }
   end
 
 end
