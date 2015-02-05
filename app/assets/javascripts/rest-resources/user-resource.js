@@ -18,6 +18,12 @@
                         url: '/api/get-user',
                         params:{token: '@token'},
                         headers : {'Content-Type' : 'application/json'}
+                      },
+          'signup': {
+                        method: 'POST',
+                        url: '/api/signup',
+                        // params:{token: '@token'}, assign params in the RegisterController
+                        headers : {'Content-Type' : 'application/json'}
                       }
         }
       );

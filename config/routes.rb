@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   #----- user api routes -----#
   post '/api/get-user' => 'users#get_user'
+  post '/api/signup' => 'users#signup'
 
 
   #----- angular non-static partials -----#

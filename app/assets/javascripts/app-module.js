@@ -85,6 +85,8 @@
   'UserService',
   'UserResource',
   function (UserService, UserResource) {
+
+
     if (dishItToken) {
       UserResource.getUser({token: dishItToken}, function(data) {
         console.log(data);
@@ -94,12 +96,22 @@
     } else {
       UserService.currentUser = null;
 
-      UserResource.getUser({token: 'dishItTokenPassedIn'}, function(data) {
+
+      var params = {user:
+        {
+          email: 'jim@email.com',
+          name: 'jim',
+          password: 'abc123',
+          password_confirmation: 'abc123',
+          county: 1
+        }
+      };
+
+      UserResource.signup(params, function (data) {
         console.log(data);
       });
-
-
     }
+
   }
   ]);  // .run
 
