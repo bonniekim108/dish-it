@@ -61,7 +61,7 @@ RSpec.describe Battle, :type => :model do
     today = Date.today
     @battle.year_month = today.end_of_month
     before_eom = (@battle.year_month.day - today.day)
-    if (today.month = @battle.year_month.month) & before_eom.between?(0, 6)
+    if (today.month = @battle.year_month.month) and before_eom.between?(0, 6)
       expect(@battle.display_mode).to eq('final_four')
     else
       puts "UNABLE TO DETERMINE VALIDITY OF THIS NEXT TEST"
