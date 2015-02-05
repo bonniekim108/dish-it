@@ -19,6 +19,12 @@
           // 'params' json has a root key of 'login' and these keys: email & password
           headers : {'Content-Type' : 'application/json'}
         },
+        'logout': {
+          method: 'GET',
+          url: '/api/logout',
+          // no 'params' are passed
+          headers : {'Content-Type' : 'application/json'}
+        },
         'signup': {
           method: 'POST',
           url: '/api/signup',

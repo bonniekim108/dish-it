@@ -22,6 +22,16 @@ class UsersController < ApplicationController
     end      
   end
 
+  def logout
+    user = current_user
+    if user
+      user.token = nil
+      user.save
+      session[:dish_it_token] = nil
+    end
+    render json: '{}', status: :ok
+  end
+
   def signup
     @user = User.new(params.require(:signup).permit(:email, :name, :password, :password_confirmation))
     @user.county = County.find(params[:signup][:county])
