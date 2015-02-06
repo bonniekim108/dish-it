@@ -65,21 +65,14 @@ ActiveRecord::Schema.define(version: 20150205025335) do
 
   add_index "restaurants", ["battle_id"], name: "index_restaurants_on_battle_id", using: :btree
 
-  create_table "suggestion_boxes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "suggestions", force: :cascade do |t|
     t.integer  "potential_dish_id"
-    t.integer  "suggestion_box_id"
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
 
   add_index "suggestions", ["potential_dish_id"], name: "index_suggestions_on_potential_dish_id", using: :btree
-  add_index "suggestions", ["suggestion_box_id"], name: "index_suggestions_on_suggestion_box_id", using: :btree
   add_index "suggestions", ["user_id"], name: "index_suggestions_on_user_id", using: :btree
 
   create_table "trash_talks", force: :cascade do |t|
