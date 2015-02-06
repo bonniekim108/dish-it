@@ -87,20 +87,6 @@
     if (dishItToken != '') {
       UserService.loginToken(dishItToken)
     }
-
-    // UserResource.logout();
-
-// UserResource.loginEmail({login:{email: 'jim@email.com', password: 'abc123'}}, function(user){
-//   UserService.currentUser = user;
-// })
-
-
-  // console.log(UserService);
-  // UserService.signup("Bonnie Kim", "bonnie@example.com", "abc123", "abc123", 1);
-
-
-
-
   }
   ]);  // .run
 

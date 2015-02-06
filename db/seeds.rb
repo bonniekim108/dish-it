@@ -29,3 +29,17 @@ CuisineLookup.create(name: 'Other')
   )
   user.save
 end
+user = User.new(name: "Jim Clark", email: "email@jim-clark.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Edwin Alegre", email: "edwin@alegre.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Bonnie Kim", email: "bonniekim@example.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Ben Sam", email: "bensam123@hotstuff.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+
+

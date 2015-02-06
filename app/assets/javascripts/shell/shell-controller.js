@@ -9,33 +9,26 @@
     'UserService',
     function($state, $rootScope, UserService) {
       var vm = this;
-console.log(UserService);
 
-      vm.userService = UserService;
-
-      vm.currentUser = vm.userService.currentUser;
-      vm.name = vm.currentUser.name;
-      console.log(vm.name)
-
+      vm.getUser = function () {
+        return UserService.getUser();
+      };
 
       vm.login = function() {
-alert(vm.currentUser.name);
-
+        UserService.login('email@jim-clark.com', 'abc123');
       };
+
       vm.logout = function() {
-alert("logout");
-
+        UserService.logout();
+        $state.go('shell.home');
       };
+
       vm.signup = function() {
-alert("signup");
-
+        $state.go('shell.signup');
       };
-
-
-
 
     }
-    ]);
+  ]);
 
 
 
