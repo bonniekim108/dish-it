@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   #----- battle api routes -----#
-  get '/api/battle/:date' => 'battles#show'
+  get '/api/battles/:year/:month' => 'battles#show'
 
 
   #----- county api routes -----#

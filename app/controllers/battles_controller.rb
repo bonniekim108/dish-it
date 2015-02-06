@@ -12,17 +12,25 @@ class BattlesController < ApplicationController
   # end
 
   def show
-    date = Date.parse(params[:date])
-    if date.is_a?(Date)
+    begin
+      date = Date.new(params[:year].to_i, params[:month].to_i, 1)
+    rescue
+      render plain: 'Invalid year and/or month parameters', status: :bad_request
+    else
       date = date.end_of_month
       @battle = Battle.find_by(year_month: date)
       if @battle
-        render json: @battle, status: :ok
+        # render json: @battle, include: { dish: { only: [ :cuisine, :name ] }, trash_talks: { include: {user: { only: :name } } }, restaurants: { include: {votes: { include: { user: { only: :name } }, only: [ :created_at, :comment, :user ] } } } }, status: :ok
+        render json: @battle, include: {
+          dish: { only: [ :cuisine, :name ] },
+          trash_talks: { include: {user: { only: :name } }, only: [ :created_at, :user, :trash ] },
+          restaurants: { include: {votes: { include: { user: { only: :name } }, only: [ :created_at, :comment, :user ] } } }
+          },
+          status: :ok
+        # render json: @battle, include: {dish: {only: [:cuisine, :name]}, restaurants: { include: { votes: { include: { user: { only: :name } } }, trash_talks: { include: :user } } } }, status: :ok
       else
-        render plain: "Battle for #{date.strftime(%B, %Y)} not found", status: :bad_request
+        render plain: "Battle for #{date.strftime('%B, %Y')} not found", status: :bad_request
       end
-    else
-      render plain: 'Invalid date parameter', status: :bad_request
     end
   end
 
