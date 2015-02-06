@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get  '/api/logout' => 'users#logout'
 
 
+  #----- county api routes -----#
+  get  '/api/counties' => 'counties#index'
+
+
   #----- angular non-static partials -----#
   get '/angular/:page' => 'angular#show'
   
