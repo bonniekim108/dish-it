@@ -7,12 +7,13 @@
     
     var service = {};
 
+    service.currentUser = {};
+
     service.login = function(email, password) {
 
       UserResource.loginEmail({login: {email: email, password: password}}, function(user){
 
         service.currentUser = user;
-        console.log(user);
 
       }, function(error){ 
         service.currentUser = null;
@@ -21,12 +22,17 @@
 
     };
 
+    service.logout = function() {
+
+      UserResource.logout();
+
+    };
+
     service.signup = function(name, email, password, password_confirmation, county) {
 
       UserResource.signup({signup: {name: name, email: email, password: password, password_confirmation: password_confirmation, county: county}}, 
         function(user){
           service.currentUser = user;
-          console.log(user);
 
         }, function(error) {
             service.currentUser = null;
@@ -39,7 +45,6 @@
       UserResource.loginToken({token: token}, function(user){
 
         service.currentUser = user;
-        console.log(user);
 
       }, function(error){ 
         service.currentUser = null;
