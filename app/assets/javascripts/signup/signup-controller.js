@@ -14,6 +14,7 @@
       	vm.counties = countydata;
       });
 			
+			// Submits signup data to the database
 			vm.submitForm = function(isValid) {
         if (isValid) {
         	UserService.signup(

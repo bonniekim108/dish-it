@@ -3,8 +3,6 @@
 <p>The SignupController will change the route(state) to battle if the registration process is successful.</p>
 <p>If the user clicks the cancel button/link, the user will route to home/landing.</p>
 
-<div class="">{{vm.errormsg}}</div>
-
 <form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
 
 	<div class="row">
@@ -41,6 +39,8 @@
 	<div class="row">
 		<div class="large-6 columns">
 				<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
+
+				<p class="">{{vm.errormsg}}</p>
 		</div>
 		<div class="large-6 columns">
 				<a ui-sref="shell.home" class="button">Cancel</a>
