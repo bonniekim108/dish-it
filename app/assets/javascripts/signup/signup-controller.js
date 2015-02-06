@@ -3,34 +3,31 @@
 
   angular.module('app')
 
-  .controller('SignupController', [
+  .controller('SignupController', ['$http', '$state', 'UserService',
     // inject other services here
-    function() {
+    function($http, $state, UserService) {
       var vm = this;
+      vm.counties = [];
 
       // Lists out all counties from county list select field
-      vm.counties = {};
-      vm.badpw;
-      vm.bademail;
-			vm.counties.options = [
-				{ id : 1, name: "Los Angeles County" },
-				{ id : 2, name: "Orange County" }
-			];
-
+      $http.get('api/counties').success(function(countydata){
+      	vm.counties = countydata;
+      });
+			
+			// Submits signup data to the database
 			vm.submitForm = function(isValid) {
-
         if (isValid) {
-        	if (vm.signup.password != vm.signup.password_confirmation) {
-        		vm.badpw = "Passwords do not match!";
-        	}
-        	// if (vm.signup.email == database.email) {
-        	// 	vm.bademail = "User email already taken!";
-        	// }
-          console.log(vm.signup.name);
-          console.log(vm.signup.email);
-          console.log(vm.signup.password);
-          console.log(vm.signup.password_confirmation);
-          console.log(vm.signup.county);
+        	UserService.signup(
+        		  vm.signup.name,
+	    		 		vm.signup.email,
+	    		 		vm.signup.password,
+	    		 		vm.signup.password_confirmation,
+	    		 		vm.signup.county
+	    		 	).then(function(user){
+	    		 		$state.go('shell.about');
+	    		 	},function(error){
+	    		 		vm.errormsg = error;
+	    		 	});
         }
 
       };

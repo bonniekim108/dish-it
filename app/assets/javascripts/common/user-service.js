@@ -3,7 +3,7 @@
 
   angular.module('app')
 
-  .factory('UserService', ['UserResource', function(UserResource) {
+  .factory('UserService', ['$q', 'UserResource', function($q, UserResource) {
 
     var service = {};
 
@@ -25,12 +25,16 @@
     };
 
     service.signup = function(name, email, password, password_confirmation, county) {
+      var deferred = $q.defer();
       UserResource.signup({signup: {name: name, email: email, password: password, password_confirmation: password_confirmation, county: county}}, 
         function(user){
           service.user = user;
+          deferred.resolve(user);
         }, function(error) {
           service.user = null;
+          deferred.reject(error.data);
         });
+      return deferred.promise;
     };
 
     service.loginToken = function(token) {
