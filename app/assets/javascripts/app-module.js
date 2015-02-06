@@ -84,8 +84,8 @@
 .run([
   'UserService',
   function (UserService) {
-    if (dishItToken != '') {
-      UserService.loginToken(dishItToken)
+    if (dishItToken !== '') {
+      UserService.loginToken(dishItToken);
     }
   }
   ]);  // .run
