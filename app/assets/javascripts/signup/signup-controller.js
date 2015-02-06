@@ -3,34 +3,30 @@
 
   angular.module('app')
 
-  .controller('SignupController', ['$http',
+  .controller('SignupController', ['$http', '$state', 'UserService',
     // inject other services here
-    function($http) {
+    function($http, $state, UserService) {
       var vm = this;
       vm.counties = [];
-      $http.get('api/counties').success(function(data){
-      	console.log(data)
-      	vm.counties = data;
-
-      });
-			
-
-
 
       // Lists out all counties from county list select field
-      // vm.counties = {};
-			// vm.counties.options = [
-			// 	{ id : 1, name: "Los Angeles County" },
-			// 	{ id : 2, name: "Orange County" }
-			// ];
-
+      $http.get('api/counties').success(function(countydata){
+      	vm.counties = countydata;
+      });
+			
 			vm.submitForm = function(isValid) {
         if (isValid) {
-          console.log(vm.signup.name);
-          console.log(vm.signup.email);
-          console.log(vm.signup.password);
-          console.log(vm.signup.password_confirmation);
-          console.log(vm.signup.county);
+        	UserService.signup(
+        		  vm.signup.name,
+	    		 		vm.signup.email,
+	    		 		vm.signup.password,
+	    		 		vm.signup.password_confirmation,
+	    		 		vm.signup.county
+	    		 	).then(function(user){
+	    		 		$state.go('shell.about');
+	    		 	},function(error){
+	    		 		vm.errormsg = error;
+	    		 	});
         }
 
       };

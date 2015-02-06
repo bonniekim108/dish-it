@@ -32,7 +32,7 @@
           deferred.resolve(user);
         }, function(error) {
           service.user = null;
-          deferred.reject(error);
+          deferred.reject(error.data);
         });
       return deferred.promise;
     };
