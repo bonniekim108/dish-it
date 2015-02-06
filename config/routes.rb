@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get  '/api/logout' => 'users#logout'
 
 
+  #----- battle api routes -----#
+  get '/api/battle/:date' => 'battles#show'
+
+
   #----- county api routes -----#
   get  '/api/counties' => 'counties#index'
 
