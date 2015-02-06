@@ -1,7 +1,68 @@
 
 <header> 
-	<a ui-sref="shell.home" ui-sref-active="active"
-	 class="logo"></a>
+
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <nav class="tab-bar">
+        <section class="left-small">
+          <a role="button" ui-sref="idOfLeftMenu" class="left-off-canvas-toggle menu-icon" ><span></span></a></section>  
+        </section>
+
+        <!-- Divider
+        <li class="divider"></li> -->
+
+        <div class="top-bar-section">
+          <ul class="right">
+            <li>
+              <input type="email" name="email" ng-model="vm.signup.email" class="email" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+            </li>
+            <li class="divider"></li>
+            <li>
+              <input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
+            </li>
+          </ul>
+        </div>
+          <nav class="tab-bar">
+            <div class="left-small"></div>
+            <div class="right tab-bar-section">
+              <div class="row">
+                <div class="small-3 small offset- columns">
+                  <input type="email" name="email" ng-model="vm.signup.email" class="email" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+                </div>
+                <div class="small-3 columns">  
+                  <input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+      </nav>
+
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <li><a ui-sref="#">About</a></li>
+          <li><a ui-sref="#">Winners</a></li>
+          <li class="has-submenu"><a ui-sref="#">Battles</a>
+            <ul class="left-submenu">
+              <li class="back"><a ui-sref="#">Back</a></li>
+              <li><a ui-sref="#">Restaurants</a></li>
+              <li><a ui-sref="#">Comments</a></li>
+              <li><a ui-sref="#">Suggestions</a></li>
+          <li><a ui-sref="#">Sign up</a></li>
+        </ul>
+      </aside>
+
+
+
+
+
+
+<!-- <a ui-sref="shell.home" ui-sref-active="active"
+	 class="logo"></a> --> 
+
+
+
 
     <div id="user-section" class="right">
       <div>{{shell.getUser().name}}</div>
@@ -10,6 +71,11 @@
         <a href ng-click="shell.signup()">signup</a>
    </div>
 
+
+
+
+ </main>
+ </div>
 </header>
 
 	<div class="wrap row">
