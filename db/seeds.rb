@@ -11,19 +11,35 @@ County.create(name: 'Los Angeles', UTC_offset: -8)
 County.create(name: 'Orange', UTC_offset: -8)
 
 # #--- Load cuisine_lookups table
-# CuisineLookup.create(name: 'American')
-# CuisineLookup.create(name: 'Asian')
-# CuisineLookup.create(name: 'Italian')
-# CuisineLookup.create(name: 'Mexican')
-# CuisineLookup.create(name: 'Other')
+CuisineLookup.create(name: 'American')
+CuisineLookup.create(name: 'Asian')
+CuisineLookup.create(name: 'Italian')
+CuisineLookup.create(name: 'Mexican')
+CuisineLookup.create(name: 'Other')
 
 
 # #--- Load users table
-# 50.times do
-#   user = User.create(
-#     name: Faker::Name.name,
-#     email: Faker::Internet.email,
-#     password: 'abc-123',
-#     password_confirmation: 'abc-123'
-#   )
-# end
+20.times do |n|
+  user = User.new(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'abc123',
+    password_confirmation: 'abc123',
+    county: (n % 2) == 1 ? County.first : County.last
+  )
+  user.save
+end
+user = User.new(name: "Jim Clark", email: "email@jim-clark.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Edwin Alegre", email: "edwin@alegre.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Bonnie Kim", email: "bonniekim@example.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+user = User.new(name: "Ben Sam", email: "bensam123@hotstuff.com", password: "abc123", password_confirmation: "abc123")
+user.county = County.first
+user.save
+
+

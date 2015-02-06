@@ -2,6 +2,23 @@
 <header> 
 	<a ui-sref="shell.home" ui-sref-active="active"
 	 class="logo"></a>
+
+    <div id="user-section" class="right">
+      <div>{{shell.getUser().name}}</div>
+        <a href ng-click="shell.login()">login</a>
+        <a href ng-click="shell.logout()">logout</a>
+        <a href ng-click="shell.signup()">signup</a>
+      
+
+
+
+
+
+   </div>
+
+
+
+
 </header>
 
 	<div class="wrap row">

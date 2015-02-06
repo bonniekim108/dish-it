@@ -10,10 +10,26 @@
     function($state, $rootScope, UserService) {
       var vm = this;
 
-      vm.name = UserService.name;
+      vm.getUser = function () {
+        return UserService.getUser();
+      };
+
+      vm.login = function() {
+        UserService.login('email@jim-clark.com', 'abc123');
+      };
+
+      vm.logout = function() {
+        UserService.logout();
+        $state.go('shell.home');
+      };
+
+      vm.signup = function() {
+        $state.go('shell.signup');
+      };
 
     }
   ]);
+
 
 
 })();
