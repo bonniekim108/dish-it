@@ -19,11 +19,13 @@ CuisineLookup.create(name: 'Other')
 
 
 # #--- Load users table
-# 50.times do
-#   user = User.create(
-#     name: Faker::Name.name,
-#     email: Faker::Internet.email,
-#     password: 'abc-123',
-#     password_confirmation: 'abc-123'
-#   )
-# end
+20.times do |n|
+  user = User.new(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'abc123',
+    password_confirmation: 'abc123',
+    county: (n % 2) == 1 ? County.first : County.last
+  )
+  user.save
+end
