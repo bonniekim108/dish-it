@@ -83,21 +83,10 @@
 
 .run([
   'UserService',
-
-  'BattleResource',
-
-
-  function (UserService, BattleResource) {
-    if (dishItToken != '') {
-      UserService.loginToken(dishItToken)
+  function (UserService) {
+    if (dishItToken !== '') {
+      UserService.loginToken(dishItToken);
     }
-
-// testing battle-service
-var battle = BattleResource.show({year: 2015, month: 2}, function(b) {
-  console.log(b);
-})
-
-
   }
   ]);  // .run
 
