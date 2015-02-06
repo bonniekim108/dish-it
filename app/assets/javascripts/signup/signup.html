@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="large-5 columns">
 				<label for="email">E-mail:</label>
-				<input type="email" name="email" ng-model="vm.signup.email" class="" placeholder="email@address.com" required />
+				<input type="email" name="email" ng-model="vm.signup.email" class="" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
 		</div>
 	</div>
 	<div class="row">
@@ -32,13 +32,13 @@
 	<div class="row">
 		<div class="large-5 columns">
 				<label for="county">County</label>
-				<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties.options" required>
+				<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties" required>
 				</select>
 		</div>
 	</div>
 	<div class="row">
 		<div class="large-6 columns">
-				<button type="submit" class="button" ng-disabled="signupForm.$invalid">Sign-up</button>
+				<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
 		</div>
 		<div class="large-6 columns">
 				<a ui-sref="shell.home" class="button">Cancel</a>
