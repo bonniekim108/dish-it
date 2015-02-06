@@ -85,7 +85,7 @@
   'UserService',
   function (UserService) {
     if (dishItToken != '') {
-      UserService.loginToken({token: dishItToken})
+      UserService.loginToken(dishItToken)
     }
 
     // UserResource.logout();
