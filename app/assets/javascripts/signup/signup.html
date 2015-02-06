@@ -3,4 +3,55 @@
 <p>The SignupController will change the route(state) to battle if the registration process is successful.</p>
 <p>If the user clicks the cancel button/link, the user will route to home/landing.</p>
 
-<a ui-sref="shell.home">Cancel</a>
+<form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
+{{vm.badpw}}
+	<div class="row">
+		<div class="large-5 columns">
+				<label for="name">Name:</label>
+				<input type="text" name="name" ng-model="vm.signup.name" class="" placeholder="Name" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-5 columns">
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" ng-model="vm.signup.email" class="" placeholder="email@address.com" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-5 columns">
+				<label for="password">Password:</label>
+				<input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-5 columns">
+				<label for="password_confirmation">Password Confirmation:</label>
+				<input type="password" name="password_confirmation" ng-model="vm.signup.password_confirmation" class=""  placeholder="password confirmation" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-5 columns">
+				<label for="county">County</label>
+				<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties.options" required>
+				</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+				<button type="submit" class="button" ng-disabled="signupForm.$invalid">Sign-up</button>
+		</div>
+		<div class="large-6 columns">
+				<a ui-sref="shell.home" class="button">Cancel</a>
+		</div>
+	</div>
+</form>
+
+
+{{vm.signup.name}}
+{{vm.signup.email}}
+{{vm.signup.password}}
+{{vm.signup.password_confirmation}}
+{{vm.signup.county}}
+
+
+
