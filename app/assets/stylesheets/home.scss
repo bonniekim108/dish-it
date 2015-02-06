@@ -1,62 +1,83 @@
 @import 'colors';
 
+// main body
 body {
 	color: $prime-blue; 
 	background-image: url("background1.jpg");
   	background-size: cover;
+
 }
 
-// 	background-image: 
-// 		linear-gradient(
-// 			to top, 
-// 			#2a77a4, #EFEFEF); 
-// }
+.righttop {
+	position: absolute; 
+	right: -88px; 
+	top: 0; 
+}
 
-.logo-img	 {
+a.showdown2 {
+	display: block; 
+	background-image: url("topright.svg"); 
+	width: 380px; 
+	height: 365px; 
+	opacity: 0.85;  
+
+}
+
+// middle styling
+
+.middle	 {
   display: block; 
-  width: 500px;
+  width: 600px;
   height: 250px;
   background-image: url("dishit1.svg"); 
   background-repeat: no-repeat;
-  position: relative;  
-  background-size: 500px 250px; 
-  left: 145px;
-  right: 140px; 
-  top: 140px; 
+  background-size: 600px 250px;  
+  position: relative; 
+  margin-top: 180px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;  
+  clear: both; 
 }
 
-.homelink {
-	color: $prime-blue;
-	display: block; 
-	position: relative; 
-	left: 175px; 
-	top: -100px; 
-	bottom: 10px; 
-	width: 480px; 
-	z-index: 1; 
-
+// bottom left styling
+.bottomleft {
+	position: absolute; 
+	left: -88px;
+	bottom: 38px;   
 }
-
-.showdown1 {
-	background-image: url("showdown1.svg"); 
-	position: relative; 
+a.showdown1 {
 	display: block; 
+	background-image: url("showdown1.svg");  
 	width: 380px; 
 	height: 365px; 
-	left: -98px; 
-	bottom: 30px; 
-	opacity: .9;
+	opacity: .85;
 }
 
 a {
 	color: $prime-blue; 
 	font-family: futura; 
-	font-size: 20px; 
+	font-size: 23px; 
 	padding: 25px; 
-
 }
 
 a.battle {
 	color: $prime-red; 
+
 }
 
+// links styling
+.homelink {
+	color: $prime-blue;
+	display: block; 
+	position: relative; 
+	margin-left: auto; 
+	margin-right: 38px; 
+	top: -80px; 
+	width: 600px; 
+	// z-index: 1; 
+}	
+
+.battle:hover {
+	color: $prime-blue; 
+}
