@@ -19,7 +19,7 @@ a.showdown2 {
 	background-image: url("topright.svg"); 
 	width: 380px; 
 	height: 365px; 
-	opacity: 0.85;  
+	opacity: 0.95;  
 
 }
 
@@ -51,7 +51,7 @@ a.showdown1 {
 	background-image: url("showdown1.svg");  
 	width: 380px; 
 	height: 365px; 
-	opacity: .85;
+	opacity: .95;
 }
 
 a {
@@ -61,10 +61,6 @@ a {
 	padding: 25px; 
 }
 
-a.battle {
-	color: $prime-red; 
-
-}
 
 // links styling
 .homelink {
@@ -77,7 +73,3 @@ a.battle {
 	width: 600px; 
 	// z-index: 1; 
 }	
-
-.battle:hover {
-	color: $prime-blue; 
-}
