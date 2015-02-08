@@ -2,9 +2,10 @@
 
 h1.testing1 {
 	color: red; 
-	font-family: arial; 
-}
-
-p#testing {
-	color: red; 
+	font-family: futura;
+	font-weight: bold; 
+	display: block; 
+	margin-left: auto;
+	margin-right: auto; 
+	color: $prime-blue; 
 }
