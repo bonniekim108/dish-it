@@ -27,6 +27,10 @@
         $state.go('shell.signup');
       };
 
+      vm.isUserLoggedIn = function () {
+        return UserService.getUser() ? true : false;
+      };
+
     }
   ]);
 
