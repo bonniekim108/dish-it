@@ -1,13 +1,14 @@
 @import 'colors';
 
 header {
-  background-color: $main-back;
+  background-color: $main-black;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 50px;
   border-bottom: solid $prime-blue;
+  border-bottom-width: 5px; 
   z-index: 1;
 
   a.active {
@@ -21,13 +22,14 @@ a.logo {
   height: 100px;
   background: url(dishit5.svg); 
   background-size: 300px 100px;
-  margin: 15px auto; 
+  margin: 8px auto; 
 }
 
 .wrap {
-  background-color: $main-back;
+  background-image: url("background4.jpg");
+  background-size: cover; 
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -35,11 +37,13 @@ a.logo {
   overflow: hidden; 
 }
 
-// footer {
-//   background-color: #1e6182; 
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   height: 40px;
-// }
+footer {
+  background-color: $main-black; 
+  position: absolute;
+  border-top: solid $prime-red; 
+  border-top-width: 5px; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
