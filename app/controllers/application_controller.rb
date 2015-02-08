@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
     # Slide the token expiraton if exists and not already expired
-    if current_user && cookies[:dish_it_token]
+    if current_user
       cookies[:dish_it_token] = { value: cookies[:dish_it_token], expires: 14.days.from_now }
     else
       cookies.delete(:dish_it_token)
