@@ -37,11 +37,13 @@
       return deferred.promise;
     };
 
-    service.loginToken = function(token) {
-      UserResource.loginToken({token: token}, function(user){
-        service.user = user;
-      }, function(error){ 
-        service.user = null;
+    service.loginToken = function() {
+      UserResource.loginToken(function (user) {
+        if (user == 'no-token') {
+          service.user = null;
+        } else {
+          service.user = user;
+        }
       });
     };
 
