@@ -2,27 +2,22 @@
 <header> 
 
   <div class="off-canvas-wrap">
-    <div class="inner-wrap">
+    <main class="inner-wrap">
       <nav class="tab-bar">
         <section class="left-small">
-          <a role="button" ui-sref="idOfLeftMenu" class="left-off-canvas-toggle menu-icon" ><span></span></a></section>  
-        </section>
-
-        <!-- Divider
-        <li class="divider"></li> -->
+          <a role="button" ui-sref="idOfLeftMenu" class="left-off-canvas-toggle menu-icon" ><span></span></a>
+        </section>  
 
         <div class="top-bar-section">
           <ul class="right">
-            <li>
-              <input type="email" name="email" ng-model="vm.signup.email" class="email" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-            </li>
-            <li class="divider"></li>
-            <li>
-              <input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
-            </li>
-          </ul>
+            <form ng-submit="signup()">
+              <input type="email" name="email" ng-model="vm.signup.email" class="form-control" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+              <input type="password" name="password" ng-model="vm.signup.password" class="form-control" placeholder="password" required />
+              <input type="submit" value="Log in" class="btn btn-primary" />
+            </form>
         </div>
-          <nav class="tab-bar">
+
+          <!-- <nav class="tab-bar">
             <div class="left-small"></div>
             <div class="right tab-bar-section">
               <div class="row">
@@ -34,7 +29,7 @@
                 </div>
               </div>
             </div>
-          </nav>
+          </nav> -->
 
 
       </nav>
@@ -46,7 +41,6 @@
           <li><a ui-sref="#">Winners</a></li>
           <li class="divider"></li>
           <li class="has-submenu"><a ui-sref="#">Battles</a>
-          <li class="divider"></li>  
             <ul class="left-submenu">
               <li class="back"><a ui-sref="#">Back</a></li>
               <li class="divider"></li>
@@ -56,10 +50,13 @@
               <li class="divider"></li>
               <li><a ui-sref="#">Suggestions</a></li>
               <li class="divider"></li>
+          <li class="divider"></li>
           <li><a ui-sref="#">Sign up</a></li>
         </ul>
       </aside>
 
+    <a class="exit-off-canvas"></a>
+    
 
 
 
@@ -82,7 +79,7 @@
 
 
 
-    </div> 
+    </main> 
   </div>
 </header>
 
