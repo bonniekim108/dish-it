@@ -1,11 +1,46 @@
 @import 'colors';
 
-h1.testing1 {
-	color: red; 
-	font-family: futura;
+.about {
+	font-family: futura; 
+}
+
+.abouttext {
 	font-weight: bold; 
-	display: block; 
-	margin-left: auto;
-	margin-right: auto; 
+	width: 350px; 
+	padding-right: 20px; 
+	position: relative;  
+	top: 20px; 
+	text-align: right; 
+	font-size: 30px;
+	background-color: $main-back;  
+
+}
+
+strong {
+	color: $prime-red; 
+}
+
+strong:hover {
 	color: $prime-blue; 
+}
+
+.aboutinfobox {
+	width: 350px; 
+	height: 420px; 
+	background-color: #EFEFEF;  
+}
+
+p.aboutinfo {
+	font-size: 18px; 
+	font-weight: normal; 
+	text-align: justify; 
+	text-justify: inter-word;
+	padding: 20px; 
+}
+
+p.aboutinfo:hover {
+	color: $prime-red; 
+	// background-image: url("freshfood1.jpg"); 
+	background-size: 350px 420px; 
+	background-repeat: no-repeat; 
 }

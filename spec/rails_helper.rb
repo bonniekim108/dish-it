@@ -24,6 +24,9 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+# My custom test data
+load "#{Rails.root}/db/test_seeds.rb"
+
 RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
