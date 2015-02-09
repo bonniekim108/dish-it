@@ -1,7 +1,7 @@
 
 <header> 
 
-  <div class="off-canvas-wrap">
+ <!--  <div class="off-canvas-wrap">
     <main class="inner-wrap">
       <nav class="tab-bar">
         <section class="left-small">
@@ -17,7 +17,7 @@
             </form>
         </div>
 
-          <!-- <nav class="tab-bar">
+          <nav class="tab-bar">
             <div class="left-small"></div>
             <div class="right tab-bar-section">
               <div class="row">
@@ -29,7 +29,7 @@
                 </div>
               </div>
             </div>
-          </nav> -->
+          </nav>
 
 
       </nav>
@@ -65,22 +65,35 @@
 <!-- <a ui-sref="shell.home" ui-sref-active="active"
 	 class="logo"></a> --> 
 
+ -->
 
+<body ng-controller="ShellController">
+  <div id="user-section" class="right">
 
+    <div ng-show="shell.isUserLoggedIn()">
+      <a ui-sref ng-click="shell.logout()">logout</a>
+    </div>
 
-    <div id="user-section" class="right">
+    <div ng-hide="shell.isUserLoggedIn()">
+      <input type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+
+      <input type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
+
+      <input type="submit" value="Log in" class="btn btn-primary" />  
+    </div>
+  </div>
+</body>
+
+   <!--  <div ng-hide="shell.isUserLoggedIn()">
       <div>{{shell.getUser().name}}</div>
         <a href ng-click="shell.login()">login</a>
         <a href ng-click="shell.logout()">logout</a>
         <a href ng-click="shell.signup()">signup</a>
       </div>
-   </div>
-
-
-
+    </div>
 
     </main> 
-  </div>
+  </div> 
 </header>
 
 	<div class="wrap row">
@@ -88,3 +101,14 @@
 	</div>
 
 <footer></footer>
+ -->
+
+
+
+
+
+
+
+
+
+
