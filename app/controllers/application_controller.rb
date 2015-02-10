@@ -18,12 +18,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    return true if Rails.env.development?
     current_user
   end
 
   def authorize_admin
-    return true if Rails.env.development?
     current_user && current_user.is_admin
   end
 

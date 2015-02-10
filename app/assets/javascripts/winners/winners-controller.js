@@ -4,8 +4,8 @@
   angular.module('app')
 
   .controller('WinnersController', [
-    // inject other services here
-    function() {
+    'YelpService',
+    function(YelpService) {
       var vm = this;
 
 

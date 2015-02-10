@@ -65,12 +65,13 @@
 <!-- <a ui-sref="shell.home" ui-sref-active="active"
 	 class="logo"></a> --> 
 
- -->
 
-<body ng-controller="ShellController">
+
+
   <div id="user-section" class="right">
 
     <div ng-show="shell.isUserLoggedIn()">
+      Welcome {{vm.UserService.name}}!
       <a ui-sref ng-click="shell.logout()">logout</a>
     </div>
 
@@ -79,12 +80,12 @@
 
       <input type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
 
-      <input type="submit" value="Log in" class="btn btn-primary" />  
+      <a href ng-click="shell.login()">login</a>
     </div>
   </div>
-</body>
 
-   <!--  <div ng-hide="shell.isUserLoggedIn()">
+
+ <div ng-hide="shell.isUserLoggedIn()">
       <div>{{shell.getUser().name}}</div>
         <a href ng-click="shell.login()">login</a>
         <a href ng-click="shell.logout()">logout</a>
@@ -101,7 +102,7 @@
 	</div>
 
 <footer></footer>
- -->
+
 
 
 
