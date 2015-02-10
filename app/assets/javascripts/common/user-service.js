@@ -5,7 +5,23 @@
 
   .factory('UserService', ['$q', 'UserResource', function($q, UserResource) {
 
+
     var service = {};
+
+    var readyDeferred = $q.defer();
+    service.ready = readyDeferred.promise;
+
+    service.user;
+
+    // init
+    UserResource.loginToken(function (user) {
+      if (user == 'no-token') {
+        service.user = null;
+      } else {
+        service.user = user;
+      }
+      readyDeferred.resolve(service.user);
+    });
 
     service.getUser = function () {
       return service.user;
@@ -37,15 +53,7 @@
       return deferred.promise;
     };
 
-    service.loginToken = function() {
-      UserResource.loginToken(function (user) {
-        if (user == 'no-token') {
-          service.user = null;
-        } else {
-          service.user = user;
-        }
-      });
-    };
+    
 
     return service;
   }]);
