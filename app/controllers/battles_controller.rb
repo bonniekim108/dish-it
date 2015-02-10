@@ -60,3 +60,4 @@ class BattlesController < ApplicationController
 
 
 end
+

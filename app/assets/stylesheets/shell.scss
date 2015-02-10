@@ -8,25 +8,41 @@ header {
   right: 0;
   height: 50px;
   border-bottom: solid $prime-blue;
-  border-bottom-width: 5px; 
-  z-index: 1;
-
+  border-bottom-width: 7px; 
+  z-index: 5;
   a.active {
     display: none; 
   }
 }
 
+// a {
+//   text-shadow: 0px 0px 1px #888888; 
+// }
+
 a.logo {
   display: block;
-  width: 300px;
+  width: 150px;
   height: 100px;
   background: url(dishit5.svg); 
-  background-size: 300px 100px;
-  margin: 8px auto; 
+  background-size: 150px 100px;
+  margin: 5px auto; 
+
+}
+
+footer {
+  background-color: $main-black; 
+  position: absolute;
+  border-top: solid $prime-red; 
+  border-top-width: 3px; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  z-index: 10px;
 }
 
 .wrap {
-  background-image: url("background4.jpg");
+  background-image: url("background3.jpg");
   background-size: cover; 
   position: absolute;
   top: 50px;
@@ -34,23 +50,78 @@ a.logo {
   right: 0;
   bottom: 0;
   box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.50);
-  overflow: hidden; 
+  overflow: scroll; 
 }
 
-footer {
-  background-color: $main-black; 
-  position: absolute;
-  border-top: solid $prime-red; 
-  border-top-width: 5px; 
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
+.icon {
+  position: absolute; 
+  float: right; 
+  right: 145px;   
+  bottom: 0px; 
+  margin: 0px; 
+
 }
 
-// bonnie's styling
+ul {
+  float: right; 
+}
 
+li {
+  display: inline-block;  
+}
 
-#user-section .login {
-  display: inline-block;
+p.copyright { 
+    display: block; 
+    font-family: arial; 
+    font-weight: bold; 
+    color: grey; 
+    font-size: 11px; 
+    margin-top: 7px;
+    margin-right: 290px; 
+    margin-bottom: 0px;  
+    float: right; 
+}
+
+a.facebook {
+  display: block; 
+  width: 30px; 
+  height: 20px; 
+  background-image: url("facebookicon3.svg");
+  background-repeat: no-repeat;  
+  background-size: 30px 20px;  
+  margin-bottom: -30px; 
+  padding: 0px; 
+}
+
+a.twitter {
+  display: block; 
+  width: 30px; 
+  height: 20px; 
+  background-image: url("twittericon1.svg"); 
+  background-repeat: no-repeat; 
+  background-size: 30px 20px; 
+  margin-bottom: -20px; 
+  padding: 0px; 
+}
+
+a.pinterest {
+  display: block; 
+  width: 30px; 
+  height: 20px; 
+  background-image: url("pinterest.svg"); 
+  background-repeat: no-repeat; 
+  background-size: 30px 20px; 
+  margin-bottom: -20px; 
+  padding: 0px; 
+}
+
+a.yelp {
+  display: block; 
+  width: 30px; 
+  height: 20px; 
+  background-image: url("yelp1.svg"); 
+  background-repeat: no-repeat; 
+  background-size: 30px 20px; 
+  margin-bottom: -20px; 
+  padding: 0px; 
 }
