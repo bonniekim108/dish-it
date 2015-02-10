@@ -75,6 +75,13 @@
         controllerAs: 'vm'
       })
 
+      .state('shell.nominate', {
+        url: '/nominate',
+        templateUrl: 'nominate/nominate.html',
+        controller: 'NominateController',
+        controllerAs: 'vm'
+      })
+
       ;  // $stateProvider chaining
 
       $urlRouterProvider.otherwise('/home');
