@@ -1,20 +1,97 @@
 
 <header> 
-	<a ui-sref="shell.home" ui-sref-active="active"
-	 class="logo"></a>
 
-    <div id="user-section" class="right">
+  <!-- <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <nav class="tab-bar">
+        <section class="left-small">
+          <a role="button" ui-sref="idOfLeftMenu" class="left-off-canvas-toggle menu-icon" ><span></span></a></section>  
+        </section> -->
+
+        <!-- Divider
+        <li class="divider"></li> -->
+
+       <!--  <div class="top-bar-section">
+          <ul class="right">
+            <li>
+              <input type="email" name="email" ng-model="vm.signup.email" class="email" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+            </li>
+            <li class="divider"></li>
+            <li>
+              <input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
+            </li>
+          </ul>
+        </div>
+          <nav class="tab-bar">
+            <div class="left-small"></div>
+            <div class="right tab-bar-section">
+              <div class="row">
+                <div class="small-3 small offset- columns">
+                  <input type="email" name="email" ng-model="vm.signup.email" class="email" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+                </div>
+                <div class="small-3 columns">  
+                  <input type="password" name="password" ng-model="vm.signup.password" class="" placeholder="password" required />
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+      </nav>
+
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <li><a ui-sref="#">About</a></li>
+          <li class="divider"></li>
+          <li><a ui-sref="#">Winners</a></li>
+          <li class="divider"></li>
+          <li class="has-submenu"><a ui-sref="#">Battles</a>
+          <li class="divider"></li>  
+            <ul class="left-submenu">
+              <li class="back"><a ui-sref="#">Back</a></li>
+              <li class="divider"></li>
+              <li><a ui-sref="#">Restaurants</a></li>
+              <li class="divider"></li>
+              <li><a ui-sref="#">Comments</a></li>
+              <li class="divider"></li>
+              <li><a ui-sref="#">Suggestions</a></li>
+              <li class="divider"></li>
+          <li><a ui-sref="#">Sign up</a></li>
+        </ul>
+      </aside> -->
+
+<a ui-sref="shell.home" ui-sref-active="active"
+   class="logo"></a> 
+
+
+
+
+    <!-- <div id="user-section" class="right">
       <div>{{shell.getUser().name}}</div>
         <a href ng-click="shell.login()">login</a>
         <a href ng-click="shell.logout()">logout</a>
         <a href ng-click="shell.signup()">signup</a>
-       </div> 
+      </div>
    </div>
+ -->
 
 </header>
 
-	<div class="wrap row">
-		<div ui-view class="columns small-10 small-offset-1"></div>
-	</div>
+  <div class="wrap row">
+    <div ui-view class="columns small-10 small-offset-1"></div>
+  </div>
 
-<footer></footer>
+<footer>
+  <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
+  
+  <div class="icon"> 
+     
+    <ul>
+      <li><a href="/" class="facebook"></a></li>
+        <li><a href="/" class="twitter"></a></li>
+        <li><a href="/" class="pinterest"></a></li>
+        <li><a href="/" class="yelp"></a></li> 
+    </ul> 
+  </div> 
+  
+</footer>
