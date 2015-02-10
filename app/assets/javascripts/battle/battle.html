@@ -4,113 +4,45 @@
 <a ui-sref="shell.about">About</a> |
 <a ui-sref="shell.home">Home</a> | {{vm.displayMode}}
 
+<div class="row">
+  <div style="margin: 15px auto; width:400px; text-align: center;">
+    <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
+    <img src="http://www.pbs.org/food/files/2012/09/Sushi-5-1.jpg" width=300>
 
-
-<div style="text-align: center; font-size:40px; font-weight: bold;">
-	{{vm.curBattle.dish.name}}<br>
-	<span style="text-align: center; font-size:30px; font-weight: bold;"> {{vm.curBattle.dish.cuisine}}</span><br>
-	<img src="http://www.pbs.org/food/files/2012/09/Sushi-5-1.jpg" width=200>
+    <div ng-if="vm.displayMode == 'winner'" style="margin: 10px" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
+      <h1>WINNER</h1>
+      <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=400><br>
+      <strong><a href="#">{{restaurant.name}}</a></strong>
+    </div>
+  </div>
 </div>
 
-<div style="">
-	<input type="text" name="search" style="width:200px" placeholder="Find a restaurant"><button type="submit" class="button">Search</button>
-</div>
-<div ng-if="vm.displayMode == 'future'">
-
-	<p>{{vm.curBattle.restaurants.length}} Restaurants</p>
-	<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.curBattle.restaurants.length">
-
-	<p><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" align="right" width=150>
-		<strong>{{restaurant.name}}</strong><br />
-		{{restaurant.location}}<br />
-		<span <a href="tel:{{restaurant.phone}}">{{restaurant.phone}}</a>
-	</p>
-	<p><button type="submit" class="button">Vote</button></p>
-	<p>{{restaurant.votes.length}} Votes</p>
-		<a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-		<div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-			<p ng-if="vote.comment.length > 0"><a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-		</div>
-	</div>
-
-</div>
-
-<div ng-if="vm.displayMode == 'nominating'">
-
-	<p>{{vm.curBattle.restaurants.length}} Restaurants</p>
-	<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.curBattle.restaurants.length">
-
-	<p><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" align="right" width=150>
-		<strong>{{restaurant.name}}</strong><br />
-		{{restaurant.location}}<br />
-		<span <a href="tel:{{restaurant.phone}}">{{restaurant.phone}}</a>
-	</p>
-	<p><button type="submit" class="button" style="float:right">Vote</button></p>
-	<p>{{restaurant.votes.length}} Votes</p>
-		<a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-		<div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-			<p ng-if="vote.comment.length > 0"><a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-		</div>
-	</div>
-
-</div>
-
-<div ng-if="vm.displayMode == 'great-eight'">
-
-	<p>{{vm.curBattle.restaurants.length}} Restaurants</p>
-	<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 8">
-
-	<p><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" align="right" width=150>
-		<strong>{{restaurant.name}}</strong><br />
-		{{restaurant.location}}<br />
-		<span <a href="tel:{{restaurant.phone}}">{{restaurant.phone}}</a>
-	</p>
-	<p><button type="submit" class="button">Vote</button></p>
-	<p>{{restaurant.votes.length}} Votes</p>
-		<a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-		<div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-			<p ng-if="vote.comment.length > 0"><a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-		</div>
-	</div>
-
+<div ng-if="vm.displayMode == 'future' || vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+  <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.curBattle.restaurants.length">
+      <div class="small-3 large-3 columns" style="margin: 15px auto; width:195px; text-align: center;">
+        <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200><br>
+        <strong><a href="#">{{restaurant.name}}</a></strong><br />
+        <button type="submit" class="button">Vote</button>
+      </div>
+    </div>
 </div>
 
 <div ng-if="vm.displayMode == 'final-four'">
-
-	<p>{{vm.curBattle.restaurants.length}} Restaurants</p>
-	<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4">
-
-	<p><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" align="right" width=150>
-		<strong>{{restaurant.name}}</strong><br />
-		{{restaurant.location}}<br />
-		<span <a href="tel:{{restaurant.phone}}">{{restaurant.phone}}</a>
-	</p>
-	<p><button type="submit" class="button">Vote</button></p>
-	<p>{{restaurant.votes.length}} Votes</p>
-		<a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-		<div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-			<p ng-if="vote.comment.length > 0"><a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-		</div>
-	</div>
-
+  <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4">
+      <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center;">
+        <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200><br>
+        <strong><a href="#">{{restaurant.name}}</a></strong><br />
+        <button type="submit" class="button">Vote</button>
+      </div>
+    </div>
 </div>
 
-<div ng-if="vm.displayMode == 'winner">
 
-	<p>{{vm.curBattle.restaurants.length}} Restaurants</p>
-	<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
-
-	<p><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" align="right" width=150>
-		<strong>{{restaurant.name}}</strong><br />
-		{{restaurant.location}}<br />
-		<span <a href="tel:{{restaurant.phone}}">{{restaurant.phone}}</a>
-	</p>
-
-	<p>{{restaurant.votes.length}} Votes</p>
-		<a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-		<div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-			<p ng-if="vote.comment.length > 0"><a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-		</div>
-	</div>
-
-</div>
+<!-- vm.curBattle.restaurants.length -->
+<!-- 
+{{vm.curBattle.restaurants.length}} -->
+    <!-- <a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
+    <div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
+      <p ng-if="vote.comment.length > 0">
+      <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
+    </div>  -->
