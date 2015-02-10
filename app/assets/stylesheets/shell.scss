@@ -31,14 +31,14 @@ a.logo {
 
 footer {
   background-color: $main-black; 
-  position: absolute;
+  position: absolute; 
   border-top: solid $prime-red; 
   border-top-width: 3px; 
   bottom: 0;
   left: 0;
   right: 0;
   height: 35px;
-  z-index: 5px;
+  z-index: 2px;
 }
 
 .wrap {
