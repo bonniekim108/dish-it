@@ -31,6 +31,10 @@
             bsReady: ['BattleService',
               function(BattleService) {
                 return BattleService.ready;
+            }],
+            user: ['UserService',
+              function(UserService) {
+                return UserService.ready;
             }]
           }
       })
@@ -88,11 +92,6 @@
 
   }])  // .config
 
-.run([
-  'UserService',
-  function (UserService) {
-    UserService.loginToken();
-  }
-]);  // .run
+.run();  // .run
 
 })();

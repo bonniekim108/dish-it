@@ -4,11 +4,21 @@
   angular.module('app')
 
   .controller('NominateController', [
-    'YelpService',
-    function(YelpService) {
+    'YelpService', 'BattleService',
+    function(YelpService, BattleService) {
       var vm = this;
 
-vm.test = "this is a test"
+      vm.BattleService = BattleService;
+      vm.battle = BattleService.curBattle;
+      vm.searchResults = [];
+
+      vm.updateSearch = function () {
+        YelpService.search(vm.searchName, function (data) {
+//DEBUG//DEBUG
+ console.log(data)         
+          vm.searchResults = data;
+        });
+      };
 
     }
     ]);

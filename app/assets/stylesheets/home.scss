@@ -1,12 +1,6 @@
 @import 'colors';
 
 // main body
-body {
-	color: $prime-blue; 
-	background-image: url("background8.jpg");
-  	background-size: cover;
-
-}
 
 .righttop {
 	position: absolute; 
@@ -44,7 +38,7 @@ a.showdown2 {
 .bottomleft {
 	position: absolute; 
 	left: -90px;
-	bottom: 80px;    
+	bottom: 20px;    
 }
 a.showdown1 {
 	display: block; 

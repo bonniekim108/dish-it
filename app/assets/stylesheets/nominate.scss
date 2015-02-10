@@ -1,0 +1,28 @@
+@import 'colors';
+
+#nominate {
+
+  h1 {
+    margin: 30px 0 70px 0;
+  }
+
+  .dish-title {
+    color: $prime-red;
+  }
+
+  hr {
+    margin: 10px 0px 25px;
+  }
+
+  [class*="block-grid-"] {
+    &.text-center {
+      > li {
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+
+
+
+}
