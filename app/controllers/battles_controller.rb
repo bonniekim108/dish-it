@@ -15,7 +15,7 @@ class BattlesController < ApplicationController
         render json: @battle, include: {
           dish: { only: [ :cuisine, :name ] },
           trash_talks: { include: {user: { only: :name } }, only: [ :created_at, :user, :trash ] },
-          restaurants: { include: {votes: { include: { user: { only: :name } }, only: [ :created_at, :comment, :user ] } } }
+          restaurants: { include: {votes: { include: { user: { only: [:id, :name] } }, only: [ :created_at, :comment, :user ] } } }
           },
           status: :ok
       else
