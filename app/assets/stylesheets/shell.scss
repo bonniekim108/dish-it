@@ -10,7 +10,6 @@ header {
   border-bottom: solid $prime-blue;
   border-bottom-width: 7px; 
   z-index: 5;
-
   a.active {
     display: none; 
   }
@@ -114,6 +113,16 @@ a.pinterest {
   background-size: 30px 20px; 
   margin-bottom: -20px; 
   padding: 0px; 
+}
+
+#user-section .login {
+  display: inline-block;
+  width: 130px;
+  padding-top: 15px;
+}
+.logout {
+  font-size: 15px;
+  padding-top: 5px
 }
 
 a.yelp {
