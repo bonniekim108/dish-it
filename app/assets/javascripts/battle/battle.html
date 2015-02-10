@@ -4,6 +4,17 @@
 <a ui-sref="shell.about">About</a> |
 <a ui-sref="shell.home">Home</a> |
 
-<div style="border:2px dashed green">
+<!-- <div style="border:2px dashed green">
   <a ui-sref="shell.restaurant({id: 5})">Example Voted Restaurant with an id of 5</a>
+</div> -->
+
+<!-- {{ vm.curBattle.dish }}
+{{ vm.curBattle.restaurants }} -->
+<div style="border:2px dashed green" ng-repeat="restaurant in vm.curBattle.restaurants">
+	<p>{{restaurant.name}}</p>
+	<p>{{restaurant.location}}</p>
+	<div ng-repeat="vote in restaurant.votes">
+		<p>{{vote.comment}}</p>
+		<p>{{vote.user.name}}</p>
+	</div>
 </div>

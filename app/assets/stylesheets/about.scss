@@ -105,4 +105,10 @@ p.aboutinfo {
 	bottom: 20px; 
 	padding: 0px; 
 
+
+p.aboutinfo:hover {
+	color: $prime-red; 
+	// background-image: url("freshfood1.jpg"); 
+	background-size: 350px 420px; 
+	background-repeat: no-repeat; 
 }
