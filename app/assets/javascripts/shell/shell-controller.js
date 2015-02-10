@@ -9,7 +9,7 @@
     'UserService',
     function($state, $rootScope, UserService) {
       var vm = this;
-
+      console.log(vm.UserService)
       vm.getUser = function () {
         return UserService.getUser();
       };
@@ -33,7 +33,6 @@
 
     }
   ]);
-
 
 
 })();
