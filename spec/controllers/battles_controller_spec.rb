@@ -59,5 +59,4 @@ RSpec.describe BattlesController, :type => :controller do
 
   end
 
-
 end
