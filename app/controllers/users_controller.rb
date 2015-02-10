@@ -2,13 +2,17 @@ class UsersController < ApplicationController
   respond_to :json
 
   def login_token
+<<<<<<< HEAD
     @user = User.find_by(token: params[:token])
+=======
+    @user = current_user
+>>>>>>> master
     if @user
-      cookies[:dish_it_token] = { value: params[:token], expires: 14.days.from_now }
+      cookies[:dish_it_token] = { value: cookies[:dish_it_token], expires: 14.days.from_now }
       render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :ok
     else
       cookies.delete(:dish_it_token)
-      render plain: 'invalid-token', status: :bad_request
+      render plain: 'no-token', status: :ok
     end      
   end
 
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
       set_token(@user)
       render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :ok
     else
-      render plain: 'invalid-credentials', status: :bad_request
+      render json: 'invalid-credentials', status: :bad_request
     end      
   end
 

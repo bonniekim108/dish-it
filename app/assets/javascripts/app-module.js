@@ -26,14 +26,14 @@
         templateUrl: 'shell/shell.html',
           // template: "<p>test</p>",
           controller: 'ShellController',
-          controllerAs: 'shell'
-          // resolve: {
-          //   currentUser: ['UserResource', '$rootScope',
-          //     function(UserResource, $rootScope) {
-          //       return UserResource.show({id: user_id}).$promise;
-          //     }]
-          // }
-        })
+          controllerAs: 'shell',
+          resolve: {
+            bsReady: ['BattleService',
+              function(BattleService) {
+                return BattleService.ready;
+            }]
+          }
+      })
 
       .state('shell.home', {
         url: '/home',
@@ -75,6 +75,13 @@
         controllerAs: 'vm'
       })
 
+      .state('shell.nominate', {
+        url: '/nominate',
+        templateUrl: 'nominate/nominate.html',
+        controller: 'NominateController',
+        controllerAs: 'vm'
+      })
+
       ;  // $stateProvider chaining
 
       $urlRouterProvider.otherwise('/home');
@@ -84,10 +91,8 @@
 .run([
   'UserService',
   function (UserService) {
-    if (dishItToken !== '') {
-      UserService.loginToken(dishItToken);
-    }
+    UserService.loginToken();
   }
-  ]);  // .run
+]);  // .run
 
 })();

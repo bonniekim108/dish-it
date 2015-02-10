@@ -8,6 +8,7 @@
     function(BattleService) {
       var vm = this;
 
+<<<<<<< HEAD
       BattleService.currentBattle().then(function(battle){
       	console.log(battle);
       	vm.curBattle = battle;
@@ -26,7 +27,15 @@
 
 
 
+=======
+      vm.curBattle = BattleService.curBattle;
+      vm.displayMode = BattleService.displayMode;  
+>>>>>>> master
 
+
+
+//debugging code
+console.log(vm.curBattle);
 
     }
   ]);
