@@ -3,7 +3,7 @@
 
 	angular.module('app')
 
-	.factory('BattleService', ['$q', 'BattleResource', function($q, BattleResource){
+	.factory('BattleService', ['$q', 'BattleResource', 'UserService', function($q, BattleResource, UserService){
 
 		var service = {};
 
@@ -28,9 +28,34 @@
 				readyDeferred.resolve();
 			});
 
+		service.userCanVote = function () {
+			switch (service.displayMode) {
+				case 'winner', 'future':
+					return false;
+				case 'nominating':
+					return !userVoted(null);
+				case 'great-eight':
+					return !userVoted(8);
+				case 'final-four':
+					return !userVoted(4);
+				default:
+					return false;
+			}
+		};
 
 
 		/*  Private Functions  */
+
+		function userVoted(numRestToCheck) {
+			var uId = UserService.getUser().id;
+			var n = n || service.curBattle.restaurants.length;
+			var findIndex;
+			for (var i = 0; i < n; i++) {
+				findIndex = _.findIndex(service.curBattle.restaurants[i].votes, function(v) { return v.user.id == uId; });
+				if ( findIndex >= 0 ) return true;
+			}
+			return false;
+		}
 
 		function getSortedBattle(yr, mo) {
 			var deferred = $q.defer();
@@ -52,15 +77,15 @@
 			var diff = moment(service.curBattle.year_month, 'YYYY-MM-DD').date() - moment().date();
 			switch (true) {
 				case diff < 0:
-				return 'winner';
+					return 'winner';
 				case diff < 7:
-				return 'final-four';
+					return 'final-four';
 				case diff < 14:
-				return 'great-eight';
+					return 'great-eight';
 				case diff < 31:
-				return 'nominating';
+					return 'nominating';
 				default:
-				return 'future';
+					return 'future';
 			}
 		}
 
