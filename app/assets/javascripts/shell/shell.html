@@ -1,27 +1,45 @@
 
 <header> 
+  <section class="top-bar-section">
+     
+    <ul class="left">
+      <li class="has-dropdown">
+        <a ui-sref="shell.home" ui-sref-active="active" class="logo"></a>
+        <ul class="dropdown">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Winners</a></li>
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#">Battles</a>
+            <ul class="dropdown">
+              <li><a href="#">Restaurants</a></li>
+              <li><a href="#">Comments</a></li>
+              <li><a href="#">Suggestions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div id="user-section" class="right">
 
-  <a ui-sref="shell.home" ui-sref-active="active"
-  class="logo"></a> 
-  <div id="user-section" class="right">
+      <div ng-show="shell.isUserLoggedIn()">
+        Welcome {{shell.getUser().name}}!
+        <br>
+        <a ng-click="shell.logout()" class='logout'>logout</a>
+      </div>
 
-    <div ng-show="shell.isUserLoggedIn()">
-      Welcome {{shell.getUser().name}}!
-      <br>
-      <a ng-click="shell.logout()" class='logout'>logout</a>
+      <div ng-hide="shell.isUserLoggedIn()">
+        <input class="login" type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+
+        <input class="login" type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
+
+        <a class="login" href ng-click="shell.login()">login</a>
+
+        <a class="signup" href ng-click="shell.signup()">signup</a>
+      </div>
     </div>
-
-    <div ng-hide="shell.isUserLoggedIn()">
-      <input class="login" type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-
-      <input class="login" type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
-
-      <a class="login" href ng-click="shell.login()">login</a>
-
-      <a class="signup" href ng-click="shell.signup()">signup</a>
-    </div>
-  </div>
-
+  </section>
 </header>
 
 <div class="wrap row">
