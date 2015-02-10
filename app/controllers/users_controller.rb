@@ -2,11 +2,7 @@ class UsersController < ApplicationController
   respond_to :json
 
   def login_token
-<<<<<<< HEAD
-    @user = User.find_by(token: params[:token])
-=======
     @user = current_user
->>>>>>> master
     if @user
       cookies[:dish_it_token] = { value: cookies[:dish_it_token], expires: 14.days.from_now }
       render json: @user, include: { county: { only: :name } } ,except: [:password_digest], status: :ok

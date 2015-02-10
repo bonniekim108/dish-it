@@ -26,10 +26,7 @@ class BattlesController < ApplicationController
 
   def create
     begin
-<<<<<<< HEAD
-=======
       raise error if !current_user
->>>>>>> master
       date = Date.new(params[:battle][:year].to_i, params[:battle][:month].to_i, -1)
       @battle = Battle.create(year_month: date, dish: Dish.new(name: params[:battle][:dish_name], cuisine: params[:battle][:dish_cuisine]))
       render json: @battle, include: {
@@ -43,8 +40,6 @@ class BattlesController < ApplicationController
     end      
   end
 
-<<<<<<< HEAD
-=======
   def upvote
     begin
       user = current_user
@@ -64,5 +59,4 @@ class BattlesController < ApplicationController
   end
 
 
->>>>>>> master
 end
