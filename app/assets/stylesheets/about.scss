@@ -1,10 +1,108 @@
 @import 'colors';
 
-h1.testing1 {
-	color: red; 
-	font-family: arial; 
+.about {
+	font-family: futura; 
+	z-index: 1; 
+	padding: 0px; 
 }
 
-p#testing {
-	color: red; 
+.abouttext {
+	color: $prime-blue; 
+	font-weight: bold; 
+	width: 350px; 
+	padding-right: 30px; 
+	position: relative;  
+	top: 20px; 
+	text-align: right; 
+	font-size: 30px;
+	 
+	  transform:rotate(90deg);
+	  left: 200px; 
+	  top: 270px; 
+}
+
+strong {
+	color: $prime-red; 
+}
+
+
+.aboutinfobox {
+	width: 350px; 
+	height: 400px; 
+	background-color: white;
+}
+
+.aboutinfobox:hover {
+	box-shadow: -2px 2px 3px #888888; 
+}
+
+p.aboutinfo {
+	font-size: 18px; 
+	font-weight: normal; 
+	text-align: justify; 
+	text-justify: inter-word;
+	padding: 20px; 
+}
+
+
+.howto {
+	color: $prime-red; 
+	font-weight: bold;
+	width: 350px; 
+	padding-right: 20px; 
+	position: relative; 
+	top: 20px; 
+	text-align: right;
+	font-size: 30px; 
+	  transform:rotate(270deg);
+	  right: 200px;
+	  top: 250px; 
+
+}
+
+.rulesbox {
+	width: 350px; 
+	height: 400px;
+	background-color: white;
+	z-index: -1; 
+
+}
+
+.rulesbox:hover {
+	box-shadow: 2px 2px 3px #888888; 
+}
+
+.rulesinfo {
+	font-size: 17px; 
+	font-weight: normal; 
+	text-align: justify; 
+	text-justify: inter-word;
+	padding: 30px; 
+
+}
+
+.abouttopleft {
+	display: block; 
+	width: 150px; 
+	height: 150px; 
+	background-image: url("breakfast1.svg");
+	position: fixed;  
+	background-size: 150px 150px; 
+	left: 140px; 
+	top: 30px;
+	padding: 0px;  
+	z-index: 1; 
+}
+
+.aboutright {
+	z-index: 2px; 
+	width: 150px;
+	height: 150px; 
+	background-image: url("breakfast2.svg");
+	position: fixed;  
+	background-size: 150px 150px; 
+	right: 139px;
+	bottom: 20px; 
+	padding: 0px; 
+
 }
