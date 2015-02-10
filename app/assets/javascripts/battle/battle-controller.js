@@ -15,6 +15,7 @@
 
 //debugging code
 console.log(vm.curBattle);
+console.log(vm.displayMode);
 
     }
   ]);
