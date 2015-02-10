@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   #----- battle api routes -----#
   get '/api/battles/:year/:month' => 'battles#show'
   post '/api/battles' => 'battles#create'
+<<<<<<< HEAD
+  put '/api/battles/:id/vote' => 'battles#vote'
+=======
   post '/api/battles/upvote' => 'battles#upvote'
+>>>>>>> master
 
 
   #----- county api routes -----#
