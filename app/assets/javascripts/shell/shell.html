@@ -73,7 +73,7 @@
     <div ng-show="shell.isUserLoggedIn()">
       Welcome {{shell.getUser().name}}!
       <br>
-      <a ng-click="shell.logout()">logout</a>
+      <a ng-click="shell.logout()" class='logout'>logout</a>
     </div>
 
     <div ng-hide="shell.isUserLoggedIn()">
@@ -82,6 +82,8 @@
       <input class="login" type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
 
       <a class="login" href ng-click="shell.login()">login</a>
+
+      <a class="signup" href ng-click="shell.signup()">signup</a>
     </div>
   </div>
 
