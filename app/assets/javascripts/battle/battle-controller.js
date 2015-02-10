@@ -3,14 +3,21 @@
 
   angular.module('app')
 
-  .controller('BattleController', [
+  .controller('BattleController', [ 'BattleService',
     // inject other services here
-    function() {
+    function(BattleService) {
       var vm = this;
 
+      vm.curBattle = BattleService.curBattle;
+      vm.displayMode = BattleService.displayMode;  
 
+
+
+//debugging code
+console.log(vm.curBattle);
+console.log(vm.displayMode);
 
     }
-    ]);
+  ]);
 
 })();

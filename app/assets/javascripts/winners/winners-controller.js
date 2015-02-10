@@ -4,7 +4,7 @@
   angular.module('app')
 
   .controller('WinnersController', [
-    // inject other services here
+    // inject dependencies here
     function() {
       var vm = this;
 
