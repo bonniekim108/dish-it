@@ -1,7 +1,42 @@
-<h1>Nominate Restaurant Page</h1>
-<a ui-sref="shell.battle">Battle</a> |
-<a ui-sref="shell.winners">Winners</a> |
-<a ui-sref="shell.about">About</a> |
-<a ui-sref="shell.home">Home</a>
+<div id="nominate" class="row text-center">
 
-<p>{{vm.test}}</p>
+
+  <!--   User should not be able to navigate to this page unless they can vote, 
+  however, we do a check just in case they type the route in address bar.
+-->
+<div ng-if="!vm.BattleService.userCanVote()">
+  <h1>Sorry, you are not eligible to nominate a restaurant at this time</h1>
+</div>
+
+
+<div ng-if="vm.BattleService.userCanVote()">
+
+  <h1>Nominate Your Favorite Restaurant for the Best <div class="dish-title">{{vm.battle.dish.name}}</div></h1>
+
+  <div class="row collapse prefix-radius">
+    <div class="small-2 columns">&nbsp</div>
+    <div class="small-3 columns">
+      <span class="prefix">Search Restaurants</span>
+    </div>
+    <div class="small-5 columns">
+      <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 200 }" ng-change="vm.updateSearch()">
+    </div>
+    <div class="small-2 columns">&nbsp</div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <ul class="large-block-grid-4 medium-block-grid-3 text-center data-equalizer">
+      <li ng-repeat="r in vm.searchResults">
+        <div class="panel callout">
+          <h5>{{r.name}}</h5>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>  <!-- can vote -->
+
+
+</div>  <!-- #nominate -->

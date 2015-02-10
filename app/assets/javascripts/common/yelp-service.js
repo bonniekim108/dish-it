@@ -16,18 +16,21 @@
     // be sure to replace spaces in injected name & city with +'s
     var baseUrl = 'http://api.yelp.com/v2/search';
 
-    var callCount = 0;
-    var pending;
+    var cbSeqLookup = "0123456789abcdefghijklmnopqrstuvwxyz";
+    var callerCb = null;
+
+    var pending = null;
 
     service.search = function (name, callback) {
+      callerCb = callback;
       if (pending) {
-        pending.resolve('cancelled by user');
+        pending.resolve('cancelled');
       }
       pending = $q.defer();
       var method = 'GET';
       var url = 'http://api.yelp.com/v2/search';
       var params = {
-        callback: 'angular.callbacks._' + callCount,
+        callback: 'angular.callbacks._' + genCb(),
         category_filter: 'restaurants',
         location: getCounty(),
         oauth_consumer_key: consumerKey,
@@ -35,14 +38,18 @@
         oauth_signature_method: 'HMAC-SHA1',
         oauth_timestamp: new Date().getTime(),
         oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-        limit: 10,
+        limit: 20,
         term: name
       };
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
       params.oauth_signature = signature;
-      callCount++;
-      $http.jsonp(url, {params: params, timeout: pending.promise})
-        .success(callback);
+      $http.jsonp(url, {params: params /*, timeout: pending.promise */})
+        .success(function (data) {
+          pending.resolve();
+          pending = null;
+          data = consolidate(data);
+          callback(data);
+        });
     };
 
     return service;
@@ -50,14 +57,28 @@
     /*  private functions  */
 
     function getCounty () {
-      return UserService.getUser().county.name + ' County';
+      return UserService.user.county.name + ' County';
     }
 
-    function randomString(length, chars) {
+    function randomString (length, chars) {
       var result = '';
       for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
         return result;
     }
+
+    function genCb () {
+      var cur = angular.callbacks.counter;
+      var ret = '';
+      if (cur > cbSeqLookup.length - 1) {
+        ret = cbSeqLookup[cbSeqLookup[Math.floor(cur / cbSeqLookup.length)]];
+      }
+      return ret + cbSeqLookup[cur % cbSeqLookup.length];
+    }
+
+    function consolidate (data) {
+      data = data.businesses;
+      return data;
+    };
 
   }]);
 
