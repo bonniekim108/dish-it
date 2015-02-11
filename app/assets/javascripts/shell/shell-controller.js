@@ -19,6 +19,7 @@
           }, function() {
             vm.user = null;
           });
+        vm.email = vm.password = '';
       };
 
       vm.logout = function() {
