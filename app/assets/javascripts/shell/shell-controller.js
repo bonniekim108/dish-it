@@ -9,13 +9,15 @@
     'UserService',
     function($state, $rootScope, UserService) {
       var vm = this;
-      console.log(vm.UserService)
+
       vm.getUser = function () {
         return UserService.getUser();
       };
 
       vm.login = function() {
-        UserService.login('email@jim-clark.com', 'abc123');
+        UserService.login(vm.email, vm.password);
+        vm.email = '';
+        vm.password = '';
       };
 
       vm.logout = function() {
@@ -28,7 +30,7 @@
       };
 
       vm.isUserLoggedIn = function () {
-        return UserService.getUser() ? true : false;
+        return UserService.getUser() != null;
       };
 
     }

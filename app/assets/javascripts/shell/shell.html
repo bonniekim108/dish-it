@@ -1,20 +1,15 @@
-
 <header> 
+  <section class="tab-bar top-bar-section">
 
-
-  <section class="top-bar-section">
-     
     <ul class="left">
       <li class="has-dropdown">
-        <a class="box-shadow-menu"><a href="menu"><span></span></a>
+        <a href class="menu-icon" style="background: #1F3046;" href><span></span></a>
 
         <ul class="dropdown">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Winners</a></li>
-          <li><a href="#">Battle</a></li>
-          <li><a href="#">Restaurants</a></li>
-          <li><a href="#">Comments</a></li>
-          <li><a href="#">Suggestions</a></li>
+          <li><a href ui-sref="shell.home"  ng-click="alert('test')">Home</a></li>
+          <li><a href ui-sref="shell.about">About<button ng-click="alert('hey')">hey</button></a></li>
+          <li><a href ui-sref="shell.winners">Winners</a></li>
+          <li><a href ui-sref="shell.battle">Battle</a></li>
         </ul>
       </li>
     </ul>
@@ -22,36 +17,40 @@
       <a ui-sref="shell.home" ui-sref-active="active"
       class="logo"></a> 
 
+
     
     <div id="user-section" class="right">
 
       <div ng-show="shell.isUserLoggedIn()">
-        Welcome {{shell.getUser().name}}!
+        Welcome {{shell.user.name}}
         <br>
-        <a ng-click="shell.logout()" class='logout'>logout</a>
+        <a ng-click="shell.logout()" href class='logout'>logout</a>
       </div>
 
-    
-
-
       <div ng-hide="shell.isUserLoggedIn()">
-        <input class="login" type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+        <form name="loginForm" novalidate ng-submit="shell.login()">
+          <input class="login" type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
 
-        <input class="login" type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
+          <input class="login" type="password" name="password" ng-model="shell.password" class="form-control" placeholder="password" required />
 
-        <a class="login" href ng-click="shell.login()">login</a>
+          <!-- <a class="login" ng-disabled="!loginForm.email.valid() || loginForm.password.invalid()" ng-click="shell.login()" href>login</a> -->
 
-        <a class="signup" href ng-click="shell.signup()">signup</a>
+          <a class="login" ng-disabled="!loginForm.email.$invalid() || !loginForm.password.$invalid()" ng-click="shell.login()" href>login</a>
+        </form>
+
       </div>
     </div>
   </section>
 </header>
+
+
 
 <div class="wrap row">
   <div ui-view class="columns small-10 small-offset-1"></div>
 </div>
 
 <footer>
+
 
   <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
   
