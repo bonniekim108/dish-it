@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/api/battles/:year/:month' => 'battles#show'
   post '/api/battles' => 'battles#create'
   post '/api/battles/upvote' => 'battles#upvote'
+  post '/api/battles/nominate' => 'battles#nominate'
 
 
   #----- county api routes -----#

@@ -10,6 +10,18 @@
     color: $prime-red;
   }
 
+  .panel {
+    min-height: 142px;
+    width: 201px;
+    cursor: pointer;
+    h4 { color: $prime-blue}
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  li {vertical-align: middle; }
+
   hr {
     margin: 10px 0px 25px;
   }

@@ -13,11 +13,13 @@
       vm.searchResults = [];
 
       vm.updateSearch = function () {
-        YelpService.search(vm.searchName, function (data) {
-//DEBUG//DEBUG
- console.log(data)         
+        YelpService.search(vm.searchName, function (data) {    
           vm.searchResults = data;
         });
+      };
+
+      vm.nominate = function (restId, comment) {
+        BattleService.upvote(restId, comment);
       };
 
     }
