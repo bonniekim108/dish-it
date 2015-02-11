@@ -3,13 +3,12 @@
 
     <ul class="left">
       <li class="has-dropdown">
-        <a href="#" class="menu-icon"><span></span></a>
-
+        <a href class="menu-icon" style="background: #1F3046;" href><span></span></a>
         <ul class="dropdown">
-          <li><a ui-sref="shell.about">About</a></li>
-          <li><a ui-sref="shell.winner">Winners</a></li>
-          <li><a ui-sref="shell.battle">Battle</a></li>
-          <li><a ui-sref="shell.home">Suggestionss</a></li>  <!-- not implemented yet -->
+          <li><a href ui-sref="shell.home"  ng-click="alert('test')">Home</a></li>
+          <li><a href ui-sref="shell.about">About<button ng-click="alert('hey')">hey</button></a></li>
+          <li><a href ui-sref="shell.winners">Winners</a></li>
+          <li><a href ui-sref="shell.battle">Battle</a></li>
         </ul>
       </li>
     </ul>
@@ -17,9 +16,9 @@
     <a ui-sref="shell.home" ui-sref-active="active"
     class="logo"></a> 
 
+
     
     <div id="user-section">
-
       <div ng-show="shell.user">
         <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
         <a ng-click="shell.logout()">logout</a>
@@ -37,11 +36,14 @@
   </section>
 </header>
 
+
+
 <div class="wrap row">
   <div ui-view class="columns small-10 small-offset-1"></div>
 </div>
 
 <footer>
+
 
   <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
   
