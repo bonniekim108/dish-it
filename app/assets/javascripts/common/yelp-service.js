@@ -85,7 +85,7 @@
           ret[idx].phone = '-multiple-';
         }
       });
-      return _.take(ret, 10);
+      return _.take(ret, 12);
     }
 
   }]);
