@@ -8,39 +8,45 @@
   <div style="margin: 15px auto; width:400px; text-align: center;">
     <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
     <img src="http://www.pbs.org/food/files/2012/09/Sushi-5-1.jpg" width=300>
-
-    <div ng-if="vm.displayMode == 'winner'" style="margin: 10px" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
-      <h1>WINNER</h1>
-      <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=400><br>
-      <strong><a href="#">{{restaurant.name}}</a></strong>
-    </div>
   </div>
-</div>
 
-<div ng-if="vm.displayMode == 'future' || vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-  <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.curBattle.restaurants.length">
+<!--
+  <div ng-if="vm.displayMode == 'winner'" style="margin: 10px" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
+    <h1>WINNER</h1>
+    <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=400><br>
+    <strong><a href="#">{{restaurant.name}}</a></strong>
+  </div>
+-->
+
+  <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
       <div class="small-3 large-3 columns" style="margin: 15px auto; width:195px; text-align: center;">
         <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200><br>
         <strong><a href="#">{{restaurant.name}}</a></strong><br />
-        <button type="submit" class="button">Vote</button>
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        
+        <!-- display votes to test? -->
+        <p>{{restaurant.votes.length}}</p>
+      
       </div>
     </div>
-</div>
+  </div>
 
-<div ng-if="vm.displayMode == 'final-four'">
-  <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4">
+  <div ng-if="vm.displayMode == 'final-four'">
+    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
       <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center;">
         <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200><br>
         <strong><a href="#">{{restaurant.name}}</a></strong><br />
-        <button type="submit" class="button">Vote</button>
+        <button ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
       </div>
     </div>
-</div>
+  </div>
 
+</div>
 
 <!-- vm.curBattle.restaurants.length -->
 <!-- 
-{{vm.curBattle.restaurants.length}} -->
+  {{vm.curBattle.restaurants.length}} -->
     <!-- <a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
     <div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
       <p ng-if="vote.comment.length > 0">

@@ -17,12 +17,9 @@
     var baseUrl = 'http://api.yelp.com/v2/search';
 
     var cbSeqLookup = "0123456789abcdefghijklmnopqrstuvwxyz";
-    var callerCb = null;
-
     var pending = null;
 
     service.search = function (name, callback) {
-      callerCb = callback;
       if (pending) {
         pending.resolve('cancelled');
       }
@@ -43,9 +40,9 @@
       };
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
       params.oauth_signature = signature;
-      $http.jsonp(url, {params: params /*, timeout: pending.promise */})
+      $http.jsonp(url, {params: params, timeout: pending.promise})
         .success(function (data) {
-          pending.resolve();
+          if (pending) pending.resolve();
           pending = null;
           data = consolidate(data);
           callback(data);
@@ -77,8 +74,19 @@
 
     function consolidate (data) {
       data = data.businesses;
-      return data;
-    };
+      var ret = [];
+      var idx;
+      _.forEach(data, function (r) {
+        idx = _.findIndex(ret, function (e) { return r.name == e.name; });
+        if (idx < 0) {
+          ret.push(r);
+        } else {
+          ret[idx].location.city = '-multiple-';
+          ret[idx].phone = '-multiple-';
+        }
+      });
+      return _.take(ret, 12);
+    }
 
   }]);
 

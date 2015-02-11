@@ -14,23 +14,27 @@
   <h1>Nominate Your Favorite Restaurant for the Best <div class="dish-title">{{vm.battle.dish.name}}</div></h1>
 
   <div class="row collapse prefix-radius">
-    <div class="small-2 columns">&nbsp</div>
+    <div class="small-2 columns">&nbsp;</div>
     <div class="small-3 columns">
       <span class="prefix">Search Restaurants</span>
     </div>
     <div class="small-5 columns">
       <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 200 }" ng-change="vm.updateSearch()">
     </div>
-    <div class="small-2 columns">&nbsp</div>
+    <div class="small-2 columns">&nbsp;</div>
   </div>
   <hr>
 
   <div class="row">
-    <ul class="large-block-grid-4 medium-block-grid-3 text-center data-equalizer">
+    <ul class="large-block-grid-4 medium-block-grid-3 text-center">
       <li ng-repeat="r in vm.searchResults">
-        <div class="panel callout">
-          <h5>{{r.name}}</h5>
-
+        <div class="panel callout" ng-click="vm.nominate(r)" ng-mouseenter="vm.hovering[$index]=true" ng-mouseleave="vm.hovering[$index]=false">
+          <h4>{{r.name}}</h4>
+          <h5 class="subheader" ng-show="vm.hovering[{{$index}}]">NOMINATE !!!</h5>
+          <h6 class="subheader" ng-hide="vm.hovering[{{$index}}]">
+            <span ng-show="r.phone == '-multiple-'">Multiple Locations</span>
+            <span ng-hide="r.phone == '-multiple-'">{{r.location.city}}<br>{{r.display_phone.substr(3)}}</span>
+          </h6>
         </div>
       </li>
     </ul>

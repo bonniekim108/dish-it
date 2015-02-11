@@ -3,19 +3,31 @@
 
   angular.module('app')
 
-  .controller('BattleController', [ 'BattleService',
-    // inject other services here
+  .controller('BattleController', [
+    'BattleService',
     function(BattleService) {
       var vm = this;
 
       vm.curBattle = BattleService.curBattle;
-      vm.displayMode = BattleService.displayMode;  
+      vm.displayMode = BattleService.displayMode; 
 
+      vm.userCanVote = function () {
+        return BattleService.userCanVote();
+      };
 
+      vm.upvote = function (restId, comment) {
+        BattleService.upvote(restId, comment).then(function(battle) {
+          vm.curBattle = battle;
+        });
+      };
 
-//debugging code
-console.log(vm.curBattle);
-console.log(vm.displayMode);
+      vm.displayLimit = function () {
+        if (vm.displayMode == 'nominating') {
+          return vm.curBattle.restaurants.length;
+        } else {
+          return 8;
+        }
+      };
 
     }
   ]);

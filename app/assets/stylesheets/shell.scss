@@ -34,6 +34,7 @@ header {
     display: none; 
   }
 }
+
   toggle-topbar menu-icon {
   height: 30%;
 }
@@ -141,15 +142,39 @@ a.pinterest {
   padding: 0px; 
 }
 
-#user-section .login {
+#user-section {
   display: inline-block;
-  width: 130px;
-  padding-top: 15px;
+  margin-right: 20px;
+  float: right;
+  font-size: 14px;
+  input {
+    display: inline-block;
+    margin: 9px 10px 0 0;
+    float: left;
+    width: 150px;
+    height: 27px;
+    // width: 40px;
+  }
+  a {
+    display: inline-block;
+    float: left;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: white;
+  }
+  p {
+  display: inline-block;
+  float: left;
+  height: 15px;
+  margin-top: 12px;
+  padding: 0;
+  font-size: 14px;
+  color: white;
+  }
 }
-.logout {
-  font-size: 15px;
-  padding-top: 5px
-}
+
 
 a.yelp {
   display: block; 

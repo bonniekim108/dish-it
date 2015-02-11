@@ -3,7 +3,7 @@
 
 	angular.module('app')
 
-	.factory('BattleService', ['$q', 'BattleResource', 'UserService', function($q, BattleResource, UserService){
+	.factory('BattleService', ['$q', '$http', 'BattleResource', 'UserService', function($q, $http, BattleResource, UserService){
 
 		var service = {};
 
@@ -14,19 +14,33 @@
 		// this promise has to be resolved before shell will load
 		var readyDeferred = $q.defer();
 		service.ready = readyDeferred.promise;
-
-		service.displayMode = null;  // set when curBattle is retrieved
 		
-		service.curBattle = new BattleResource();
-		service.curBattle.$show({year: year, month: month}).then(
-			function (battle) {
-				var sorted = _.sortBy(battle.restaurants, function(r) {
-					return r.votes.length * -1;
-				});
-				battle.restaurants = sorted;
-				service.displayMode = getDisplayMode();
-				readyDeferred.resolve();
+		// load current battle
+		getSortedBattle(year, month).then(function(battle) {
+			service.curBattle = battle;
+			service.displayMode = getDisplayMode();
+			readyDeferred.resolve();
+		});
+
+		service.upvote = function (restId, comment) {
+			var def = $q.defer();
+			var config = {
+				url: '/api/battles/upvote',
+				method: 'POST',
+				data: {
+					vote: {
+						restaurant_id: restId,
+						comment: comment
+					}
+				}
+			};
+			$http(config).success(function (battle) {
+				var sorted = sortByVotes(battle);
+				service.curBattle.restaurants = sorted;
+				def.resolve(service.curBattle);
 			});
+			return def.promise;
+		};
 
 		service.userCanVote = function () {
 			switch (service.displayMode) {
@@ -46,8 +60,8 @@
 
 		/*  Private Functions  */
 
-		function userVoted(numRestToCheck) {
-			var uId = UserService.getUser().id;
+		function userVoted (numRestToCheck) {
+			var uId = UserService.user.id;
 			var n = n || service.curBattle.restaurants.length;
 			var findIndex;
 			for (var i = 0; i < n; i++) {
@@ -57,23 +71,28 @@
 			return false;
 		}
 
-		function getSortedBattle(yr, mo) {
+		function sortByVotes (battle) {
+			var sorted = _.sortBy(battle.restaurants, function(r) {
+				return r.votes.length * -1;
+			});
+			return sorted;
+		}
+
+		function getSortedBattle (yr, mo) {
 			var deferred = $q.defer();
-			BattleResource.show({
+			var newBat = new BattleResource();
+			newBat.$show({
 				year: yr, month: mo
 			}, function (battle) {
-				var sorted = _.sortBy(battle.restaurants, function(r) {
-					return r.votes.length * -1;
-				});
-				battle.restaurants = sorted;
-				deferred.resolve(battle);
+				battle.restaurants = sortByVotes(battle);
+				deferred.resolve(newBat);
 			}, function (fail) {
 				deferred.reject(fail);
 			});
 			return deferred.promise;
 		}
 
-		function getDisplayMode() {
+		function getDisplayMode () {
 			var diff = moment(service.curBattle.year_month, 'YYYY-MM-DD').date() - moment().date();
 			switch (true) {
 				case diff < 0:
