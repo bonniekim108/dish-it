@@ -148,12 +148,12 @@ a.pinterest {
 #user-section {
   display: inline-block;
   position: absolute;
-  margin-right: 20px;
-  float: right;
+  top: 8px;
+  right: 30px;
   font-size: 14px;
   input {
     display: inline-block;
-    margin: 9px 10px 0 0;
+    margin: 1px 11px 0 0;
     float: left;
     width: 150px;
     height: 27px;
@@ -163,19 +163,28 @@ a.pinterest {
     display: inline-block;
     float: left;
     height: 15px;
-    margin: 0;
+    margin: 3px 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+  }
+  a:hover {
+    color: $prime-red;
+  }
+  p {
+    display: inline-block;
+    float: left;
+    margin-top: 3px;
+    height: 15px;
     padding: 0;
     font-size: 14px;
     color: white;
   }
-  p {
-  display: inline-block;
-  float: left;
-  height: 15px;
-  margin-top: 12px;
-  padding: 0;
-  font-size: 14px;
-  color: white;
+  span {
+    display: inline-block;
+    float: left;
+    margin: 3px 10px 3px 10px;
   }
 }
 
