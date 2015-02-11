@@ -34,7 +34,7 @@
       <div ng-hide="shell.user">
         <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
         <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
-        <a href ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+        <a href ng-click="shell.login()">login</a><span>|</span>
         <a href ng-click="shell.signup()">signup</a>
       </div>
 
