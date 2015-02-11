@@ -1,5 +1,28 @@
-<h1>Restaurant Page</h1>
+<div class="row" style="margin-top: 50px">
+  <div class="small-6 large-3 columns">
+    <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200>
+  </div>
+  <div class="small-6 large-9 columns">
+    <h1>{{vm.name}}</h1>
+    <p>{{vm.location}}<br>
+       {{vm.phone}}</p>
+    <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+  </div>
+</div>
+<div class="row">
+  <h4>Comments</h4>
+  <div ng-repeat="vote in vm.votes" style="border-top:1px dashed #CCC">
+    <p ng-if="vote.comment.length > 0">
+    <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
 
-<p>Example Voted Restaurant with an id of {{vm.restaurantId}}</p>
+  </div>
+</div>
+
 
 <a ui-sref="shell.battle">return to Battle</a>
+
+{{vm.restaurantId}}
+<!-- <p>Example Voted Restaurant with an id of </p>
+
+   ng-click="vm.upvote({{restaurant.id}})"
+ -->
