@@ -15,7 +15,7 @@
       };
 
       vm.login = function() {
-        UserService.login('email@jim-clark.com', 'abc123');
+        UserService.login('bonniekim@example.com', 'abc123');
       };
 
       vm.logout = function() {
