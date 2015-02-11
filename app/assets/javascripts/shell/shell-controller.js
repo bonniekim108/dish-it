@@ -9,17 +9,21 @@
     'UserService',
     function($state, $rootScope, UserService) {
       var vm = this;
-      console.log(vm.UserService)
-      vm.getUser = function () {
-        return UserService.getUser();
-      };
+
+      vm.user = UserService.user;
 
       vm.login = function() {
-        UserService.login('bonniekim@example.com', 'abc123');
+        UserService.login(vm.email, vm.password).then(
+          function(user) {
+            vm.user = user;
+          }, function() {
+            vm.user = null;
+          });
       };
 
       vm.logout = function() {
         UserService.logout();
+        vm.user = null;
         $state.go('shell.home');
       };
 
