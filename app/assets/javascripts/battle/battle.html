@@ -19,7 +19,7 @@
 -->
 
   <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.curBattle.restaurants.length track by restaurant.id">
+    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
       <div class="small-3 large-3 columns" style="margin: 15px auto; width:195px; text-align: center;">
         <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200><br>
         <strong><a href="#">{{restaurant.name}}</a></strong><br />

@@ -21,6 +21,14 @@
         });
       };
 
+      vm.displayLimit = function () {
+        if (vm.displayMode == 'nominating') {
+          return vm.curBattle.restaurants.length;
+        } else {
+          return 8;
+        }
+      };
+
     }
   ]);
 
