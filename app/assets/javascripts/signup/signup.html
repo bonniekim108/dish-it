@@ -2,11 +2,11 @@
 <h1 class="Signup">Sign-Up</h1>
 
 <div class="row">
-	<div class="medium-9 columns">
+	<div class="small-5 columns">
 <form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
 
 			<div class="row">
-				<div class="large-5 columns">
+				<div class="small-5 columns">
 						<label for="name">Name:</label>
 						<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder="Name" required />
 				</div>
@@ -48,37 +48,20 @@
 			</div> 
 		</form>
 	</div> 
-  <div class="medium-3 columns"> 
+  <div class="small-5 columns"> 
+
+  	<ul class="small-block-grid-3"> 
+	  <li><img class="boxgrid" src="/assets/freshfood1.jpg"> </li>
+	  <li><img class="boxgrid" src="freshfood2.jpg"></li> 
+	  <li><img class="boxgrid" src="freshfood3.jpeg"></li> <!-- Your content goes here --></li>
+	  <li><!-- Your content goes here --></li>
+	  <li><!-- Your content goes here --></li>
+	  <li><!-- Your content goes here --></li>
+	  <li><!-- Your content goes here --></li>
+	</ul>
 
 
-	<div class="orbit-container"> 
-
-	    <ul data-orbit data-options="animation:slide;
-	                      pause_on_hover:true;
-	                      animation_speed:500;
-	                      navigation_arrows:true;
-	                      bullets:false;">
-	      <li>
-	        <img src="assets/freshfood1.jpg" alt="slide 1" />
-	        <div class="orbit-caption">
-	          Caption One.
-	        </div>
-	      </li>
-	      <li class="active">
-	        <img src="assets/freshfood2.jpg" alt="slide 2" />
-	        <div class="orbit-caption">
-	          Caption Two.
-	        </div>
-	      </li>
-	      <li>
-	        <img src="assets/freshfood3.jpeg" alt="slide 3" />
-	        <div class="orbit-caption">
-	          Caption Three.
-	        </div>
-	      </li>
-	    </ul>
-
-   </div> 
+</div> 
 
 </div> 
 
