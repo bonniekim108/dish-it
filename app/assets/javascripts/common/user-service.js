@@ -11,28 +11,28 @@
     var readyDeferred = $q.defer();
     service.ready = readyDeferred.promise;
 
-    service.user;
-
     // init
-    UserResource.loginToken(function (user) {
-      if (user == 'no-token') {
-        service.user = null;
-      } else {
+    service.user = null;
+    UserResource.loginToken(
+      function (user) {
         service.user = user;
+        readyDeferred.resolve(service.user);
+      }, function (nouser) {
+        service.user = null;
+        readyDeferred.resolve(null);
       }
-      readyDeferred.resolve(service.user);
-    });
-
-    service.getUser = function () {
-      return service.user;
-    };
+    );
 
     service.login = function(email, password) {
+      var def = $q.defer();
       UserResource.loginEmail({login: {email: email, password: password}}, function(user){
         service.user = user;
+        def.resolve(user);
       }, function(error){ 
         service.user = null;
+        def.reject();
       });
+      return def.promise;
     };
 
     service.logout = function() {
@@ -52,8 +52,6 @@
         });
       return deferred.promise;
     };
-
-    
 
     return service;
   }]);
