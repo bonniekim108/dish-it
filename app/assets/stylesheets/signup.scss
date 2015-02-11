@@ -1,20 +1,70 @@
 @import 'colors';
 
-h1.signup {
+p.signup { 
 	font-family: futura; 
 	font-weight: bold; 
 	color: $prime-blue; 
+	font-size: 35px; 
+	text-align: left; 
+	padding-left: 10px; 
+	margin-bottom: -2px; 
 }
 
-.orbit-container {
+p.tobattle {
+	font-family: futura; 
+	font-weight: bold; 
+	color: $prime-red; 
+	font-size: 33px; 
+	text-align: right; 
+	padding-left: 10px; 
+	margin-bottom: -2px; 
+}
+
+
+label {
+	text-align: right; 
+	font-family: futura; 
+	font-weight: bold; 
+	font-size: 15px; 
+	color: $prime-red; 
+	padding-bottom: 2px; 
+}
+
+.onebox {
+	width: 350px; 
+	height: 460px; 
+	background-color: white; 
+
+}
+
+.formpadding {
+	padding: 10px; 
+}
+
+.submitbutton {
+	display: inline-block; 
+	float: left; 
+
+}
+
+.cancelbutton {
+	display: inline-block;
 	float: right; 
 }
 
-.boxgrid {
-	line-height: 0; 
-	display: inline-block; 
-	border: solid 4px #FFFFFF; 
-	max-width: 100%; 
-	box-shadow: 0 0 0 1px; 
+.orbit-container {
+	height: 200px;  
+	margin: 0;
+	padding: 0; 
+	z-index: 3; 
+}
 
+.major {
+	z-index: 2; 
+	margin-right: 100%; 
+}
+
+.th {
+	display: inline-block; 
+	box-shadow: 0 0 0 1px #EFEFEF; 
 }

@@ -1,67 +1,65 @@
 <br> 
-<h1 class="Signup">Sign-Up</h1>
 
 <div class="row">
-	<div class="small-5 columns">
-<form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
+    <div class="small-5 columns">
+    	<p class="signup">Sign-Up</p> 
+    	    <div class="onebox"> 
+	    		<div class="formpadding"> 
+			       <form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
 
-			<div class="row">
-				<div class="small-5 columns">
-						<label for="name">Name:</label>
-						<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder="Name" required />
-				</div>
-			</div> 
-			<div class="row">
-				<div class="large-5 columns">
-						<label for="email">E-mail:</label>
-						<input type="email" name="email" ng-change="vm.errormsg=''" ng-model="vm.signup.email" class="ng-pristine ng-invalid" placeholder="email@address.com" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-				</div>
+					<label for="name">n a m e</label>
+					<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder="Name" required />
+						
+					<label for="email">e m a i l</label>
+					<input type="email" name="email" ng-change="vm.errormsg=''" ng-model="vm.signup.email" class="ng-pristine ng-invalid" placeholder="email@address" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+						
+				    
+					<label for="password">p a s s w o r d </label>
+					<input type="password" name="password" ng-change="vm.errormsg=''" ng-model="vm.signup.password" class="ng-pristine ng-invalid" placeholder="password" required />
+						
+
+					<label for="password_confirmation">p a s s w o r d - c o n f i r m a t i o n</label>
+					<input type="password" name="password_confirmation" ng-model="vm.signup.password_confirmation" class="ng-pristine ng-invalid"  placeholder="password confirmation" required />
+						
+					<label for="county">c o u n t y</label>
+					<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties" required></select>
+					
+				
+
+					   <div class="submitbutton">	
+							<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
+						</div> 
+		               <div class="cancelbutton">
+							<p class="">{{vm.errormsg}}<a ui-sref="shell.home" class="button">Cancel</a> </p> 
+					    </div> 
+
+					</form>
+				   </div> 
 		    </div> 
-		    <div class="row">
-				<div class="large-5 columns">
-						<label for="password">Password:</label>
-						<input type="password" name="password" ng-change="vm.errormsg=''" ng-model="vm.signup.password" class="ng-pristine ng-invalid" placeholder="password" required />
-				</div>
-			</div> 
-			<div class="row"> 
-				<div class="large-5 columns">
-						<label for="password_confirmation">Password Confirmation:</label>
-						<input type="password" name="password_confirmation" ng-model="vm.signup.password_confirmation" class="ng-pristine ng-invalid"  placeholder="password confirmation" required />
-				</div>
-			</div> 
-			<div class="row"> 
-				<div class="large-5 columns">
-						<label for="county">County</label>
-						<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties" required>
-						</select>
-				</div>
-			</div> 
-			<div class="row">
-				<div class="large-6 columns">
-						<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
-
-						<p class="">{{vm.errormsg}}</p>
-				</div>
-				<div class="large-6 columns">
-						<a ui-sref="shell.home" class="button">Cancel</a>
-				</div>
-			</div> 
-		</form>
 	</div> 
-  <div class="small-5 columns"> 
 
-  	<ul class="small-block-grid-3"> 
-	  <li><img class="boxgrid" src="/assets/freshfood1.jpg"> </li>
-	  <li><img class="boxgrid" src="freshfood2.jpg"></li> 
-	  <li><img class="boxgrid" src="freshfood3.jpeg"></li> <!-- Your content goes here --></li>
-	  <li><!-- Your content goes here --></li>
-	  <li><!-- Your content goes here --></li>
-	  <li><!-- Your content goes here --></li>
-	  <li><!-- Your content goes here --></li>
-	</ul>
+	<div class="small-5 columns"> 
+	   <p class="tobattle">to BATTLE</p> 
+	 	<div class="signuprightbox"> 
+			<div class="signupright"> 
 
+				<ul class="large-block-grid-2 small-block-grid-2"> 
+					<li><img class="th" src="/assets/signup9.jpg"></li> 
+					<li><img class="th" src="/assets/signup2.jpg"></li> 
+					<li><img class="th" src="/assets/signup3.jpg"></li> 
+					<li><img class="th" src="/assets/signup4.jpg"></li> 
+					<li><img class="th" src="/assets/signup5.jpg"></li> 
+					<li><img class="th" src="/assets/signup6.jpg"></li> 
+					<li><img class="th" src="/assets/signup7.jpg"></li> 
+					<li><img class="th" src="/assets/signup8.jpg"></li> 
+				</ul> 
+
+			</div> 
+
+		</div> 
+
+	</div> 
 
 </div> 
 
-</div> 
-
+  		 

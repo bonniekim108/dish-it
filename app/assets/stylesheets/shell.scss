@@ -8,7 +8,7 @@ header {
   right: 0;
   height: 50px;
   border-bottom: solid $prime-blue;
-  border-bottom-width: 7px; 
+  border-bottom-width: 5px; 
   z-index: 5;
   a.active {
     display: none; 
@@ -25,15 +25,16 @@ toggle-topbar menu-icon {
 
 body {
   color: $prime-blue; 
+  background-color: $main-grey; 
   
-  background: rgba(42,118,162,1);
-  background: -moz-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(42,118,162,1)), color-stop(2%, rgba(45,117,160,1)), color-stop(49%, rgba(115,97,110,0.9)), color-stop(100%, rgba(191,75,55,0.9)));
-  background: -webkit-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
-  background: -o-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
-  background: -ms-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
-  background: linear-gradient(to bottom, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a76a2', endColorstr='#bf4b37', GradientType=0 );
+  // background: rgba(42,118,162,1);
+  // background: -moz-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
+  // background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(42,118,162,1)), color-stop(2%, rgba(45,117,160,1)), color-stop(49%, rgba(115,97,110,0.9)), color-stop(100%, rgba(191,75,55,0.9)));
+  // background: -webkit-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
+  // background: -o-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
+  // background: -ms-linear-gradient(top, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
+  // background: linear-gradient(to bottom, rgba(42,118,162,1) 0%, rgba(45,117,160,1) 2%, rgba(115,97,110,0.9) 49%, rgba(191,75,55,0.9) 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a76a2', endColorstr='#bf4b37', GradientType=0 );
 
 }
 
@@ -43,7 +44,9 @@ a.logo {
   height: 100px;
   background: url(dishit5.svg); 
   background-size: 150px 100px;
-  margin: 5px auto; 
+  margin-right: auto; 
+  margin-left: auto; 
+  margin-top: 5px; 
 
 }
 
@@ -51,7 +54,7 @@ footer {
   background-color: $main-black; 
   position: absolute; 
   border-top: solid $prime-red; 
-  border-top-width: 3px; 
+  border-top-width: 5px; 
   bottom: 0;
   left: 0;
   right: 0;
@@ -67,7 +70,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
   overflow: scroll; 
 }
 
@@ -75,7 +78,7 @@ footer {
   position: absolute; 
   float: right; 
   right: 145px;   
-  bottom: 0px; 
+  bottom: -2px; 
   margin: 0px; 
 
 }
