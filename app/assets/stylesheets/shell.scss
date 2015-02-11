@@ -23,10 +23,12 @@ a.menu-icon {
 header {
   background-color: $main-black; 
   position: absolute;
+  text-align: center;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
+  width: 100%; 
   border-bottom: solid $prime-blue;
   border-bottom-width: 5px; 
   z-index: 5;
@@ -45,7 +47,7 @@ body {
 }
 
 a.logo {
-  display: block;
+  display: inline-block;
   width: 150px;
   height: 100px;
   background: url(dishit5.svg); 
@@ -53,6 +55,7 @@ a.logo {
   margin-right: auto; 
   margin-left: auto; 
   margin-top: 5px; 
+  padding: 0;
 
 }
 
@@ -144,6 +147,7 @@ a.pinterest {
 
 #user-section {
   display: inline-block;
+  position: absolute;
   margin-right: 20px;
   float: right;
   font-size: 14px;
