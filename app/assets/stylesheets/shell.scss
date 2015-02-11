@@ -136,15 +136,33 @@ a.pinterest {
   padding: 0px; 
 }
 
-#user-section .login {
+#user-section {
   display: inline-block;
-  width: 130px;
-  padding-top: 15px;
+  margin-right: 20px;
+  float: right;
+  font-size: 14px;
+  input {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    float: left;
+    width: 150px;
+    height: 25px;
+    // width: 40px;
+  }
+  a {
+    display: inline-block;
+    float: left;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: white;
+  }
+  .signup-link {
+    margin-left: 20px;
+  }
 }
-.logout {
-  font-size: 15px;
-  padding-top: 5px
-}
+
 
 a.yelp {
   display: block; 
