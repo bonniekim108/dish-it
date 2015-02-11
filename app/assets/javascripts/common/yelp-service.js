@@ -74,7 +74,18 @@
 
     function consolidate (data) {
       data = data.businesses;
-      return data;
+      var ret = [];
+      var idx;
+      _.forEach(data, function (r) {
+        idx = _.findIndex(ret, function (e) { return r.name == e.name; });
+        if (idx < 0) {
+          ret.push(r);
+        } else {
+          ret[idx].location.city = '-multiple-';
+          ret[idx].phone = '-multiple-';
+        }
+      });
+      return _.take(ret, 10);
     }
 
   }]);
