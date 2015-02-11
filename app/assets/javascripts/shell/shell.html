@@ -1,5 +1,7 @@
 
 <header> 
+
+
   <section class="top-bar-section">
      
     <ul class="left">
@@ -16,6 +18,10 @@
         </ul>
       </li>
     </ul>
+
+      <a ui-sref="shell.home" ui-sref-active="active"
+      class="logo"></a> 
+
     
     <div id="user-section" class="right">
 
@@ -24,6 +30,9 @@
         <br>
         <a ng-click="shell.logout()" class='logout'>logout</a>
       </div>
+
+    
+
 
       <div ng-hide="shell.isUserLoggedIn()">
         <input class="login" type="email" name="email" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
