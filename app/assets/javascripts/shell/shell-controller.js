@@ -22,7 +22,6 @@
         vm.countdown.s = diff.seconds();
       }, 1000);
 
-
       vm.login = function() {
         UserService.login(vm.email, vm.password).then(
           function(user) {
