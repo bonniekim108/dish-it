@@ -1,46 +1,34 @@
 
 <header> 
 
+<div id="menu-section" ng-hide="shell.hideMenu()">
+  <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
+  <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
+  <a ui-sref="shell.winners" ui-sref-active="active">winners</a><span>|</span>
+  <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
+</div>
+
+  <a ui-sref="shell.home" ui-sref-active="active"
+  class="logo"></a>
 
 
-    <a ui-sref="shell.home" ui-sref-active="active"
-    class="logo"></a>
 
-  <!-- <section class="tab-bar top-bar-section"> -->
-    
-
-
-
-    <!-- <ul class="left">
-      <li class="has-dropdown">
-        <a href class="menu-icon" style="background: #1F3046;" href><span></span></a>
-        <ul class="dropdown">
-          <li><a href ui-sref="shell.home"  ng-click="alert('test')">Home</a></li>
-          <li><a href ui-sref="shell.about">About<button ng-click="alert('hey')">hey</button></a></li>
-          <li><a href ui-sref="shell.winners">Winners</a></li>
-          <li><a href ui-sref="shell.battle">Battle</a></li>
-        </ul>
-      </li>
-    </ul> -->
-
-
-    
-    <div id="user-section">
-      <div ng-show="shell.user">
-        <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
-        <a ng-click="shell.logout()">logout</a>
-      </div>
-
-      <div ng-hide="shell.user">
-        <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-        <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
-        <a href ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
-        <a href ng-click="shell.signup()">signup</a>
-      </div>
-
+  <div id="user-section">
+    <div ng-show="shell.user">
+      <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+      <a ng-click="shell.logout()">logout</a>
     </div>
 
-  <!-- </section> -->
+    <div ng-hide="shell.user">
+      <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+      <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
+      <a href ng-click="shell.login()">login</a><span>|</span>
+      <a href ng-click="shell.signup()">signup</a>
+    </div>
+
+  </div>
+
+
 
 </header>
 

@@ -61,6 +61,7 @@
 		/*  Private Functions  */
 
 		function userVoted (numRestToCheck) {
+			if (!UserService.user) return true;
 			var uId = UserService.user.id;
 			var n = n || service.curBattle.restaurants.length;
 			var findIndex;

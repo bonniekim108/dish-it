@@ -145,37 +145,61 @@ a.pinterest {
   padding: 0px; 
 }
 
+header {
+  a {
+    display: inline-block;
+    height: 15px;
+    margin: 3px 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+  }
+  a:hover {
+    color: $prime-red;
+  }
+}
+
+#menu-section {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 30px;
+  font-size: 14px;
+  a, span {
+    margin-right: 20px;
+  }
+  a.active {
+    color: $prime-red;
+    display: inline-block;
+  }
+}
+
 #user-section {
   display: inline-block;
   position: absolute;
-  margin-right: 20px;
-  float: right;
+  top: 8px;
+  right: 30px;
   font-size: 14px;
   input {
     display: inline-block;
-    margin: 9px 10px 0 0;
-    float: left;
+    margin: 1px 11px 0 0;
     width: 150px;
     height: 27px;
     // width: 40px;
   }
-  a {
+  p {
     display: inline-block;
     float: left;
+    margin-top: 3px;
     height: 15px;
-    margin: 0;
     padding: 0;
     font-size: 14px;
     color: white;
   }
-  p {
-  display: inline-block;
-  float: left;
-  height: 15px;
-  margin-top: 12px;
-  padding: 0;
-  font-size: 14px;
-  color: white;
+  span {
+    display: inline-block;
+    margin: 3px 10px 3px 15px;
   }
 }
 
