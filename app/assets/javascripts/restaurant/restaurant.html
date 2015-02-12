@@ -3,17 +3,18 @@
     <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200>
   </div>
   <div class="small-6 large-9 columns">
-    <h1>{{vm.name}}</h1>
-    <p>{{vm.location}}<br>
-       {{vm.phone}}</p>
-    <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+    <h1>{{vm.restaurant.name}}</h1>
+    <p>{{vm.restaurant.location}}<br>
+       {{vm.restaurant.phone}}</p>
+    <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
   </div>
 </div>
 <div class="row">
-  <h4>Comments</h4>
-  <div ng-repeat="vote in vm.votes" style="border-top:1px dashed #CCC">
-    <p ng-if="vote.comment.length > 0">
-    <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
+  <h4>Votes</h4>
+  <div ng-repeat="vote in vm.restaurant.votes">
+    <p  style="border-top:1px dashed #CCC">
+    <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
+    <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
 
   </div>
 </div>
@@ -26,3 +27,4 @@
 
    ng-click="vm.upvote({{restaurant.id}})"
  -->
+{{vm.curBattle.dish.name}}

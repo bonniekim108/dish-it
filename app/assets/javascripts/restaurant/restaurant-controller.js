@@ -8,9 +8,10 @@
     function($stateParams,BattleService) {
       var vm = this;
 
-      vm.curBattle = BattleService.curBattle.restaurants; 
+      vm.curBattle = BattleService.curBattle; 
       vm.restaurantId = $stateParams.id;
-      console.log(BattleService.curBattle);
+      vm.restaurant = {};
+
       vm.userCanVote = function () {
         return BattleService.userCanVote();
       };
@@ -21,9 +22,9 @@
         });
       };
 
-      for (var i = 0; i < vm.curBattle.length; i++){
-        if (vm.curBattle[i].id == vm.restaurantId) {
-          return vm.curBattle = vm.curBattle[i];
+      for (var i = 0; i < vm.curBattle.restaurants.length; i++){
+        if (vm.curBattle.restaurants[i].id == vm.restaurantId) {
+          vm.restaurant = vm.curBattle.restaurants[i];
         }
       }
 
