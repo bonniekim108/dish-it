@@ -154,11 +154,7 @@ header {
   }
 }
 
-header button.signin {
-  background: transparent;
-  height: 20px;
-  font-weight: bolder;
-}
+header 
 
 #menu-section {
   display: inline-block;
@@ -185,7 +181,6 @@ header button.signin {
     margin: 1px 11px 0 0;
     width: 150px;
     height: 27px;
-    // width: 40px;
   }
   p {
     display: inline-block;
@@ -199,6 +194,14 @@ header button.signin {
   span {
     display: inline-block;
     margin: 3px 10px 3px 15px;
+  }
+  button.signin {
+    background: transparent;
+    font-size: 14px;
+    font-weight: bolder;
+    height: 20px;
+    padding: 0;
+    &:hover:enabled {color: $prime-red;}
   }
 }
 
