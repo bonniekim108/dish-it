@@ -19,7 +19,9 @@
       };
 
       vm.nominate = function (yelpRest) {
-
+        BattleService.nominate(yelpRest).then(function() {
+//go back to battle page
+        });
       };
 
     }

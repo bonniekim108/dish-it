@@ -98,7 +98,7 @@ class BattlesController < ApplicationController
 
   private
 
-  def nominate_params do
+  def nominate_params
     return params.require(:nominate).permit(:name, :location, :phone, :yelp_rating_photo_url, :yelp_photo_url, :comment)
   end
 
