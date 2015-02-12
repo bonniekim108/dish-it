@@ -4,11 +4,11 @@
   angular.module('app')
 
   .controller('WinnersController', [
-    // inject dependencies here
-    function() {
+    'BattleService',
+    function(BattleService) {
       var vm = this;
 
-
+      vm.winners = BattleService.winners;
 
     }
     ]);
