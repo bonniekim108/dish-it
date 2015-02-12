@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>dishIT</title>
-	<%= stylesheet_link_tag    'application', media: 'all' %>
-	<%= csrf_meta_tags %>
+	<head>
+		<title>dish IT!</title>
+		<%= stylesheet_link_tag    'application', media: 'all' %>
+		<%= csrf_meta_tags %>
 
-	<!-- adding favicon -->
-	<%= favicon_link_tag 'favicon5.ico' %> 
-    <!-- favicon column  -->
+		<!-- adding favicon -->
+		<%= favicon_link_tag 'favicon5.ico' %> 
+	    <!-- favicon column  -->
 
-</head>
-<body ng-app="app">
+	</head>
+		<body ng-app="app">
 
+			<%= yield %>
+			<%= javascript_include_tag 'application' %>
 
-
-	<%= yield %>
-
-	<%= javascript_include_tag 'application' %>
-</body>
+		</body>
 </html>

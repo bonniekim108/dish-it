@@ -1,81 +1,46 @@
 
 <header> 
 
-<!-- 
-      <form ng-hide="shell.user" ng-submit="shell.login() && myForm.$valid" name="myForm" novalidate>
-        <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-        <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
-        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-        <span ng-show="myForm.email.$error.required" || "myForm.email.$error.email" || "myForm.password.$error.required"
-        || "myForm.password.$error.password">Login unsuccessful</span>
-      </span>
 
-        <a href ng-disabled="myForm.email.$error.required" || "myForm.email.$error.email" || "myForm.password.$error.required"|| "myForm.password.$error.password" 
-        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
-        <a href ng-click="shell.signup()">signup</a>
-      </form> -->
+  <div id="menu-section" ng-hide="shell.hideMenu()">
+    <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
+    <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
+    <a ui-sref="shell.winners" ui-sref-active="active">winners</a><span>|</span>
+    <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
+  </div>
 
-
-       <!--  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-        <span ng-show="myForm.email.$error.required">Login unsuccessful</span>
-        <span ng-show="myForm.email.$error.email">Invalid email.</span>
-      </span>  --> 
+<!-- logo area --> 
+  <a ui-sref="shell.home" ui-sref-active="active"
+  class="logo"></a>
+<!-- logo area --> 
 
 
-       <!--  <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
-        <span ng-show="myForm.password.$error.required">Password is required.</span>
-        <span ng-show="myForm.password.$error.password">Invalid password.</span> -->
-        <!--   </span> -->
 
-        <!-- <a href ng-disabled="myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.password.$invalid" 
-        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a> -->
-        <!-- <a href ng-disabled="myForm.$dirty || myForm.$invalid" 
-        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
-        <a href ng-click="shell.signup()">signup</a>
-      </form> -->
+  <div id="user-section">
+    <div ng-show="shell.user">
+      <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+      <a ng-click="shell.logout()">logout</a>
+    </div>
 
-      <div id="menu-section" ng-hide="shell.hideMenu()">
-        <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
-        <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
-        <a ui-sref="shell.winners" ui-sref-active="active">winners</a><span>|</span>
-        <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
-      </div>
+    <div ng-hide="shell.user">
+      <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+      <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
+      <a href ng-click="shell.login()">login</a><span>|</span>
+      <a href ng-click="shell.signup()">signup</a>
+    </div>
+  </div>
 
-      <a ui-sref="shell.home" ui-sref-active="active"
-      class="logo"></a>
-
-      <div id="user-section">
-        <div ng-show="shell.user">
-          <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
-          <a ng-click="shell.logout()">logout</a>
-        </div>
-
-        <div ng-hide="shell.user">
-          <form name="loginForm" ng-submit="shell.login()" novalidate>
-            <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-            <input type="password" name="password" class="form-control" ng-model="shell.password" ng-minlength="4" placeholder="password" required />
-            <button href ng-disabled="loginForm.$invalid" name="loginLink" ng-click="shell.login()" class="signin">login</button><span>|</span>
-            <a href ng-click="shell.signup()">signup</a>
-          </form>
-        </div>
-
-      </div>
-
-    </header>
-
-
+</header>
 
     <div class="wrap row">
       <div ui-view class="columns small-10 small-offset-1"></div>
     </div>
 
-    <footer>
+<footer>
 
-
-      <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
-
-      <div class="icon"> 
-
+  <p class="copyright">Copyright 2015 © dish IT. Powered by BEN SAM - BONNIE KIM - EDWIN ALEGRE - JIM CLARK</p> 
+  
+  <div class="icon"> 
         <ul>
           <li><a href class="facebook"></a></li>
           <li><a href class="twitter"></a></li>
@@ -84,4 +49,4 @@
         </ul> 
       </div> 
 
-    </footer>
+</footer>
