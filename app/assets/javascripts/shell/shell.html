@@ -1,6 +1,7 @@
 
 <header> 
 
+
   <div id="menu-section" ng-hide="shell.hideMenu()">
     <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
     <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
@@ -31,25 +32,21 @@
 
 </header>
 
-
-
-<div class="wrap row">
-  <div ui-view class="columns small-10 small-offset-1"></div>
-</div>
+    <div class="wrap row">
+      <div ui-view class="columns small-10 small-offset-1"></div>
+    </div>
 
 <footer>
-
 
   <p class="copyright">Copyright 2015 © dish IT. Powered by BEN SAM - BONNIE KIM - EDWIN ALEGRE - JIM CLARK</p> 
   
   <div class="icon"> 
+        <ul>
+          <li><a href class="facebook"></a></li>
+          <li><a href class="twitter"></a></li>
+          <li><a href class="pinterest"></a></li>
+          <li><a href class="yelp"></a></li> 
+        </ul> 
+      </div> 
 
-    <ul>
-      <li><a href class="facebook"></a></li>
-      <li><a href class="twitter"></a></li>
-      <li><a href class="pinterest"></a></li>
-      <li><a href class="yelp"></a></li> 
-    </ul> 
-  </div> 
-  
 </footer>

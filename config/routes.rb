@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   #----- battle api routes -----#
   get '/api/battles/:year/:month' => 'battles#show'
+  get '/api/battles/winners' => 'battles#winners'
   post '/api/battles' => 'battles#create'
   post '/api/battles/upvote' => 'battles#upvote'
   post '/api/battles/nominate' => 'battles#nominate'

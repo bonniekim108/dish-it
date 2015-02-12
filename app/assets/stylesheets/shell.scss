@@ -147,10 +147,17 @@ header {
     font-size: 15px; 
     font-weight: 300; 
     color: white;
+    font-weight: normal;
   }
    a:hover {
     color: $prime-red;
   }
+}
+
+header button.signin {
+  background: transparent;
+  height: 20px;
+  font-weight: bolder;
 }
 
 #menu-section {
