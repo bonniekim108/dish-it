@@ -11,7 +11,7 @@
       var vm = this;
 
       vm.user = UserService.user;
-
+      
       vm.login = function() {
         UserService.login(vm.email, vm.password).then(
           function(user) {
