@@ -29,10 +29,11 @@
 					   <div class="submitbutton">	
 							<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
 						</div> 
-		               <div class="cancelbutton"><a ui-sref="shell.home" class="button">Cancel</a>
-							
+		               
+		                <div class="cancelbutton">
+							<a ui-sref="shell.home" class="button">Cancel</a> 
 					    </div> 
-						<br><p>&nbsp;{{vm.errormsg}}</p> 
+							<p class="errormesg">{{vm.errormsg}} </p> 
 					</form>
 				   </div> 
 		    </div> 
