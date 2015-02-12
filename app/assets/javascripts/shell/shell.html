@@ -25,12 +25,37 @@
         <a ng-click="shell.logout()">logout</a>
       </div>
 
-      <div ng-hide="shell.user">
+      <form ng-hide="shell.user" ng-submit="shell.login() && myForm.$valid" name="myForm" novalidate>
         <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
         <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
-        <a href ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+        <span ng-show="myForm.email.$error.required" || "myForm.email.$error.email" || "myForm.password.$error.required"
+        || "myForm.password.$error.password">Login unsuccessful</span>
+      </span>
+
+        <a href ng-disabled="myForm.email.$error.required" || "myForm.email.$error.email" || "myForm.password.$error.required"|| "myForm.password.$error.password" 
+        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
         <a href ng-click="shell.signup()">signup</a>
-      </div>
+      </form>
+
+
+       <!--  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+        <span ng-show="myForm.email.$error.required">Login unsuccessful</span>
+        <span ng-show="myForm.email.$error.email">Invalid email.</span>
+        </span>  --> 
+
+        
+       <!--  <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+        <span ng-show="myForm.password.$error.required">Password is required.</span>
+        <span ng-show="myForm.password.$error.password">Invalid password.</span> -->
+    <!--   </span> -->
+
+        <!-- <a href ng-disabled="myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.password.$invalid" 
+        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a> -->
+        <!-- <a href ng-disabled="myForm.$dirty || myForm.$invalid" 
+        ng-click="shell.login()">login&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+        <a href ng-click="shell.signup()">signup</a>
+      </form> -->
 
     </div>
 
