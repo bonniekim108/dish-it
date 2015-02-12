@@ -33,7 +33,11 @@
       };
 
       vm.isUserLoggedIn = function () {
-        return UserService.getUser() != null;
+        return UserService.getUser() !== null;
+      };
+
+      vm.hideMenu = function () {
+        return $state.current.name === 'shell.home';
       };
 
     }
