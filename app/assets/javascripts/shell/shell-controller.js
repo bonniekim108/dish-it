@@ -5,12 +5,23 @@
 
   .controller('ShellController', [
     '$state',
-    '$rootScope',
+    '$interval',
     'UserService',
-    function($state, $rootScope, UserService) {
+    function($state, $interval, UserService) {
       var vm = this;
 
       vm.user = UserService.user;
+
+      vm.countdown = {};
+      var eom = moment().endOf("month");
+      $interval(function () {
+        var diff = moment.duration(eom.diff(moment()));
+        vm.countdown.d = diff.days();
+        vm.countdown.h = diff.hours();
+        vm.countdown.m = diff.minutes();
+        vm.countdown.s = diff.seconds();
+      }, 1000);
+
 
       vm.login = function() {
         UserService.login(vm.email, vm.password).then(
@@ -42,6 +53,11 @@
 
     }
   ]);
+
+  function padToTwo (number) {
+    if (number<=9) { number = ("0"+number).slice(-2); }
+    return number;
+  }
 
 
 })();
