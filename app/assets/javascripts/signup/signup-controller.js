@@ -26,7 +26,7 @@
 	    		 	).then(function(user){
 	    		 		$state.go('shell.about');
 	    		 	},function(error){
-	    		 		vm.errormsg = error;
+	    		 		vm.errormsg = "password need at least 4 characters";
 	    		 	});
         }
 

@@ -1,3 +1,4 @@
+
 <header> 
   <section class="tab-bar top-bar-section">
 
@@ -57,16 +58,41 @@
         <a href ng-click="shell.signup()">signup</a>
       </form> -->
 
+<div id="menu-section" ng-hide="shell.hideMenu()">
+  <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
+  <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
+  <a ui-sref="shell.winners" ui-sref-active="active">winners</a><span>|</span>
+  <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
+</div>
+
+  <a ui-sref="shell.home" ui-sref-active="active"
+  class="logo"></a>
+
+  <div id="user-section">
+    <div ng-show="shell.user">
+      <p>Welcome&nbsp;&nbsp;<strong>{{shell.user.name}}</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+      <a ng-click="shell.logout()">logout</a>
     </div>
 
-  </section>
+    <div ng-hide="shell.user">
+      <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+      <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
+      <a href ng-click="shell.login()">login</a><span>|</span>
+      <a href ng-click="shell.signup()">signup</a>
+    </div>
+
+  </div>
+
 </header>
+
+
 
 <div class="wrap row">
   <div ui-view class="columns small-10 small-offset-1"></div>
 </div>
 
 <footer>
+
 
   <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
   

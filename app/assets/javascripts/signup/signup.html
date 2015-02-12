@@ -8,18 +8,18 @@
 			       <form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
 
 					<label for="name">n a m e</label>
-					<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder="Name" required />
+					<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder=" f i r s t & l a s t " required />
 						
 					<label for="email">e m a i l</label>
-					<input type="email" name="email" ng-change="vm.errormsg=''" ng-model="vm.signup.email" class="ng-pristine ng-invalid" placeholder="email@address" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+					<input type="email" name="email" ng-change="vm.errormsg=''" ng-model="vm.signup.email" class="ng-pristine ng-invalid" placeholder=" e m a i l " ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
 						
 				    
 					<label for="password">p a s s w o r d </label>
-					<input type="password" name="password" ng-change="vm.errormsg=''" ng-model="vm.signup.password" class="ng-pristine ng-invalid" placeholder="password" required />
+					<input type="password" name="password" ng-change="vm.errormsg=''" ng-model="vm.signup.password" class="ng-pristine ng-invalid" placeholder=" p a s s w o r d " required />
 						
 
 					<label for="password_confirmation">p a s s w o r d - c o n f i r m a t i o n</label>
-					<input type="password" name="password_confirmation" ng-model="vm.signup.password_confirmation" class="ng-pristine ng-invalid"  placeholder="password confirmation" required />
+					<input type="password" name="password_confirmation" ng-model="vm.signup.password_confirmation" class="ng-pristine ng-invalid"  placeholder=" c o n f i r m - p a s s w o r d " required />
 						
 					<label for="county">c o u n t y</label>
 					<select ng-model="vm.signup.county" name="county" ng-options="obj.id as obj.name for obj in vm.counties" required></select>
@@ -29,10 +29,11 @@
 					   <div class="submitbutton">	
 							<button type="submit" class="button" ng-disabled="signupForm.$invalid || ( vm.signup.password != vm.signup.password_confirmation )">Sign-up</button>
 						</div> 
-		               <div class="cancelbutton">
-							<p class="">{{vm.errormsg}}<a ui-sref="shell.home" class="button">Cancel</a> </p> 
+		               
+		                <div class="cancelbutton">
+							<a ui-sref="shell.home" class="button">Cancel</a> 
 					    </div> 
-
+							<p class="errormesg">{{vm.errormsg}} </p> 
 					</form>
 				   </div> 
 		    </div> 
