@@ -1,6 +1,4 @@
-
 <header> 
-
 
   <div id="menu-section" ng-hide="shell.hideMenu()">
     <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
@@ -9,12 +7,8 @@
     <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
   </div>
 
-<!-- logo area --> 
   <a ui-sref="shell.home" ui-sref-active="active"
   class="logo"></a>
-<!-- logo area --> 
-
-
 
   <div id="user-section">
     <div ng-show="shell.user">
@@ -23,27 +17,32 @@
     </div>
 
     <div ng-hide="shell.user">
-      <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
-      <input type="password" name="password" class="form-control" ng-model="shell.password" placeholder="password" required />
-      <a href ng-click="shell.login()">login</a><span>|</span>
-      <a href ng-click="shell.signup()">signup</a>
+      <form name="loginForm" ng-submit="shell.login()" novalidate>
+        <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+        <input type="password" name="password" class="form-control" ng-model="shell.password" ng-minlength="4" placeholder="password" required />
+        <button href ng-disabled="loginForm.$invalid" name="loginLink" ng-click="shell.login()" class="signin">login</button><span>|</span>
+        <a href ng-click="shell.signup()">signup</a>
+      </form>
     </div>
+
   </div>
+
 </header>
 
-    <div class="wrap row">
-      <div ui-view id="routes" class="columns small-10 small-offset-1"></div>
-    </div>
+<div class="wrap row">
+  <div ui-view id="routes" class="columns small-10 small-offset-1"></div>
+</div>
 
-    <footer>
-      <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
+<footer>
+  <p class="copyright">Copyright 2015 © dish IT. Powered by JIM CLARK - BONNIE KIM - EDWIN ALEGRE - BEN SAM</p> 
 
-      <div class="icon"> 
-        <ul>
-          <li><a href class="facebook"></a></li>
-          <li><a href class="twitter"></a></li>
-          <li><a href class="pinterest"></a></li>
-          <li><a href class="yelp"></a></li> 
-        </ul> 
-      </div> 
-    </footer>
+  <div class="icon"> 
+
+    <ul>
+      <li><a href class="facebook"></a></li>
+      <li><a href class="twitter"></a></li>
+      <li><a href class="pinterest"></a></li>
+      <li><a href class="yelp"></a></li> 
+    </ul> 
+  </div> 
+</footer>
