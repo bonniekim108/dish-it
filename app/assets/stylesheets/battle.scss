@@ -1,0 +1,14 @@
+@import 'colors';
+
+.battleleft {
+	position: absolute; 
+	width: 200px; 
+	height: 500px; 
+	background-image: url("battle1.svg"); 
+	background-size: 200px 500px; 
+	background-repeat: no-repeat; 
+	left: -200px; 
+	z-index: 4; 
+
+
+}
