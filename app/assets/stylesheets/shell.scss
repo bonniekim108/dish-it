@@ -224,3 +224,25 @@ a.yelp {
 .login {
   padding: 0; 
 }
+
+#demo-mode-wrap {
+  position: absolute;
+  height: 15px;
+  top: 8px;
+  left: 30px;
+  font-size: 8px;
+  font-weight: light;
+  color: $prime-blue;
+  a {
+    font-size: 8px;
+    font-weight: light;
+    color: white;
+    &.active {
+      color: $prime-red;
+      cursor: default;
+    }
+  }
+  ul {
+    margin-left: 0px;
+  }
+}

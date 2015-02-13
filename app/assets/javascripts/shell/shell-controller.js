@@ -6,8 +6,9 @@
   .controller('ShellController', [
     '$state',
     '$interval',
+    '$rootScope',
     'UserService',
-    function($state, $interval, UserService) {
+    function($state, $interval, $rootScope, UserService) {
       var vm = this;
 
       vm.user = UserService.user;
@@ -49,6 +50,17 @@
       vm.hideMenu = function () {
         return $state.current.name === 'shell.home';
       };
+
+      // demo mode code
+      $rootScope.demoMode = vm.demoMode = null;
+      vm.setDemoMode = function (mode) {
+        $rootScope.demoMode = vm.demoMode = mode;
+        $rootScope.$emit('demo-mode-changed');
+      };
+      vm.showDemo = function () {
+        return ($state.current.name === 'shell.battle');
+      };
+      // end of demo mode code
 
     }
   ]);
