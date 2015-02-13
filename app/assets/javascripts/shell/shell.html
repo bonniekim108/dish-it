@@ -8,8 +8,12 @@
     <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
   </div>
 
-  <a ui-sref="shell.home" ui-sref-active="active"
-  class="logo"></a>
+  <a ui-sref="shell.home" ui-sref-active="active" class="logo">
+    <div>
+      <p><span>{{shell.countdown.d}}</span><span>{{shell.countdown.h}}</span><span>{{shell.countdown.m}}</span><span>{{shell.countdown.s}}</span></p>
+      <p><span>days</span><span>hrs</span><span>mins</span><span>secs</span></p>
+    </div>
+  </a>
 
   <div id="user-section">
     <div ng-show="shell.user">
