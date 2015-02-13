@@ -12,15 +12,30 @@
 		var month = today.getMonth() + 1;
 
 		// this promise has to be resolved before shell will load
-		var readyDeferred = $q.defer();
-		service.ready = readyDeferred.promise;
+		var curDef = $q.defer();
+		var winDef = $q.defer();
+		service.ready = $q.all([curDef.promise, winDef.promise]);
+
+		service.curBattle = {};
+		service.winners = [];
 		
 		// load current battle
 		getSortedBattle(year, month).then(function(battle) {
 			service.curBattle = battle;
 			service.displayMode = getDisplayMode();
-			readyDeferred.resolve();
+			curDef.resolve();
 		});
+
+		// load previous winner battles
+		$http.get('/api/battles/winners')
+			.success(function(battles) {
+				battles.forEach(function(b){
+					b.restaurants = sortByVotes(b);
+				});
+				service.winners = battles;
+				winDef.resolve();
+			}
+		);
 
 		service.upvote = function (restId, comment) {
 			var def = $q.defer();
@@ -61,6 +76,7 @@
 		/*  Private Functions  */
 
 		function userVoted (numRestToCheck) {
+			if (!UserService.user) return true;
 			var uId = UserService.user.id;
 			var n = n || service.curBattle.restaurants.length;
 			var findIndex;
@@ -86,8 +102,6 @@
 			}, function (battle) {
 				battle.restaurants = sortByVotes(battle);
 				deferred.resolve(newBat);
-			}, function (fail) {
-				deferred.reject(fail);
 			});
 			return deferred.promise;
 		}

@@ -1,0 +1,26 @@
+#routes{
+ opacity: 1;
+}
+
+#routes.ng-enter, #routes.ng-leave {
+  -webkit-transition:all .8s ease-in-out;
+  -moz-transition:all .8s ease-in-out;
+  -o-transition:all .8s ease-in-out;
+  transition:all .8s ease-in-out;
+}
+
+#routes.ng-enter {
+  opacity: 0;
+}
+
+#routes.ng-enter-active {
+  opacity: 1;
+}
+
+#routes.ng-leave {
+  opacity: 1;
+}
+
+#routes.ng-leave-active {
+  opacity: 0;
+}

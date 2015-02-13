@@ -40,6 +40,21 @@ class BattlesController < ApplicationController
     end      
   end
 
+  def winners
+    date = Date.today.end_of_month
+    @battles = Battle.all.where(["year_month < ?", date]).order(year_month: :desc)
+    if @battles
+      render json: @battles, include: {
+        dish: { only: [ :cuisine, :name ] },
+        trash_talks: { include: {user: { only: :name } }, only: [ :created_at, :user, :trash ] },
+        restaurants: { include: {votes: { include: { user: { only: [:id, :name] } }, only: [ :created_at, :comment, :user ] } } }
+        },
+        status: :ok
+    else
+      render plain: "No winners exist", status: :bad_request
+    end
+  end
+
   def upvote
     begin
       user = current_user

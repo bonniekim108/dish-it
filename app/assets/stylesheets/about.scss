@@ -83,31 +83,64 @@ p.aboutinfo {
 
 }
 
+// .abouttopleft {
+// 	display: block; 
+// 	width: 170px; 
+// 	height: 170px; 
+// 	background-image: url("breakfast1.svg");
+// 	position: fixed;  
+// 	background-size: 170px 170px; 
+// 	left: 138px; 
+// 	top: 30px;
+// 	padding: 0px;  
+// 	z-index: 2; 
+// }
+
 .abouttopleft {
-	display: block; 
-	width: 170px; 
-	height: 170px; 
-	background-image: url("breakfast1.svg");
-	position: fixed;  
-	background-size: 170px 170px; 
-	left: 138px; 
-	top: 30px;
-	padding: 0px;  
+	position: absolute; 
+	left: -90px; 
+	top: -10px; 
 	z-index: 2; 
+
+}
+
+a.abouttopleft1 {
+	display: block; 
+	background-image: url("breakfast1.svg");
+	background-size: 165px 165px; 
+	width: 165px; 
+	height: 165px; 
 }
 
 .aboutright {
-	z-index: 0; 
-	width: 170px;
-	height: 170px; 
-	background-image: url("breakfast2.svg");
-	position: fixed;  
-	background-size: 170px 170px; 
-	right: 138px;
-	bottom: 20px; 
-	padding: 0px; 
-
+	position: absolute; 
+	right: -90px; 
+	bottom: -100px;
+	z-index: 1; 
 }
+
+a.aboutright1 {
+	display: block; 
+	background-image: url("breakfast2.svg"); 
+	background-size: 165px 165px; 
+	width: 165px; 
+	height: 165px; 
+}
+
+// .righttop {
+// 	position: absolute; 
+// 	right: -90px; 
+// 	top: -8px; 
+// }
+
+// a.showdown2 {
+// 	display: block; 
+// 	background-image: url("finalshow2.svg"); 
+// 	width: 380px; 
+// 	height: 365px; 
+// 	opacity: 0.9;  
+
+// }
 
 .form {
 	width: 342px; 
