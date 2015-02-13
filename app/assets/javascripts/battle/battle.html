@@ -1,23 +1,25 @@
-<h1>Battle Page </h1>
 
-<div class="row">
-  <div style="margin: 15px auto; width:400px; text-align: center;">
-    <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-  </div>
+<p id="battleheading">THIS MONTH'S BATTLE</p>
 
-  <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
-      <div class="small-3 large-3 columns" style="width:200px; text-align: center; border: 1px solid #CCC">
-        <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" style="float:left"></a><br>
-        <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
-        
-        <!-- display votes to test? -->
-        <p>{{restaurant.votes.length}}</p>
-        
+<!-- <div id="battle_page_container"> -->
+  <div class="row battlepage">
+    <div class="style">
+      <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
+    </div>
+
+    <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+      <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
+        <div class="small-3 large-3 columns" style="width:200px; text-align: center; border: 1px solid #CCC">
+          <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" style="float:left"></a><br>
+          <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+          
+          <!-- display votes to test? -->
+          <p>{{restaurant.votes.length}}</p>
+          
+        </div>
       </div>
     </div>
-  </div>
 
   <div ng-if="vm.displayMode == 'final-four'">
     <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
@@ -28,12 +30,6 @@
       </div>
     </div>
   </div>
-</div>  <!-- row -->
+<!-- </div> -->
 
-  <!-- vote modal -->
-  <div id="upvote-modal" class="reveal-modal small" data-reveal>
-    <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
-    <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
-    <button ng-click="vm.finalizeUpvote()">Vote</button>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
+
