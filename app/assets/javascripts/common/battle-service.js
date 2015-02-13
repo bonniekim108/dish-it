@@ -72,7 +72,7 @@
 			}
 		};
 
-		service.nominate = function (yelpRest) {
+		service.nominate = function (yelpRest, comment) {
 			var def = $q.defer();
 			var config = {
 				url: '/api/battles/upvote',
