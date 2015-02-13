@@ -73,8 +73,13 @@ a.logo {
                display: inline-block; 
                width: 30px;
              }
+             span.leftunder {
+              border-bottom: 2px solid $prime-red; 
+
+             }
            }
-         }
+        
+    }
 
     div.righttime {
         margin-top: 50px;
@@ -92,6 +97,9 @@ a.logo {
            span {
               display: inline-block; 
               width: 30px;
+            }
+            span.rightunder {
+              border-bottom: 2px solid $prime-blue; 
             }
           }
         }
@@ -250,6 +258,10 @@ header {
     height: 20px;
     padding: 0;
     &:hover:enabled {color: $prime-red;}
+  }
+  a.active {
+    color: $prime-blue;
+    display: inline-block;
   }
 }
 

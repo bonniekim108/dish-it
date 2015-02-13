@@ -3,7 +3,7 @@
 
   <div id="menu-section" ng-hide="shell.hideMenu()">
     <a ui-sref="shell.home" ui-sref-active="active">home</a><span>|</span>
-    <a ui-sref="shell.batle" ui-sref-active="active">battle</a><span>|</span>
+    <a ui-sref="shell.battle" ui-sref-active="active">battle</a><span>|</span>
     <a ui-sref="shell.winners" ui-sref-active="active">winners</a><span>|</span>
     <a ui-sref="shell.about" ui-sref-active="active">about</a><span>|</span>
   </div>
@@ -11,10 +11,17 @@
   <a ui-sref="shell.home" ui-sref-active="active" class="logo">
 
        <div class="lefttime">
-          <p><span><u>{{shell.countdown.d}}</u></span><span><u>{{shell.countdown.h}}</u></span></p><p><span>days</span><span>hrs</p>
+          <p>
+            <span class="leftunder">{{shell.countdown.d}}</span>
+            <span class="leftunder">{{shell.countdown.h}}</span>
+          </p>
+          <p><span>days</span><span>hrs</p>
        </div> 
       <div class="righttime"> 
-          <p><span><u>{{shell.countdown.m}}</u></span><span><u> {{shell.countdown.s}}</u></span></p><p><span>mins</span><span>secs</span></p>
+          <p>
+            <span class="rightunder">{{shell.countdown.m}}</span>
+            <span class="rightunder">{{shell.countdown.s}}</span></p>
+          <p><span>mins</span><span>secs</span></p>
        </div>
 
   </a>
@@ -30,7 +37,7 @@
         <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
         <input type="password" name="password" class="form-control" ng-model="shell.password" ng-minlength="4" placeholder="password" required />
         <button href ng-disabled="loginForm.$invalid" name="loginLink" ng-click="shell.login()" class="signin">login</button><span>|</span>
-        <a href ng-click="shell.signup()">signup</a>
+        <a ui-sref="shell.signup" ui-sref-active="active">signup</a>
       </form>
     </div>
   </div>
