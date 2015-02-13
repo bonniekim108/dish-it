@@ -1,3 +1,16 @@
-<h1>Winners Page</h1>
+<h1>Winners</h1>
 
-{{vm.winners}}
+<div class="row" ng-repeat="winner in vm.winners">
+  <div class="small-6 large-12 columns" style="text-align: center; margin: 0 auto; border: 1px solid #CCC; padding-bottom:25px">
+    <h3>Winner for {{winner.dish.cuisine}}: {{winner.dish.name}}</h3>
+    <h4>{{winner.year_month | date: 'MMMM yyyy'}}</h4>
+    <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
+      ID: {{firstplace.id}}<br>
+      Name: {{firstplace.name}}<br>
+      Location: {{firstplace.location}}<br>
+      Phone{{firstplace.phone}}<br>
+      Votes: {{firstplace.votes.length}}<br>
+      <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=300>
+    </div>
+  </div>
+</div>
