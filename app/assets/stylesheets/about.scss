@@ -1,148 +1,155 @@
 @import 'colors';
 
-.about {
-	font-family: futura; 
-	z-index: 1; 
-	padding: 0px; 
-}
 
-.abouttext {
-	color: $prime-blue; 
-	font-weight: bold; 
-	width: 350px; 
-	padding-right: 30px; 
-	position: relative;  
-	top: 20px; 
-	text-align: right; 
-	font-size: 30px;
-	 
-	  transform:rotate(90deg);
-	  left: 200px; 
-	  top: 270px; 
-}
+#about_container {
 
-strong {
-	color: $prime-red; 
-}
+height: 100%; 
 
+	.about {
+		font-family: futura; 
+		z-index: 1; 
+		padding: 0px; 
+	}
 
-.aboutinfobox {
-	width: 350px; 
-	height: 420px; 
-	background-color: white;
-}
+	.abouttext {
+		color: $prime-blue; 
+		font-weight: bold; 
+		width: 350px; 
+		padding-right: 30px; 
+		position: relative;  
+		top: 20px; 
+		text-align: right; 
+		font-size: 30px;
+		 
+		  transform:rotate(90deg);
+		  left: 200px; 
+		  top: 270px; 
+	}
 
-.aboutinfobox:hover {
-	box-shadow: -2px 2px 3px #888888; 
-}
-
-p.aboutinfo {
-	position: center; 
-	font-size: 18px; 
-	font-weight: normal; 
-	text-align: justify; 
-	text-justify: inter-word;
-	padding: 20px; 
-}
+	strong {
+		color: $prime-red; 
+	}
 
 
-.howto {
-	color: $prime-red; 
-	font-weight: bold;
-	width: 350px; 
-	padding-right: 20px; 
-	position: relative; 
-	top: 20px; 
-	text-align: right;
-	font-size: 30px; 
-	  transform:rotate(270deg);
-	  right: 200px;
-	  top: 250px; 
+	.aboutinfobox {
+		width: 350px; 
+		height: 420px; 
+		background-color: white;
+	}
 
-}
+	.aboutinfobox:hover {
+		box-shadow: -2px 2px 3px #888888; 
+	}
 
-.rulesbox {
-	width: 350px; 
-	height: 420px;
-	background-color: white;
-	position: relative; 
-	z-index: 0; 
+	p.aboutinfo {
+		position: center; 
+		font-size: 18px; 
+		font-weight: normal; 
+		text-align: justify; 
+		text-justify: inter-word;
+		padding: 20px; 
+	}
 
-}
 
-.rulesbox:hover {
-	box-shadow: 2px 2px 3px #888888; 
-}
+	.howto {
+		color: $prime-red; 
+		font-weight: bold;
+		width: 350px; 
+		padding-right: 20px; 
+		position: relative; 
+		top: 20px; 
+		text-align: right;
+		font-size: 30px; 
+		  transform:rotate(270deg);
+		  right: 200px;
+		  top: 250px; 
 
-.rulesinfo {
-	font-size: 17px; 
-	font-weight: normal; 
-	text-align: justify; 
-	text-justify: inter-word;
-	padding: 30px; 
+	}
 
-}
+	.rulesbox {
+		width: 350px; 
+		height: 420px;
+		background-color: white;
+		position: relative; 
+		z-index: 0; 
 
-// .abouttopleft {
-// 	display: block; 
-// 	width: 170px; 
-// 	height: 170px; 
-// 	background-image: url("breakfast1.svg");
-// 	position: fixed;  
-// 	background-size: 170px 170px; 
-// 	left: 138px; 
-// 	top: 30px;
-// 	padding: 0px;  
-// 	z-index: 2; 
-// }
+	}
 
-.abouttopleft {
-	position: absolute; 
-	left: -90px; 
-	top: -10px; 
-	z-index: 2; 
+	.rulesbox:hover {
+		box-shadow: 2px 2px 3px #888888; 
+	}
 
-}
+	.rulesinfo {
+		font-size: 17px; 
+		font-weight: normal; 
+		text-align: justify; 
+		text-justify: inter-word;
+		padding: 30px; 
 
-a.abouttopleft1 {
-	display: block; 
-	background-image: url("breakfast1.svg");
-	background-size: 165px 165px; 
-	width: 165px; 
-	height: 165px; 
-}
+	}
 
-.aboutright {
-	position: absolute; 
-	right: -90px; 
-	bottom: -100px;
-	z-index: 1; 
-}
+	// .abouttopleft {
+	// 	display: block; 
+	// 	width: 170px; 
+	// 	height: 170px; 
+	// 	background-image: url("breakfast1.svg");
+	// 	position: fixed;  
+	// 	background-size: 170px 170px; 
+	// 	left: 138px; 
+	// 	top: 30px;
+	// 	padding: 0px;  
+	// 	z-index: 2; 
+	// }
 
-a.aboutright1 {
-	display: block; 
-	background-image: url("breakfast2.svg"); 
-	background-size: 165px 165px; 
-	width: 165px; 
-	height: 165px; 
-}
+	.abouttopleft {
+		position: absolute; 
+		left: -90px; 
+		top: -10px; 
+		z-index: 2; 
 
-// .righttop {
-// 	position: absolute; 
-// 	right: -90px; 
-// 	top: -8px; 
-// }
+	}
 
-// a.showdown2 {
-// 	display: block; 
-// 	background-image: url("finalshow2.svg"); 
-// 	width: 380px; 
-// 	height: 365px; 
-// 	opacity: 0.9;  
+	a#abouttopleft1 {
+		display: block; 
+		background-image: url("breakfast1.svg");
+		background-size: 165px 165px; 
+		width: 165px; 
+		height: 165px; 
+	}
 
-// }
+	.aboutright {
+		position: absolute; 
+		right: -90px; 
+		bottom: -100px;
+		z-index: 1; 
+	}
 
-.form {
-	width: 342px; 
-	height: 100%; 
-}
+	a#aboutright1 {
+		display: block; 
+		background-image: url("breakfast2.svg"); 
+		background-size: 165px 165px; 
+		width: 165px; 
+		height: 165px; 
+	}
+
+	// .righttop {
+	// 	position: absolute; 
+	// 	right: -90px; 
+	// 	top: -8px; 
+	// }
+
+	// a.showdown2 {
+	// 	display: block; 
+	// 	background-image: url("finalshow2.svg"); 
+	// 	width: 380px; 
+	// 	height: 365px; 
+	// 	opacity: 0.9;  
+
+	// }
+
+	.form {
+		width: 342px; 
+		height: 100%; 
+    }
+
+ }
