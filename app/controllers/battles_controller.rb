@@ -74,9 +74,6 @@ class BattlesController < ApplicationController
   end
 
   def nominate
-
- puts "params #{params}"
-
     begin
       user = current_user
       raise error if !user
@@ -88,7 +85,7 @@ class BattlesController < ApplicationController
       render json: @battle, include: {
         dish: { only: [ :cuisine, :name ] },
         trash_talks: { include: {user: { only: :name } }, only: [ :created_at, :user, :trash ] },
-        restaurants: { include: {votes: { include: { user: { only: :name } }, only: [ :created_at, :comment, :user ] } } }
+        restaurants: { include: {votes: { include: { user: { only: [:id, :name]} }, only: [ :created_at, :comment, :user ] } } }
         },
         status: :ok
     rescue

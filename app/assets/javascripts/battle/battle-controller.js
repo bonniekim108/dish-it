@@ -4,21 +4,21 @@
   angular.module('app')
 
   .controller('BattleController', [
+    '$rootScope',
     'BattleService',
-    function(BattleService) {
+    function($rootScope, BattleService) {
       var vm = this;
 
       vm.curBattle = BattleService.curBattle;
-      vm.displayMode = BattleService.displayMode; 
+      vm.displayMode = BattleService.getDisplayMode(); 
+
+      // demo mode code
+      $rootScope.$on('demo-mode-changed', function () {
+        vm.displayMode = BattleService.getDisplayMode();
+      });
 
       vm.userCanVote = function () {
         return BattleService.userCanVote();
-      };
-
-      vm.upvote = function (restId, comment) {
-        BattleService.upvote(restId, comment).then(function(battle) {
-          vm.curBattle = battle;
-        });
       };
 
       vm.displayLimit = function () {
@@ -27,6 +27,19 @@
         } else {
           return 8;
         }
+      };
+
+      vm.upvote = function (rest) {
+        vm.pendingUpvote = rest;    
+        vm.comment = '';
+        $('#upvote-modal').foundation('reveal', 'open');
+      };
+
+      vm.finalizeUpvote = function () {
+        $('#upvote-modal').foundation('reveal', 'close');
+        BattleService.upvote(vm.pendingUpvote.id, vm.comment).then(function(battle) {
+          vm.curBattle = battle;
+        });
       };
 
     }

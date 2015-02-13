@@ -1,4 +1,4 @@
-<h1>Battle Page</h1>
+<h1>Battle Page </h1>
 
 <div class="row">
 
@@ -6,27 +6,18 @@
 
   <div style="margin: 15px auto; width:400px; text-align: center;">
     <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-  
   </div>
-
-<!--
-  <div ng-if="vm.displayMode == 'winner'" style="margin: 10px" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
-    <h1>WINNER</h1>
-    <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=400><br>
-    <strong><a href="#">{{restaurant.name}}</a></strong>
-  </div>
--->
 
   <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
     <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
       <div class="small-3 large-3 columns" style="width:200px; text-align: center; border: 1px solid #CCC">
         <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" style="float:left"></a><br>
         <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
         
         <!-- display votes to test? -->
         <p>{{restaurant.votes.length}}</p>
-      
+        
       </div>
     </div>
   </div>
@@ -36,18 +27,16 @@
       <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
         <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
         <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
       </div>
     </div>
   </div>
+</div>  <!-- row -->
 
-</div>
-
-<!-- vm.curBattle.restaurants.length -->
-<!--
-  {{vm.curBattle.restaurants.length}} -->
-    <!-- <a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-    <div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-      <p ng-if="vote.comment.length > 0">
-      <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-    </div>  -->
+  <!-- vote modal -->
+  <div id="upvote-modal" class="reveal-modal small" data-reveal>
+    <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
+    <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
+    <button ng-click="vm.finalizeUpvote()">Vote</button>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
