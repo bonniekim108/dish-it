@@ -3,16 +3,7 @@
 <div class="row">
   <div style="margin: 15px auto; width:400px; text-align: center;">
     <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-  
   </div>
-
-<!--
-  <div ng-if="vm.displayMode == 'winner'" style="margin: 10px" ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 1">
-    <h1>WINNER</h1>
-    <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=400><br>
-    <strong><a href="#">{{restaurant.name}}</a></strong>
-  </div>
--->
 
   <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
     <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
@@ -23,7 +14,7 @@
         
         <!-- display votes to test? -->
         <p>{{restaurant.votes.length}}</p>
-      
+        
       </div>
     </div>
   </div>
@@ -37,14 +28,5 @@
       </div>
     </div>
   </div>
-
 </div>
 
-<!-- vm.curBattle.restaurants.length -->
-<!--
-  {{vm.curBattle.restaurants.length}} -->
-    <!-- <a href="#" ng-click="showDetails = ! showDetails" style="font-size:16px;padding:0;font-weight:bold;">Show Comments</a>
-    <div ng-repeat="vote in restaurant.votes" ng-show="showDetails">
-      <p ng-if="vote.comment.length > 0">
-      <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}<br>{{vote.comment}}</p>
-    </div>  -->
