@@ -22,7 +22,6 @@
 		// load current battle
 		getSortedBattle(year, month).then(function(battle) {
 			service.curBattle = battle;
-			// service.displayMode = service.getDisplayMode();
 			curDef.resolve();
 		});
 
@@ -77,7 +76,7 @@
 		};
 
 		service.userCanVote = function () {
-			switch (service.displayMode) {
+			switch (service.getDisplayMode()) {
 				case 'winner', 'future':
 					return false;
 				case 'nominating':
