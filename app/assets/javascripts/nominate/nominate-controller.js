@@ -18,8 +18,8 @@
         });
       };
 
-      vm.nominate = function (restId, comment) {
-        BattleService.upvote(restId, comment);
+      vm.nominate = function (yelpRest) {
+
       };
 
     }

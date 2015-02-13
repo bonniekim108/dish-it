@@ -72,6 +72,29 @@
 			}
 		};
 
+		service.nominate = function (yelpRest) {
+			var def = $q.defer();
+			var config = {
+				url: '/api/battles/upvote',
+				method: 'POST',
+				data: {
+					vote: {
+						restaurant_id: restId,
+						comment: comment
+					}
+				}
+			};
+			$http(config).success(function (battle) {
+				var sorted = sortByVotes(battle);
+				service.curBattle.restaurants = sorted;
+				def.resolve(service.curBattle);
+			});
+			return def.promise;
+//	params.require(:nominate).permit(:name, :location, :phone, :yelp_rating_photo_url, :yelp_photo_url, :comment)
+
+		};
+
+
 
 		/*  Private Functions  */
 
