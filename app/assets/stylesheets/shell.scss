@@ -40,15 +40,33 @@ body {
 
 a.logo {
   display: inline-block;
-  width: 130px;
+  width: 170px;
   height: 90px;
   background: url(dishit5.svg); 
   background-size: 130px 90px;
+  background-repeat: no-repeat;
   margin-right: auto; 
   margin-left: auto; 
   margin-top: 5px; 
   padding: 0;
-
+  overflow: visible;
+  div {
+    margin-top: 50px;
+    margin-left: 123px;
+    z-index: 5;
+    p {
+      font-size: 9px;
+      color: grey;
+      line-height: 10px;
+      width: 100px;
+      margin: 0;
+      text-align: center;
+      span {
+        display: inline-block;
+        width: 25px;
+      }
+    }
+  }
 }
 
 footer {
@@ -223,4 +241,26 @@ a.yelp {
 
 .login {
   padding: 0; 
+}
+
+#demo-mode-wrap {
+  position: absolute;
+  height: 15px;
+  top: 8px;
+  left: 30px;
+  font-size: 8px;
+  font-weight: light;
+  color: $prime-blue;
+  a {
+    font-size: 8px;
+    font-weight: light;
+    color: white;
+    &.active {
+      color: $prime-red;
+      cursor: default;
+    }
+  }
+  ul {
+    margin-left: 0px;
+  }
 }

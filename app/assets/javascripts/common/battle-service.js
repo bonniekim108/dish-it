@@ -3,7 +3,7 @@
 
 	angular.module('app')
 
-	.factory('BattleService', ['$q', '$http', 'BattleResource', 'UserService', function($q, $http, BattleResource, UserService){
+	.factory('BattleService', ['$q', '$http', '$rootScope', 'BattleResource', 'UserService', function($q, $http, $rootScope, BattleResource, UserService){
 
 		var service = {};
 
@@ -22,7 +22,6 @@
 		// load current battle
 		getSortedBattle(year, month).then(function(battle) {
 			service.curBattle = battle;
-			service.displayMode = getDisplayMode();
 			curDef.resolve();
 		});
 
@@ -36,6 +35,25 @@
 				winDef.resolve();
 			}
 		);
+
+    $rootScope.demoMode = null;  // demo mode code
+
+		service.getDisplayMode = function () {
+			if ($rootScope.demoMode) return $rootScope.demoMode;  // demo mode code
+			var diff = moment(service.curBattle.year_month, 'YYYY-MM-DD').date() - moment().date();
+			switch (true) {
+				case diff < 0:
+					return 'winner';
+				case diff < 7:
+					return 'final-four';
+				case diff < 14:
+					return 'great-eight';
+				case diff < 31:
+					return 'nominating';
+				default:
+					return 'future';
+			}
+		};
 
 		service.upvote = function (restId, comment) {
 			var def = $q.defer();
@@ -58,7 +76,7 @@
 		};
 
 		service.userCanVote = function () {
-			switch (service.displayMode) {
+			switch (service.getDisplayMode()) {
 				case 'winner', 'future':
 					return false;
 				case 'nominating':
@@ -129,22 +147,6 @@
 				deferred.resolve(newBat);
 			});
 			return deferred.promise;
-		}
-
-		function getDisplayMode () {
-			var diff = moment(service.curBattle.year_month, 'YYYY-MM-DD').date() - moment().date();
-			switch (true) {
-				case diff < 0:
-					return 'winner';
-				case diff < 7:
-					return 'final-four';
-				case diff < 14:
-					return 'great-eight';
-				case diff < 31:
-					return 'nominating';
-				default:
-					return 'future';
-			}
 		}
 
 		return service;

@@ -21,13 +21,12 @@
       </div>
     </div>
 
-    <div ng-if="vm.displayMode == 'final-four'">
-      <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
-        <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
-          <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
-          <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-          <button ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
-        </div>
+  <div ng-if="vm.displayMode == 'final-four'">
+    <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
+      <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
+        <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
+        <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
       </div>
     </div>
   </div>
