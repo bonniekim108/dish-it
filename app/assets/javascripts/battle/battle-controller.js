@@ -11,18 +11,10 @@
       vm.curBattle = BattleService.curBattle;
       vm.displayMode = BattleService.displayMode; 
 
-
-console.log(vm.curBattle)
-
       vm.userCanVote = function () {
         return BattleService.userCanVote();
       };
 
-      vm.upvote = function (restId, comment) {
-        BattleService.upvote(restId, comment).then(function(battle) {
-          vm.curBattle = battle;
-        });
-      };
 
       vm.displayLimit = function () {
         if (vm.displayMode == 'nominating') {
@@ -30,6 +22,19 @@ console.log(vm.curBattle)
         } else {
           return 8;
         }
+      };
+
+      vm.upvote = function (rest) {
+        vm.pendingUpvote = rest;    
+        vm.comment = '';
+        $('#upvote-modal').foundation('reveal', 'open');
+      };
+
+      vm.finalizeUpvote = function () {
+        $('#upvote-modal').foundation('reveal', 'close');
+        BattleService.upvote(vm.pendingUpvote.id, vm.comment).then(function(battle) {
+          vm.curBattle = battle;
+        });
       };
 
     }

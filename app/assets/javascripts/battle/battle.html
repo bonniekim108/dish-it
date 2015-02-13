@@ -10,7 +10,7 @@
       <div class="small-3 large-3 columns" style="width:200px; text-align: center; border: 1px solid #CCC">
         <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" style="float:left"></a><br>
         <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
         
         <!-- display votes to test? -->
         <p>{{restaurant.votes.length}}</p>
@@ -24,9 +24,16 @@
       <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
         <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
         <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        <button ng-click="vm.upvote(restaurant)" class="button">Vote</button>
       </div>
     </div>
   </div>
-</div>
+</div>  <!-- row -->
 
+  <!-- vote modal -->
+  <div id="upvote-modal" class="reveal-modal small" data-reveal>
+    <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
+    <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
+    <button ng-click="vm.finalizeUpvote()">Vote</button>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
