@@ -1,30 +1,27 @@
-<div class="row">
+<div id="nominate" class="row text-center battlepage">
 
-  <div style="margin: 15px auto; width:400px; text-align: center;">
-    <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-  </div>
-
-  <!-- <div id="battle_page_container"> -->
-  <div class="row battlepage">
+<!-- 
     <div class="style">
       <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-    </div>
+    </div> -->
 
-    <div ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-      <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
-        <div class="small-3 large-3 columns" style="width:200px; text-align: center; border: 1px solid #CCC">
-          <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" style="float:left"></a><br>
-          <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
-          
-          <!-- display votes to test? -->
-          <p>{{restaurant.votes.length}}</p>
-          
-        </div>
+    <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+      <ul class="large-block-grid-4 medium-block-grid-3 text-center">
+        <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
+          <div class="battle-restaurants">
+        <a ui-sref="/#/restaurant/{{restaurant.id}}"><img src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+        <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+        
+        <img src="{{restaurant.yelp_rating_photo_url}}">
+        <!-- display votes to test? -->
+        <p>{{restaurant.votes.length}}</p>
       </div>
+        </li>
+      </ul>
     </div>
 
-    <div ng-if="vm.displayMode == 'final-four'">
+<!--     <div ng-if="vm.displayMode == 'final-four'">
       <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
         <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
           <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
@@ -32,9 +29,8 @@
           <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
-  </div>
 
   <!-- vote modal -->
   <div id="upvote-modal" class="reveal-modal small" data-reveal>
@@ -45,3 +41,4 @@
   </div>
 
 
+</div>
