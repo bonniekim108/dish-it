@@ -16,10 +16,10 @@
       var eom = moment().endOf("month");
       $interval(function () {
         var diff = moment.duration(eom.diff(moment()));
-        vm.countdown.d = diff.days();
-        vm.countdown.h = diff.hours();
-        vm.countdown.m = diff.minutes();
-        vm.countdown.s = diff.seconds();
+        vm.countdown.d = padToTwo(diff.days());
+        vm.countdown.h = padToTwo(diff.hours());
+        vm.countdown.m = padToTwo(diff.minutes());
+        vm.countdown.s = padToTwo(diff.seconds());
       }, 1000);
 
       vm.login = function() {
