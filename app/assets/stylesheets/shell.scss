@@ -55,24 +55,47 @@ a.logo {
   margin-top: 5px; 
   padding: 0;
   overflow: visible;
-  div {
-    margin-top: 50px;
-    margin-left: 123px;
-    z-index: 5;
-    p {
-      font-size: 9px;
-      color: grey;
-      line-height: 10px;
-      width: 100px;
-      margin: 0;
-      text-align: center;
-      span {
-        display: inline-block;
-        width: 25px;
-      }
-    }
-  }
-}
+
+    div.lefttime {
+      margin-top: 50px;
+      margin-left: -75px;
+      display: inline-block; 
+      float: left; 
+        p {
+          font-family: futura; 
+          font-size: 12px;
+          color: $prime-red;
+          line-height: 13px;
+          width: 100px;
+          margin: 0;
+          text-align: center;
+            span {
+               display: inline-block; 
+               width: 30px;
+             }
+           }
+         }
+
+    div.righttime {
+        margin-top: 50px;
+        margin-right: -33px;
+        display: inline-block; 
+        float: right; 
+          p {
+            font-family: futura; 
+            font-size: 12px;
+            color: $prime-blue;
+            line-height: 13px;
+            width: 100px;
+            margin: 0;
+            text-align: center;
+           span {
+              display: inline-block; 
+              width: 30px;
+            }
+          }
+        }
+} 
 
 footer {
   background-color: $main-black; 
@@ -181,6 +204,7 @@ header {
 
 #menu-section {
   display: inline-block;
+  color: #EFEFEF; 
   position: absolute;
   top: 8px;
   left: 30px;
@@ -212,12 +236,13 @@ header {
     height: 15px;
     padding: 0;
     font-size: 14px;
-    color: white;
+    color: #EFEFEF;
   }
   span {
     display: inline-block;
     margin: 3px 10px 3px 15px;
   }
+
   button.signin {
     background: transparent;
     font-size: 14px;
@@ -269,4 +294,3 @@ a.yelp {
     margin-left: 0px;
   }
 }
-

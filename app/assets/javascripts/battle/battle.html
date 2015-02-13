@@ -9,19 +9,21 @@
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
           <div class="battle-restaurants">
-        <a ui-sref="/#/restaurant/{{restaurant.id}}"><img src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
-        <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
-        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
-        
-        <img src="{{restaurant.yelp_rating_photo_url}}">
-        <!-- display votes to test? -->
-        <p>{{restaurant.votes.length}}</p>
-      </div>
+            <a ui-sref="/#/restaurant/{{restaurant.id}}"><img src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+            <strong><a href="/#/restaurant/{{restaurant.id}}">{{restaurant.name}}</a></strong><br />
+            <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
+
+            <img src="{{restaurant.yelp_rating_photo_url}}">
+            <!-- display votes to test? -->
+            <p>{{restaurant.votes.length}}</p>
+
+          </div>
         </li>
       </ul>
     </div>
 
-<!--     <div ng-if="vm.displayMode == 'final-four'">
+
+ <!--    <div ng-if="vm.displayMode == 'final-four'">
       <div ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
         <div class="large-6 columns" style="margin: 15px auto; width:390px; text-align: center; border: 1px solid #CCC">
           <a href="/#/restaurant/{{restaurant.id}}"><img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=200></a><br>
@@ -32,13 +34,14 @@
     </div> -->
 
 
-  <!-- vote modal -->
-  <div id="upvote-modal" class="reveal-modal small" data-reveal>
-    <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
-    <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
-    <button ng-click="vm.finalizeUpvote()">Vote</button>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
-
+    <!-- vote modal -->
+    <div id="upvote-modal" class="reveal-modal small" data-reveal>
+      <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
+      <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
+      <button ng-click="vm.finalizeUpvote()">Vote</button>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
 
 </div>
+
+
