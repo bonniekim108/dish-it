@@ -1,1 +1,11 @@
 @import 'colors';
+
+#upvote-modal {
+  textarea {
+    font-size: 20px;
+  }
+  .upvote-title {
+    color: $prime-blue;
+    float: left;
+  }
+}
