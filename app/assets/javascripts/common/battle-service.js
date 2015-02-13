@@ -121,7 +121,7 @@
 		function userVoted (numRestToCheck) {
 			if (!UserService.user) return true;
 			var uId = UserService.user.id;
-			var n = n || service.curBattle.restaurants.length;
+			var n = numRestToCheck || service.curBattle.restaurants.length;
 			var findIndex;
 			for (var i = 0; i < n; i++) {
 				findIndex = _.findIndex(service.curBattle.restaurants[i].votes, function(v) { return v.user.id == uId; });
