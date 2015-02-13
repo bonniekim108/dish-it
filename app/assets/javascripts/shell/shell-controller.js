@@ -50,9 +50,9 @@
       // demo mode code
       vm.demoMode = null;
       vm.setDemoMode = function (mode) {
-        $rootScope.demoMode = vm.demoMode = mode;
+        $rootScope.demoMode = mode;
+        vm.demoMode = mode;
         $rootScope.$emit('demo-mode-changed');
-        $state.reload();
       };
       vm.showDemo = function () {
         return ($state.current.name === 'shell.battle');
