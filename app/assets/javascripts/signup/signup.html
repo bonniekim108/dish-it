@@ -8,9 +8,9 @@
 			       <form name="signupForm" ng-submit="vm.submitForm(signupForm.$valid)" novalidate>
 
 					<label for="name">n a m e</label>
-					<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder=" f i r s t & l a s t " required />
+					<input type="text" name="name" ng-change="vm.errormsg=''" ng-model="vm.signup.name" class="ng-pristine ng-invalid" placeholder=" f i r s t &nbsp; & &nbsp; l a s t " required />
 						
-					<label for="email">e m a i l </label>
+					<label for="email"> @ a d d r e s s </label>
 					<input type="email" name="email" ng-change="vm.errormsg=''" ng-model="vm.signup.email" class="ng-pristine ng-invalid" placeholder=" e m a i l " ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
 						
 				    

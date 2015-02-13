@@ -24,6 +24,7 @@ header {
   border-bottom: solid $prime-blue;
   border-bottom-width: 5px; 
   z-index: 5;
+
   a.active {
     display: none; 
   }
@@ -31,6 +32,10 @@ header {
 
   toggle-topbar menu-icon {
   height: 30%;
+}
+
+p strong {
+  color: $prime-blue; 
 }
 
 body {
@@ -73,7 +78,7 @@ footer {
   bottom: 0;
   box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
   overflow: scroll; 
-  padding-top: 20px; 
+  padding-top: 10px; 
   padding-bottom: 50px; 
 }
 
@@ -165,7 +170,7 @@ header {
     margin-right: 20px;
   }
   a.active {
-    color: $prime-red;
+    color: $prime-blue;
     display: inline-block;
   }
 }
@@ -224,3 +229,4 @@ a.yelp {
 .login {
   padding: 0; 
 }
+

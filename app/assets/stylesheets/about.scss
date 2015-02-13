@@ -37,7 +37,7 @@ height: 100%;
 
 	.aboutinfobox {
 		width: 350px; 
-		height: 420px; 
+		height: 440px; 
 		background-color: white;
 	}
 
@@ -72,7 +72,7 @@ height: 100%;
 
 	.rulesbox {
 		width: 350px; 
-		height: 420px;
+		height: 440px;
 		background-color: white;
 		position: relative; 
 		z-index: 0; 
@@ -92,23 +92,10 @@ height: 100%;
 
 	}
 
-	// .abouttopleft {
-	// 	display: block; 
-	// 	width: 170px; 
-	// 	height: 170px; 
-	// 	background-image: url("breakfast1.svg");
-	// 	position: fixed;  
-	// 	background-size: 170px 170px; 
-	// 	left: 138px; 
-	// 	top: 30px;
-	// 	padding: 0px;  
-	// 	z-index: 2; 
-	// }
-
 	.abouttopleft {
 		position: absolute; 
 		left: -90px; 
-		top: -10px; 
+		top: -15px; 
 		z-index: 2; 
 
 	}
@@ -135,21 +122,6 @@ height: 100%;
 		width: 165px; 
 		height: 165px; 
 	}
-
-	// .righttop {
-	// 	position: absolute; 
-	// 	right: -90px; 
-	// 	top: -8px; 
-	// }
-
-	// a.showdown2 {
-	// 	display: block; 
-	// 	background-image: url("finalshow2.svg"); 
-	// 	width: 380px; 
-	// 	height: 365px; 
-	// 	opacity: 0.9;  
-
-	// }
 
 	.form {
 		width: 342px; 
