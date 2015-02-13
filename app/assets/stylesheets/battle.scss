@@ -1,5 +1,6 @@
 @import 'colors';
 
+
 #upvote-modal {
   textarea {
     font-size: 20px;
@@ -8,4 +9,30 @@
     color: $prime-blue;
     float: left;
   }
+}
+
+// #battle_page_container {
+
+.battlepage {
+
+  display: block; 
+  width: 865px;
+  height: 850px;
+  background-color: white;
+  // background-position: center;
+  // position: relative;
+  // top: 30px;
+  margin-right: auto; 
+  margin-left: auto; 
+
+
+  .style {
+
+    margin: 15px auto; 
+    width:400px; 
+    text-align: center;
+    
+  } 
+
+
 }
