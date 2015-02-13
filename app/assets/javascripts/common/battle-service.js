@@ -75,11 +75,15 @@
 		service.nominate = function (yelpRest, comment) {
 			var def = $q.defer();
 			var config = {
-				url: '/api/battles/upvote',
+				url: '/api/battles/nominate',
 				method: 'POST',
 				data: {
-					vote: {
-						restaurant_id: restId,
+					nominate: {
+						name: yelpRest.name,
+						location: yelpRest.location.city,
+						phone: yelpRest.display_phone,
+						yelp_rating_photo_url: yelpRest.rating_img_url,
+						yelp_photo_url: yelpRest.image_url,
 						comment: comment
 					}
 				}
@@ -93,8 +97,6 @@
 //	params.require(:nominate).permit(:name, :location, :phone, :yelp_rating_photo_url, :yelp_photo_url, :comment)
 
 		};
-
-
 
 		/*  Private Functions  */
 

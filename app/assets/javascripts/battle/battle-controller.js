@@ -11,6 +11,9 @@
       vm.curBattle = BattleService.curBattle;
       vm.displayMode = BattleService.displayMode; 
 
+
+console.log(vm.curBattle)
+
       vm.userCanVote = function () {
         return BattleService.userCanVote();
       };

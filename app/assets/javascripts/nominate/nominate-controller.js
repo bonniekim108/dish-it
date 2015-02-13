@@ -4,8 +4,8 @@
   angular.module('app')
 
   .controller('NominateController', [
-    'YelpService', 'BattleService',
-    function(YelpService, BattleService) {
+    'YelpService', 'BattleService','$state',
+    function(YelpService, BattleService, $state) {
       var vm = this;
 
       vm.BattleService = BattleService;
@@ -26,11 +26,11 @@
 
       vm.finalizeNom = function () {
         $('#nom-modal').foundation('reveal', 'close');
-console.log('nominated: ', vm.pendingNom);
-console.log('comment: ', vm.comment);
+// console.log('nominated: ', vm.pendingNom);
+// console.log('comment: ', vm.comment);
         // the restaurant data is in vm.pendingNom & the comment is in vm.comment
         BattleService.nominate(vm.pendingNom, vm.comment).then(function() {
-
+          $state.go('shell.battle');
         });
       };
 
