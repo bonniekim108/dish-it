@@ -17,7 +17,7 @@
       <a ng-click="shell.logout()">logout</a>
     </div>
 
-    <div ng-hide="shell.user">
+  <div ng-hide="shell.user">
       <form name="loginForm" ng-submit="shell.login()" novalidate>
         <input type="email" name="email" class="form-control" ng-model="shell.email" placeholder="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
         <input type="password" name="password" class="form-control" ng-model="shell.password" ng-minlength="4" placeholder="password" required />
