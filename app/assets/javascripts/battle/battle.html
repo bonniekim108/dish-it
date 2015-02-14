@@ -1,16 +1,20 @@
 <div id="nominate" class="row text-center battlepage">
 
-<br>
+
     <div class="style">
       <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-      <a class="nominate-link right" ui-sref="shell.nominate" ng-show="vm.displayMode=='nominating'">Nominate your own!</a>
+
+      <button ng-show="vm.displayMode=='nominating'" ui-sref="shell.nominate" class="button right">Nominate Restaurant</button>
+
     </div> 
 
     <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
           <div class="battle-restaurants">
+
             <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+
             <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br />
             <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
 
@@ -27,7 +31,9 @@
       <ul class="large-block-grid-2 medium-block-grid-2 text-center">
         <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
           <div class="battle-restaurants">
+
             <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image-2"></a><br>
+
             <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br />
             <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
             <img ng-src="{{restaurant.yelp_rating_photo_url}}">
