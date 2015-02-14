@@ -7,7 +7,7 @@
       <button ng-show="vm.displayMode=='nominating'" ui-sref="shell.nominate" class="button right">Nominate Restaurant</button>
 
     </div> 
-
+    the battle 
     <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
