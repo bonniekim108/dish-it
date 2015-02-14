@@ -27,7 +27,7 @@
 
     <div class="row">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
-        <li ng-repeat="r in vm.searchResults">
+        <li ng-repeat="r in vm.searchResults" ng-animate class="nom-animate">
           <div class="panel callout" ng-click="vm.nominate(r)" ng-mouseenter="vm.hovering[$index]=true" ng-mouseleave="vm.hovering[$index]=false">
             <h4>{{r.name}}</h4>
             <h5 class="subheader" ng-show="vm.hovering[{{$index}}]">NOMINATE !!!</h5>
