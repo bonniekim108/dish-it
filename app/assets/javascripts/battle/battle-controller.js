@@ -6,7 +6,8 @@
   .controller('BattleController', [
     '$rootScope',
     'BattleService',
-    function($rootScope, BattleService) {
+    '$state',
+    function($rootScope, BattleService, $state) {
       var vm = this;
 
       vm.curBattle = BattleService.curBattle;
