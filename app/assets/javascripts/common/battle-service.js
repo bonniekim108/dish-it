@@ -100,8 +100,8 @@
 						name: yelpRest.name,
 						location: yelpRest.location.city,
 						phone: yelpRest.display_phone,
-						yelp_rating_photo_url: yelpRest.rating_img_url.substr(7),
-						yelp_photo_url: yelpRest.image_url.substr(7),
+						yelp_rating_photo_url: yelpRest.rating_img_url.substr(5),
+						yelp_photo_url: yelpRest.image_url.substr(5),
 						comment: comment
 					}
 				}
