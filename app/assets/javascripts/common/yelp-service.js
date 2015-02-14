@@ -25,7 +25,7 @@
       }
       pending = $q.defer();
       var method = 'GET';
-      var url = 'http://api.yelp.com/v2/search';
+      var url = 'api.yelp.com/v2/search';
       var params = {
         callback: 'angular.callbacks._' + genCb(),
         category_filter: 'restaurants',
