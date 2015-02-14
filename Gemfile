@@ -44,7 +44,7 @@ gem 'foundation-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'faker', :require => false
+gem 'faker', "~> 1.4.3"
 
 group :development, :test do
 

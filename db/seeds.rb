@@ -19,16 +19,16 @@ CuisineLookup.create(name: 'Other')
 
 
 #--- Load users table
-200.times do |n|
-  user = User.new(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: 'abc123',
-    password_confirmation: 'abc123',
-    county: (n % 2) == 1 ? County.first : County.last
-  )
-  user.save
-end
+# 200.times do |n|
+#   user = User.new(
+#     name: Faker::Name.name,
+#     email: Faker::Internet.email,
+#     password: 'abc123',
+#     password_confirmation: 'abc123',
+#     county: (n % 2) == 1 ? County.first : County.last
+#   )
+#   user.save
+# end
 user = User.new(name: "Jim Clark", email: "email@jim-clark.com", password: "abc123", password_confirmation: "abc123")
 user.county = County.first
 user.save
@@ -90,39 +90,39 @@ end
 
 #--- Previous battles
 
-4.times do |n|
-  battleDate = (n + 1).months.ago.end_of_month
-  b = Battle.new(year_month: battleDate)
-  p = pot.sample
-  b.dish = Dish.new(name: p.name, cuisine: p.cuisine)
-  if n != 1  # two battles ago will not have any restaurants or trash_talks for testing purposes
-    num_rests = rand(1..50)
-    num_rests.times do
-      r = Restaurant.new(name: Faker::App.name, location: Faker::Address.city, phone: Faker::PhoneNumber.phone_number)
-      numVotes = rand(1..20)
-      usersVoted = []
-      numVotes.times do
-        v = Vote.new()
-        hasComment = [true, false].sample
-        v.comment = Faker::Lorem.sentence if hasComment
-        u = users.sample
-        until !usersVoted.include?(u.id)
-          u = users.sample
-        end
-        usersVoted << u.id
-        v.user = u
-        r.votes << v
-      end
-      b.restaurants << r
-    end
-    num_trash = rand(1..5)
-    num_trash.times do
-      t = TrashTalk.new(trash: Faker::Lorem.sentence, user: users.sample)
-      b.trash_talks << t
-    end
-  end
-  b.save
-end
+# 4.times do |n|
+#   battleDate = (n + 1).months.ago.end_of_month
+#   b = Battle.new(year_month: battleDate)
+#   p = pot.sample
+#   b.dish = Dish.new(name: p.name, cuisine: p.cuisine)
+#   if n != 1  # two battles ago will not have any restaurants or trash_talks for testing purposes
+#     num_rests = rand(1..50)
+#     num_rests.times do
+#       r = Restaurant.new(name: Faker::App.name, location: Faker::Address.city, phone: Faker::PhoneNumber.phone_number)
+#       numVotes = rand(1..20)
+#       usersVoted = []
+#       numVotes.times do
+#         v = Vote.new()
+#         hasComment = [true, false].sample
+#         v.comment = Faker::Lorem.sentence if hasComment
+#         u = users.sample
+#         until !usersVoted.include?(u.id)
+#           u = users.sample
+#         end
+#         usersVoted << u.id
+#         v.user = u
+#         r.votes << v
+#       end
+#       b.restaurants << r
+#     end
+#     num_trash = rand(1..5)
+#     num_trash.times do
+#       t = TrashTalk.new(trash: Faker::Lorem.sentence, user: users.sample)
+#       b.trash_talks << t
+#     end
+#   end
+#   b.save
+# end
 
 
 #--- Current month's battle
@@ -131,30 +131,30 @@ battleDate = Date.today.end_of_month
 b = Battle.new(year_month: battleDate)
 p = pot.sample
 b.dish = Dish.new(name: p.name, cuisine: p.cuisine)
-  num_rests = rand(1..20)
-  num_rests.times do
-    r = Restaurant.new(name: Faker::App.name, location: Faker::Address.city, phone: Faker::PhoneNumber.phone_number)
-    numVotes = rand(1..15)
-    usersVoted = []
-    numVotes.times do
-      v = Vote.new()
-      hasComment = [true, false].sample
-      v.comment = Faker::Lorem.sentence if hasComment
-      u = users.sample
-      until !usersVoted.include?(u.id)
-        u = users.sample
-      end
-      usersVoted << u.id
-      v.user = u
-      r.votes << v
-    end
-    b.restaurants << r
-  end
-  num_trash = rand(1..5)
-  num_trash.times do
-    t = TrashTalk.new(trash: Faker::Lorem.sentence, user: users.sample)
-    b.trash_talks << t
-  end
+  # num_rests = rand(1..20)
+  # num_rests.times do
+  #   r = Restaurant.new(name: Faker::App.name, location: Faker::Address.city, phone: Faker::PhoneNumber.phone_number)
+  #   numVotes = rand(1..15)
+  #   usersVoted = []
+  #   numVotes.times do
+  #     v = Vote.new()
+  #     hasComment = [true, false].sample
+  #     v.comment = Faker::Lorem.sentence if hasComment
+  #     u = users.sample
+  #     until !usersVoted.include?(u.id)
+  #       u = users.sample
+  #     end
+  #     usersVoted << u.id
+  #     v.user = u
+  #     r.votes << v
+  #   end
+  #   b.restaurants << r
+  # end
+  # num_trash = rand(1..5)
+  # num_trash.times do
+  #   t = TrashTalk.new(trash: Faker::Lorem.sentence, user: users.sample)
+  #   b.trash_talks << t
+  # end
 b.save
 
 
