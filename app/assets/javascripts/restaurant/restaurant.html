@@ -6,7 +6,7 @@
   <div class="small-6 large-9 columns">
     <h1>{{vm.restaurant.name}}</h1>
     <p>{{vm.restaurant.location}}<br>
-       {{vm.restaurant.phone}}</p>
+       {{vm.restaurant.phone.substr(3)}}</p>
     <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
   </div>
 </div>
