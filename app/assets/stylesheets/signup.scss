@@ -1,5 +1,9 @@
 @import 'colors';
 
+.signuppage {
+	padding: 0; 
+}
+
 p.signup { 
 	font-family: futura; 
 	font-weight: bold; 
@@ -37,8 +41,13 @@ label {
 }
 
 .onebox:hover {
-    box-shadow: -2px 2px 3px #888888; 
+
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+
 }
+
 
 .formpadding {
 	padding: 10px; 

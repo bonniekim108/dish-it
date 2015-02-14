@@ -1,13 +1,8 @@
 @import 'colors';
 
-h3 {
-	float: right; 
-}
-
-
 #about_container {
 
-height: 100%; 
+margin-top: 30px;
 
 	.about {
 		font-family: futura;
@@ -35,15 +30,18 @@ height: 100%;
 		color: $prime-red; 
 	}
 
-
-	.aboutinfobox {
+		.aboutinfobox {
 		width: 350px; 
 		height: 440px; 
 		background-color: white;
 	}
 
 	.aboutinfobox:hover {
-		box-shadow: -2px 2px 3px #888888; 
+	
+    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+
 	}
 
 	p.aboutinfo {
@@ -81,7 +79,11 @@ height: 100%;
 	}
 
 	.rulesbox:hover {
-		box-shadow: 2px 2px 3px #888888; 
+	
+    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+
 	}
 
 	.rulesinfo {
@@ -91,12 +93,16 @@ height: 100%;
 		text-justify: inter-word;
 		padding: 30px; 
 
+		 strong {
+		 	color: $prime-blue; 
+		 }
+
 	}
 
 	.abouttopleft {
 		position: absolute; 
-		left: -90px; 
-		top: -80px; 
+		left: -85px; 
+		top: -40px; 
 		z-index: 2; 
 
 	}
