@@ -18,7 +18,7 @@ CuisineLookup.create(name: 'Mexican')
 CuisineLookup.create(name: 'Other')
 
 
---- Load users table
+#--- Load users table
 200.times do |n|
   user = User.new(
     name: Faker::Name.name,
