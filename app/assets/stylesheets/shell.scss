@@ -55,7 +55,6 @@ a.logo {
   margin-top: 5px; 
   padding: 0;
   overflow: visible;
-
     div.lefttime {
       margin-top: 50px;
       margin-left: -75px;
@@ -118,6 +117,7 @@ footer {
 }
 
 .wrap {
+
   background-image: url("background3.jpg");
   background-size: cover; 
   position: absolute;
@@ -127,8 +127,8 @@ footer {
   bottom: 0;
   box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
   overflow: scroll; 
-  padding-top: 60px; 
-  padding-bottom: 50px; 
+  padding-top: 20px; 
+  padding-bottom: 40px; 
 }
 
 .icon {

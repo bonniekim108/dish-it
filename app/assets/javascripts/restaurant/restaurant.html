@@ -1,31 +1,35 @@
-<div class="row" style="margin-top: 50px">
-  <div class="small-6 large-3 columns">
-    <img src="{{vm.restaurant.yelp_photo_url}}" width=200>
-    <img src="{{vm.restaurant.yelp_rating_photo_url}}">
-  </div>
-  <div class="small-6 large-9 columns">
-    <h1>{{vm.restaurant.name}}</h1>
-    <p>{{vm.restaurant.location}}<br>
-       {{vm.restaurant.phone}}</p>
-    <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
-  </div>
-</div>
-<div class="row">
-  <h4>Votes</h4>
-  <div ng-repeat="vote in vm.restaurant.votes">
-    <p  style="border-top:1px dashed #CCC">
-    <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-    <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
+<div id="rest_container"> 
 
-  </div>
-</div>
+   <div class="restaurant row"> 
+
+      <div class="medium-3 large-3 columns">
+          <img class="img1" ng-src="{{vm.restaurant.yelp_photo_url}}">
+         <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
+      </div>
+
+      <div class="small-6 large-9 columns">
+        <h1>{{vm.restaurant.name}}</h1>
+        <p>{{vm.restaurant.location}}<br>
+           {{vm.restaurant.phone}}</p>
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <h4>Votes</h4>
+      <div ng-repeat="vote in vm.restaurant.votes">
+        <p  style="border-top:1px dashed #CCC">
+        <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
+        <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
+
+      </div>
+    </div>
 
 
-<a ui-sref="shell.battle">return to Battle</a>
+    <a ui-sref="shell.battle">return to Battle</a>
 
-{{vm.restaurantId}}
-<!-- <p>Example Voted Restaurant with an id of </p>
+    {{vm.restaurantId}}
+    {{vm.curBattle.dish.name}}
 
-   ng-click="vm.upvote({{restaurant.id}})"
- -->
-{{vm.curBattle.dish.name}}
+  </div> 
