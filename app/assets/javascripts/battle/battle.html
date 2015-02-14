@@ -3,12 +3,11 @@
 
     <div class="style">
       <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-
-      <button ng-show="vm.displayMode=='nominating'" ui-sref="shell.nominate" class="button right">Nominate Restaurant</button>
-
     </div> 
-    the battle 
     <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+
+      <span ng-if="vm.displayMode == 'nominating'"><button ng-show="vm.userCanVote()" ui-sref="shell.nominate" class="button right">Nominate Restaurant</button></span>
+      
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
           <div class="battle-restaurants">
@@ -19,7 +18,6 @@
             <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="button">Vote</button>
 
             <img ng-src="{{restaurant.yelp_rating_photo_url}}">
-            <!-- display votes to test? -->
             <p>{{restaurant.votes.length}} votes</p>
 
           </div>
