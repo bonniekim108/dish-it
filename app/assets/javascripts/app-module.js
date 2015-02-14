@@ -60,6 +60,14 @@
         controllerAs: 'vm'
       })
 
+      .state('shell.winner', {
+        url: '/winners',
+        templateUrl: 'winners/winner.html',
+        controller: 'WinnersController',
+        controllerAs: 'vm',
+        params: {id: '', battle_id:''}
+      })
+
       .state('shell.about', {
         url: '/about',
         templateUrl: 'about/about.html'
