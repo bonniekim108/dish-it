@@ -22,27 +22,19 @@
     text-align: center;
   }
 
-  .nominate-link {
-    font-color: #000;
-    font-weight: bold;
-    font-style: italic;
-  }
-
   .battle-restaurants {
 
     border: 1px solid #CCC; 
-    margin: 0px;
-    padding: 0px;
 
-      position:relative;
-      float:left;
-      width:10  0%;
-      padding:1em;
-      margin:2em 10px 4em;
-      background:#fff;
-      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    position:relative;
+    float:left;
+    width:100%;
+    padding:1em;
+    margin:0 10px;
+    background:#fff;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   } 
 
   .battle-restaurant-image {
