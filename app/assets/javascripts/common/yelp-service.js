@@ -29,6 +29,7 @@
       var params = {
         callback: 'angular.callbacks._' + genCb(),
         category_filter: 'restaurants',
+        dataType: 'jsonp',
         location: getCounty(),
         oauth_consumer_key: consumerKey,
         oauth_token: token,
@@ -40,7 +41,7 @@
       };
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
       params.oauth_signature = signature;
-      $http.jsonp(url, {params: params, headers: {"Accept" : "application/json"}, timeout: pending.promise})
+      $http.jsonp(url, {params: params, headers: {'Accept': 'application/json'}, timeout: pending.promise})
         .success(function (data) {
           if (pending) pending.resolve();
           pending = null;
