@@ -7,7 +7,7 @@ height: 100%;
 	.righttop {
 		position: absolute; 
 		right: -90px; 
-		top: -20px; 
+		top: -70px; 
 	}
 
 	a.showdown2 {
@@ -28,7 +28,7 @@ height: 100%;
 	  background-repeat: no-repeat;
 	  background-size: 600px 250px;  
 	  position: relative; 
-	  margin-top: 170px;
+	  margin-top: 100px;
 	  margin-bottom: 200px;
 	  margin-left: auto;
 	  margin-right: auto;  
@@ -39,7 +39,7 @@ height: 100%;
 	.bottomleft {
 		position: absolute; 
 		left: -88px;
-		bottom: -17px;    
+		bottom: -20px;    
 	}
 	a.showdown1 {
 		display: block; 
@@ -68,6 +68,11 @@ height: 100%;
 		bottom: 180px;  
 		width: 600px; 
 		z-index: 1; 
+
+		a:hover {
+			color: $prime-red;
+			font-weight: bold; 	
+		}
 	}	
 
 }
