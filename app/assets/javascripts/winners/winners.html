@@ -1,5 +1,4 @@
 <h1>Winners</h1>
-
 <div class="row" ng-repeat="winner in vm.winners">
   <div class="small-6 large-12 columns" style="text-align: center; margin: 0 auto; border: 1px solid #CCC; padding-bottom:25px">
     <h3>Winner for {{winner.dish.cuisine}}: {{winner.dish.name}}</h3>
@@ -12,5 +11,9 @@
       Votes: {{firstplace.votes.length}}<br>
       <img src="http://www.bodykitsonline.co.uk/images/no_picture.gif" width=300>
     </div>
+    Runner Ups:
+    <!-- <div ng-repeat="firstplace in winner.restaurants">
+      Name: {{firstplace.name}}<br>
+    </div> -->
   </div>
 </div>
