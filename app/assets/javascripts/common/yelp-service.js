@@ -40,7 +40,7 @@
       };
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
       params.oauth_signature = signature;
-      $http.jsonp(url, {params: params, timeout: pending.promise})
+      $http.jsonp(url, {params: params, headers: {"Accept" : "application/json"}, timeout: pending.promise})
         .success(function (data) {
           if (pending) pending.resolve();
           pending = null;
