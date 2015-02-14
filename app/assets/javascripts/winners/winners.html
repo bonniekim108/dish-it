@@ -4,22 +4,20 @@
     <h3>Winner for {{winner.dish.cuisine}}: {{winner.dish.name}}</h3>
     <h4>{{winner.year_month | date: 'MMMM yyyy'}}</h4>
     <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
-
-      <a ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">ID: {{firstplace.id}} {{firstplace.battle_id}}</a><br>
-      Name: {{firstplace.name}}<br>
+      Name: <a ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
       Location: {{firstplace.location}}<br>
       Phone{{firstplace.phone}}<br>
       Votes: {{firstplace.votes.length}}<br>
-    </div>
+    </div><br>
     Runner Ups:
-    <!-- <div ng-repeat="firstplace in winner.restaurants">
-      Name: {{firstplace.name}}<br>
-    </div> -->
+    <div ng-repeat="runnerUps in winner.restaurants">
+      Name: <a ui-sref="shell.winner({id: runnerUps.id, battle_id: runnerUps.battle_id})">{{runnerUps.name}}</a><br>
+    </div>
   </div>
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
   <ul class="large-block-grid-4 medium-block-grid-3 text-center">
     <li ng-repeat="winner in vm.winners">
       <div class="battle-restaurants">
@@ -41,4 +39,9 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->
+
+
+
+
+  

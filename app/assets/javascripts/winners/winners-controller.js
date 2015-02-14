@@ -12,26 +12,23 @@
 
       vm.winners = BattleService.winners;
       console.log($stateParams);
-      // vm.restaurantId = $stateParams.id;
-      // vm.battleId = $stateParams.battle_id;
-      // vm.restaurant = {};
+      vm.restaurantId = $stateParams.id;
+      vm.battleId = $stateParams.battle_id;
+      vm.restaurant = {};
+      vm.battle = {};
 
-
-      // for (var i = 0; i < n; i++) {
-      //   findIndex = _.findIndex(vm.battleId.restaurants[i].id, function(v) { return v.restaurant.id == uId; });
-      //   if ( findIndex >= 0 ) return true;
-      // }
-
-
-
-      // vm.restaurantId = $stateParams.id;
-      // vm.restaurant = {};
-          
-      // for (var i = 0; i < vm.winners.restaurants.length; i++){
-      //   if (vm.winners.restaurants[i].id == vm.restaurantId) {
-      //     vm.restaurant = vm.winners.restaurants[i];
-      //   }
-      // }
+      for (var i = 0; i < vm.winners.length; i++){
+        if (vm.winners[i].id == vm.battleId) {
+          vm.battle = vm.winners[i];
+              console.log(vm.battle.restaurants.length);
+          for (var j = 0; j < vm.battle.restaurants.length; j++){
+            if (vm.battle.restaurants[j].id == vm.restaurantId) {
+              vm.restaurant = vm.battle.restaurants[j];
+              console.log(vm.restaurant);
+            }
+          }
+        }
+      }
 
     }
     ]);
