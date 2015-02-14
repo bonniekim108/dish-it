@@ -3,7 +3,7 @@
 <br>
     <div class="style">
       <h2>{{vm.curBattle.dish.cuisine}}: {{vm.curBattle.dish.name}}</h2>
-      <a class="nominate-link right" href="/#/nominate">Nominate your own!</a>
+      <a class="nominate-link right" ui-sref="shell.nominate" ng-show="vm.displayMode=='nominating'">Nominate your own!</a>
     </div> 
 
     <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
@@ -16,7 +16,7 @@
 
             <img ng-src="{{restaurant.yelp_rating_photo_url}}">
             <!-- display votes to test? -->
-            <p>{{restaurant.votes.length}}</p>
+            <p>{{restaurant.votes.length}} votes</p>
 
           </div>
         </li>
@@ -30,6 +30,9 @@
             <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image-2"></a><br>
             <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br />
             <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="button">Vote</button>
+            <img ng-src="{{restaurant.yelp_rating_photo_url}}">
+            <!-- display votes to test? -->
+            <p>{{restaurant.votes.length}} votes</p>
           </div>
         </li>
       </ul>
