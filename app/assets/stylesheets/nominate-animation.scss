@@ -1,0 +1,31 @@
+.nom-animate {
+ opacity: 1;
+ width: 100%;
+}
+
+.nom-animate.ng-enter, .nom-animate.ng-leave {
+  -webkit-transition:all .3s ease-in-out;
+  -moz-transition:all .3s ease-in-out;
+  -o-transition:all .3s ease-in-out;
+  transition:all .3s ease-in-out;
+}
+
+.nom-animate.ng-enter {
+  opacity: 0.7;
+  width: 0;
+}
+
+.nom-animate.ng-enter-active {
+  opacity: 1;
+  width: 100%;
+}
+
+.nom-animate.ng-leave {
+  opacity: 1;
+  width: 100%;
+}
+
+.nom-animate.ng-leave-active {
+  opacity: 0.7;
+  width: 0;
+}
