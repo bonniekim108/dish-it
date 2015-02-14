@@ -13,9 +13,6 @@
     var token = 'dJhfXl5eZwMOwiU8NZNM52kJ-UknEt0o';
     var tokenSecret = 'ZvIlgJQHp0qUW30WfNF8uDHtICY';
 
-    // be sure to replace spaces in injected name & city with +'s
-    var baseUrl = 'http://api.yelp.com/v2/search';
-
     var cbSeqLookup = "0123456789abcdefghijklmnopqrstuvwxyz";
     var pending = null;
 
