@@ -3,7 +3,7 @@
 
   angular.module('app')
 
-  .factory('YelpService', ['$http', '$q', 'UserService', function($http, $q, UserService){
+  .factory('YelpService', ['$http', '$location', '$q', 'UserService', function($http, $location, $q, UserService){
 
     var service = {};
 
@@ -25,11 +25,10 @@
       }
       pending = $q.defer();
       var method = 'GET';
-      var url = 'api.yelp.com/v2/search';
+      var url = $location.protocol() + '://api.yelp.com/v2/search';
       var params = {
         callback: 'angular.callbacks._' + genCb(),
         category_filter: 'restaurants',
-        dataType: 'jsonp',
         location: getCounty(),
         oauth_consumer_key: consumerKey,
         oauth_token: token,
@@ -41,7 +40,7 @@
       };
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
       params.oauth_signature = signature;
-      $http.jsonp(url, {params: params, headers: {'Accept': 'application/json'}, timeout: pending.promise})
+      $http.jsonp(url, {params: params, timeout: pending.promise})
         .success(function (data) {
           if (pending) pending.resolve();
           pending = null;
