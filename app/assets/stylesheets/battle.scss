@@ -62,7 +62,12 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    img { float: right; }
+    text-align: center;
+    img {
+      margin-top: 10px;
+      display: block;
+      float: right;
+    }
   }
 
   div.voting {
