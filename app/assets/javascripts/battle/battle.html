@@ -30,7 +30,7 @@
         </div> 
 
         <div class="voting">
-          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="tiny button"><strong> ✔ </strong></button>
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
           <span class="votes"> ( {{restaurant.votes.length}} votes ) </span> 
         </div> 
 
@@ -63,6 +63,8 @@
   </ul>
 </div> 
 
+</div>
+
 <div id="upvote-modal" class="reveal-modal small" data-reveal>
   <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
   <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
@@ -70,6 +72,6 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-</div>
+
 
 
