@@ -22,7 +22,7 @@
       }
       pending = $q.defer();
       var method = 'GET';
-      var url = 'http://api.yelp.com/v2/search';
+      var url = 'https://api.yelp.com/v2/search';
       // var url = $location.protocol() + '://api.yelp.com/v2/search';
       var params = {
         callback: 'angular.callbacks._' + genCb(),
