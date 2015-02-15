@@ -11,6 +11,20 @@
   <a ui-sref="shell.home" ui-sref-active="active" class="logo">
 
        <div class="lefttime">
+          <p><span>DAYS</span><span>HRS</p>
+          <p>
+            <span class="leftunder">{{shell.countdown.d}}</span>
+            <span class="leftunder">{{shell.countdown.h}}</span>
+          </p>
+       </div> 
+      <div class="righttime"> 
+          <p><span>MINS</span><span>SECS</span></p>
+          <p>
+            <span class="rightunder">{{shell.countdown.m}}</span>
+            <span class="rightunder">{{shell.countdown.s}}</span>
+          </p>
+       </div>
+<!--        <div class="lefttime">
           <p>
             <span class="leftunder">{{shell.countdown.d}}</span>
             <span class="leftunder">{{shell.countdown.h}}</span>
@@ -23,7 +37,7 @@
             <span class="rightunder">{{shell.countdown.s}}</span></p>
           <p><span>mins</span><span>secs</span></p>
        </div>
-
+ -->
   </a>
 
   <div id="user-section">

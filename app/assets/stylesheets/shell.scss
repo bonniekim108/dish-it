@@ -34,7 +34,7 @@ header {
   }
 }
 
-  toggle-topbar menu-icon {
+toggle-topbar menu-icon {
   height: 30%;
 }
 
@@ -59,53 +59,66 @@ a.logo {
   margin-top: 5px; 
   padding: 0;
   overflow: visible;
-    div.lefttime {
-      margin-top: 50px;
-      margin-left: -75px;
-      display: inline-block; 
-      float: left; 
-        p {
-          font-family: futura; 
-          font-size: 12px;
-          color: $prime-red;
-          line-height: 13px;
-          width: 100px;
-          margin: 0;
-          text-align: center;
-            span {
-               display: inline-block; 
-               width: 30px;
-             }
-             span.leftunder {
-              border-bottom: 2px solid $prime-red; 
-
-             }
-           }
-        
-    }
-
-    div.righttime {
-        margin-top: 50px;
-        margin-right: -33px;
+  div.lefttime {
+    margin-top: 50px;
+    margin-left: -75px;
+    display: inline-block; 
+    float: left; 
+    text-align: center;
+    p {
+      font-family: futura; 
+      font-size: 12px;
+      color: $prime-red;
+      line-height: 13px;
+      width: 100px;
+      margin: 0;
+      text-align: center;
+      span {
+        padding: 1px;
         display: inline-block; 
-        float: right; 
-          p {
-            font-family: futura; 
-            font-size: 12px;
-            color: $prime-blue;
-            line-height: 13px;
-            width: 100px;
-            margin: 0;
-            text-align: center;
-           span {
-              display: inline-block; 
-              width: 30px;
-            }
-            span.rightunder {
-              border-bottom: 2px solid $prime-blue; 
-            }
-          }
-        }
+        width: 31px;
+        text-align: center;
+      }
+      span.leftunder {
+        border-top: 0px solid $prime-red; 
+      }
+    }
+  }
+
+  div.lefttime p:first-child {
+    font-size: 9px;
+  }
+
+  div.righttime {
+    margin-top: 50px;
+    margin-right: -33px;
+    display: inline-block; 
+    float: right;
+    text-align: center;
+    p {
+      font-family: futura; 
+      font-size: 12px;
+      color: $prime-blue;
+      line-height: 13px;
+      width: 100px;
+      margin: 0;
+      text-align: center;
+      span {
+        padding: 1px;
+        display: inline-block; 
+        width: 31px;
+        text-align: center;
+      }
+      span.rightunder {
+        border-top: 0px solid $prime-blue; 
+      }
+    }
+  }
+
+  div.righttime p:first-child {
+    font-size: 9px;
+  }
+
 } 
 
 footer {
@@ -123,16 +136,18 @@ footer {
 .wrap {
 
   background-image: url("/background3.jpg");
-  background-size: cover; 
+  background-size: cover;
   position: absolute;
-  top: 50px;
+  top: 30px;
+  bottom: 40px; 
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 30px;
   box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
   overflow: scroll; 
   padding-top: 80px; 
   padding-bottom: 30px; 
+
 }
 
 .icon {
@@ -153,15 +168,15 @@ li {
 }
 
 p.copyright { 
-    display: block; 
-    font-family: arial; 
-    font-weight: bold; 
-    color: grey; 
-    font-size: 11px; 
-    margin-top: 7px;
-    margin-right: 170px; 
-    margin-bottom: 0px;  
-    float: right; 
+  display: block; 
+  font-family: arial; 
+  font-weight: bold; 
+  color: grey; 
+  font-size: 11px; 
+  margin-top: 7px;
+  margin-right: 170px; 
+  margin-bottom: 0px;  
+  float: right; 
 }
 
 a.facebook {
@@ -209,7 +224,7 @@ header {
     color: white;
     font-weight: normal;
   }
-   a:hover {
+  a:hover {
     color: $prime-red;
   }
 }
