@@ -112,8 +112,10 @@
 				def.resolve(service.curBattle);
 			});
 			return def.promise;
-//	params.require(:nominate).permit(:name, :location, :phone, :yelp_rating_photo_url, :yelp_photo_url, :comment)
+		};
 
+		service.lookupRestByName = function (battle, restName) {
+			return _.find(battle.restaurants, function(r) { return r.name == restName; });
 		};
 
 		/*  Private Functions  */

@@ -28,9 +28,12 @@
     <div class="row">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="r in vm.searchResults" ng-animate class="nom-animate">
-          <div class="panel callout" ng-click="vm.nominate(r)" ng-mouseenter="vm.hovering[$index]=true" ng-mouseleave="vm.hovering[$index]=false">
+          <div class="panel callout" ng-click="vm.nominate(r)" ng-class="{nominated: r.alreadyNominated}" ng-mouseenter="vm.hovering[$index]=true" ng-mouseleave="vm.hovering[$index]=false">
             <h4>{{r.name}}</h4>
-            <h5 class="subheader" ng-show="vm.hovering[{{$index}}]">NOMINATE !!!</h5>
+            <h5 class="subheader" ng-show="vm.hovering[{{$index}}]">
+              <span class="nom-vote" ng-show="r.alreadyNominated">already nominated<br>CLICK TO VOTE !!!</span>
+              <span ng-hide="r.alreadyNominated">NOMINATE !!!</span>
+            </h5>
             <h6 class="subheader" ng-hide="vm.hovering[{{$index}}]">
               <span ng-show="r.phone == '-multiple-'">Multiple Locations</span>
               <span ng-hide="r.phone == '-multiple-'">{{r.location.city}}<br>{{r.display_phone.substr(3)}}</span>
@@ -46,7 +49,10 @@
   <div id="nom-modal" class="reveal-modal small" data-reveal>
     <h3 class="nom-title">{{vm.pendingNom.name}}</h3>
     <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
-    <button ng-click="vm.finalizeNom()">Nominate</button>
+    <button ng-click="vm.finalizeNom()">
+      <span ng-show="vm.pendingNom.alreadyNominated">VOTE</span>
+      <span ng-hide="vm.pendingNom.alreadyNominated">NOMINATE</span>    
+    </button>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 
