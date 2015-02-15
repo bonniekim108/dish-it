@@ -2,7 +2,21 @@
 
 #home_container {
 
-height: 100%; 
+	height: 100%; 
+
+		// bottom left styling
+		.bottomleft {
+			position: absolute; 
+			left: -85px;
+			bottom: -30px;    
+			a.showdown1 {
+				display: block; 
+				background-image: url("/finalshow1.svg");  
+				width: 380px; 
+				height: 365px; 
+				opacity: 0.9;
+			}
+		}
 
 	.righttop {
 		position: absolute; 
@@ -23,31 +37,37 @@ height: 100%;
 	.middle	 {
 	  display: block; 
 	  width: 600px;
-	  height: 250px;
+	  height: 300px;
+	  margin-top: -30px;
 	  background-image: url("/dishit1.svg"); 
 	  background-repeat: no-repeat;
 	  background-size: 600px 250px;  
 	  position: relative; 
-	  margin-top: 100px;
-	  margin-bottom: 200px;
+	  // margin-top: 100px;
+	  // margin-bottom: 200px;
 	  margin-left: auto;
 	  margin-right: auto;  
 	  clear: both; 
+	  top: 50%;
+	  transform: translateY(-50%);
+		z-index: 20; 
+		// links styling
+		.homelink {
+			color: $prime-blue;
+			display: block; 
+			position: absolute; 
+			margin-left: auto; 
+			margin-right: 30px;
+			margin-top: auto; 
+			bottom: 0;  
+			left: 50px; 
+
+			a:hover {
+				color: $prime-red;
+				font-weight: bold; 	
+			}
 	}
 
-	// bottom left styling
-	.bottomleft {
-		position: absolute; 
-		left: -90px;
-		bottom: -100px;    
-	}
-	a.showdown1 {
-		display: block; 
-		background-image: url("/finalshow1.svg");  
-		width: 380px; 
-		height: 365px; 
-		opacity: .9;
-	}
 
 	a {
 		color: $prime-blue; 
@@ -56,23 +76,6 @@ height: 100%;
 		padding: 25px; 
 	}
 
-
-	// links styling
-	.homelink {
-		color: $prime-blue;
-		display: block; 
-		position: relative; 
-		margin-left: auto; 
-		margin-right: 30px;
-		margin-top: auto; 
-		bottom: 180px;  
-		width: 600px; 
-		z-index: 1; 
-
-		a:hover {
-			color: $prime-red;
-			font-weight: bold; 	
-		}
 	}	
 }
 
