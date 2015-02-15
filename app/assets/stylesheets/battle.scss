@@ -33,7 +33,7 @@
     border: 4px solid $prime-blue; 
     border-radius: 5px; 
     float: left;
-    height: 371px; 
+    height: 361px; 
     margin: 0 10px;
     background: #ffffff;
     // -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -54,7 +54,6 @@
     margin: 0;
     background-color: $prime-blue;
     img {
-      margin: 5px;
       border-radius: 10px;
     }
   }
@@ -75,7 +74,7 @@
       line-height: 18px;
     }
     img {
-      margin-top: 5px;
+      margin-top: 10px;
       display: block;
       float: right;
     }
