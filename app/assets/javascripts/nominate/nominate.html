@@ -11,7 +11,10 @@
 
   <div ng-if="vm.BattleService.userCanVote()">
 
-    <h1>Nominate Your Favorite Restaurant for the Best <div class="dish-title">{{vm.battle.dish.name}}</div></h1>
+    <div class="dish-title">
+      <h3>Nominate Your Favorite Restaurant for the Best</h3>
+      <h1>{{vm.battle.dish.name}}</h1>
+    </div>
 
     <div class="row collapse prefix-radius">
       <div class="small-2 columns">&nbsp;</div>

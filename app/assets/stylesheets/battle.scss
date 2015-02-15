@@ -64,12 +64,15 @@
     padding-bottom: 0px; 
     background-color: $prime-red; 
     background-position: center; 
-    text-align: center; 
-
+    text-align: center;
     span.votes {
-      color: white; 
-      font-size: 15px; 
-
+      display: inline-block;
+      background-color: $main-grey;
+      color: $prime-blue; 
+    }
+    button {
+      margin: 0 10px 10px 0;
+      border: none;
     }
   }
 

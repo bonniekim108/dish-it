@@ -2,12 +2,13 @@
 
 #nominate {
 
-  h1 {
-    margin: 30px 0 70px 0;
-  }
-
   .dish-title {
-    color: $prime-red;
+    h3 {
+      color: $prime-blue;
+    }
+    h1 {
+      color: $prime-red;
+    }
   }
 
   .panel {
