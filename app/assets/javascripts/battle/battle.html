@@ -2,76 +2,73 @@
 
   <h3 class="stitched">
    <strong>B A T T L E</strong>
-  </h3> 
+ </h3> 
 
-  <div class="style">
-      <span id="cuisine">{{vm.curBattle.dish.cuisine}}</span> <span id="dishname">:<u>{{vm.curBattle.dish.name}}</u></span>
-  </div> 
+ <div class="style">
+  <span id="cuisine">{{vm.curBattle.dish.cuisine}}</span> <span id="dishname">:<u>{{vm.curBattle.dish.name}}</u></span>
+</div> 
 
-     <span ng-if="vm.displayMode == 'nominating'"><button ng-show="vm.userCanVote()" ui-sref="shell.nominate" class="buttonright tiny button expand"> ✐ &nbsp; N O M I N A T E &nbsp; a &nbsp;  R E S T A U R A N T </button></span>
+<span ng-if="vm.displayMode == 'nominating'"><button ng-show="vm.userCanVote()" ui-sref="shell.nominate" class="buttonright tiny button expand"> ✐ &nbsp; N O M I N A T E &nbsp; a &nbsp;  R E S T A U R A N T </button></span>
 
-      <span><button class="greateight tiny button expand" ng-show="vm.displayMode=='great-eight'">T H E &nbsp; G R E A T &nbsp; E I G H T</button></span>
+<span><button class="greateight tiny button expand" ng-show="vm.displayMode=='great-eight'">T H E &nbsp; G R E A T &nbsp; E I G H T</button></span>
 
-      <span><button class="finalfour tiny button expand" ng-show="vm.displayMode=='final-four'">T H E &nbsp; F I N A L &nbsp; F O U R </button></span> 
+<span><button class="finalfour tiny button expand" ng-show="vm.displayMode=='final-four'">T H E &nbsp; F I N A L &nbsp; F O U R </button></span> 
 
-     <br> 
+<br> 
 
-  <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-      <!-- <div ng-show="vm.displayMode=='great-eight'" id="greateight">- The Great Eight -</div> -->
-      
-      <ul class="large-block-grid-4 medium-block-grid-3 text-center">
-        <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
-          <div class="battle-restaurants">
+<div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
+  <!-- <div ng-show="vm.displayMode=='great-eight'" id="greateight">- The Great Eight -</div> -->
+  <ul class="large-block-grid-4 medium-block-grid-3 text-center">
+    <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
+      <div class="battle-restaurants">
 
-            <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+        <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
 
-            <div class="restname">
-            <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br> 
-            <img ng-src="{{restaurant.yelp_rating_photo_url}}">
-            </div> 
-
-            <div class="voting">
-            <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="tiny button"><strong> ✔ </strong></button>
-            <span class="votes"> ( {{restaurant.votes.length}} votes ) </span> 
-           </div> 
-
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div ng-if="vm.displayMode == 'final-four'">
-<!-- 
-     <span> the final four </span>  -->
-      <ul class="large-block-grid-4 medium-block-grid-3 text-center">
-        <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
-          <div class="battle-restaurants">
-
-            <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
-
-            <div class="restname">
-            <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br>
-            <img ng-src="{{restaurant.yelp_rating_photo_url}}"> 
-            </div>
-
-            <div class="voting">
-            <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
-             <span class="votes"> ( {{restaurant.votes.length}} votes )</span> 
-            </div> 
-
-          </div>
-
+        <div class="restname">
+          <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br> 
+          <img ng-src="{{restaurant.yelp_rating_photo_url}}">
         </div> 
-      </li>
-      </ul>
-    </div>
 
-    <div id="upvote-modal" class="reveal-modal small" data-reveal>
-      <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
-      <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
-      <button ng-click="vm.finalizeUpvote()">Vote</button>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>
+        <div class="voting">
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant.id, '')" class="tiny button"><strong> ✔ </strong></button>
+          <span class="votes"> ( {{restaurant.votes.length}} votes ) </span> 
+        </div> 
+
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="row" ng-if="vm.displayMode == 'final-four'">
+<!-- 
+ <span> the final four </span>  -->
+  <ul class="large-block-grid-4 medium-block-grid-3 text-center">
+    <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
+      <div class="battle-restaurants">
+
+        <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+
+        <div class="restname">
+          <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br>
+          <img ng-src="{{restaurant.yelp_rating_photo_url}}"> 
+        </div>
+
+        <div class="voting">
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
+          <span class="votes"> ( {{restaurant.votes.length}} votes )</span> 
+        </div> 
+
+      </div>
+    </li>
+  </ul>
+</div> 
+
+<div id="upvote-modal" class="reveal-modal small" data-reveal>
+  <h3 class="upvote-title">{{vm.pendingUpvote.name}}</h3>
+  <textarea ng-model="vm.comment" placeholder="comments..." rows="5"></textarea>
+  <button ng-click="vm.finalizeUpvote()">Vote</button>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
 </div>
 
