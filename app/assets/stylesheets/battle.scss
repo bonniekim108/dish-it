@@ -87,7 +87,7 @@
     }
   }
 
-  button.greateight {
+  button.mode-btn {
 
     background-color: $prime-blue; 
     border-right: 2px solid $prime-red;
@@ -100,21 +100,6 @@
     color: $main-grey; 
     font-weight: bold; 
     margin-bottom: 30px; 
-  }
-
-  button.finalfour {
-    background-color: $prime-blue; 
-    border-right: 2px solid $prime-red;
-    border-left: 2px solid $prime-red; 
-    border-bottom: 2px solid $prime-red;  
-    border-bottom-left-radius: 5px; 
-    border-bottom-right-radius: 5px; 
-    font-size: 15px; 
-    font-family: futura; 
-    color: $main-grey; 
-    font-weight: bold; 
-    margin-bottom: 30px; 
-
   }
 
     h3.stitched {
