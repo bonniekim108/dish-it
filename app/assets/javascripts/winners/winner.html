@@ -17,9 +17,9 @@
   <h4>Votes</h4>
   <div ng-repeat="vote in vm.restaurant.votes">
     <p  style="border-top:1px dashed #CCC">
-    <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-    <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
-
+      <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
+      <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span>
+    </p>
   </div>
 </div>
 
