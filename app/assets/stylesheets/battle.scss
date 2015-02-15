@@ -51,8 +51,10 @@
   .battle-restaurant-image {
     width: 179px;
     height: 179px;
-    margin: 5px;
+    margin: 0;
+    background-color: $prime-blue;
     img {
+      margin: 5px;
       border-radius: 10px;
     }
   }
@@ -63,6 +65,7 @@
   }
   .rest-name {
     position: relative;
+    margin-top: -10px;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
