@@ -1,13 +1,20 @@
 @import 'colors';
 
 #about_container {
-	margin-top: 20px; 
+	
+	height: 100%;
+	margin-top: 20px;
+	position: relative;
 
 	.about {
-		font-family: futura;
-		margin-top: -50px;  
+		position: relative;
+		height: 432px;
+		font-family: futura;  
 		z-index: 1; 
-		padding: 0px; 
+		padding: 0px;
+		margin-top: -110px;
+		top: 50%;
+	  transform: translateY(-50%);
 	}
 
 	.abouttext {
