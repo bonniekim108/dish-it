@@ -51,6 +51,7 @@ margin-top: 30px;
 		text-align: justify; 
 		text-justify: inter-word;
 		padding: 20px; 
+
 	}
 
 
@@ -95,6 +96,10 @@ margin-top: 30px;
 
 		 strong {
 		 	color: $prime-blue; 
+		 }
+
+		 strong#topdish {
+		 	color: $prime-red; 
 		 }
 
 	}

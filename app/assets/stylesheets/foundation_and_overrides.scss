@@ -445,9 +445,9 @@ $global-radius: 0px;
 // $button-function-factor: -20%;
 
 // We use these to control button border and hover styles.
-// $button-border-width: 0px;
+$button-border-width: 1px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: #2A77a4; 
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
