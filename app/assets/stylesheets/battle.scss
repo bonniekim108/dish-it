@@ -28,20 +28,6 @@
       }
   }
 
-  .buttonright {
-    background-color: $prime-blue; 
-    border-right: 2px solid $prime-red;
-    border-left: 2px solid $prime-red; 
-    border-bottom: 2px solid $prime-red;  
-    border-bottom-left-radius: 5px; 
-    border-bottom-right-radius: 5px; 
-    font-size: 15px; 
-    font-family: futura; 
-    color: $main-grey; 
-    font-weight: bold; 
-    margin-bottom: 30px; 
-  }
-
   .battle-restaurants {
     position: relative;
     border: 1px solid $prime-blue; 
@@ -88,7 +74,6 @@
   }
 
   button.mode-btn {
-
     background-color: $prime-blue; 
     border-right: 2px solid $prime-red;
     border-left: 2px solid $prime-red; 
@@ -100,7 +85,16 @@
     color: $main-grey; 
     font-weight: bold; 
     margin-bottom: 30px; 
+    cursor: default;
+    .highlight {
+      color: white;
+      cursor: pointer;
+      &:hover {
+        color: black;
+      }
+    }
   }
+
 
     h3.stitched {
      margin-top: 30px;  

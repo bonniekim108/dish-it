@@ -12,17 +12,16 @@
   <button class="mode-btn tiny button expand">
     <span ng-if="vm.displayMode=='great-eight'">T H E &nbsp; G R E A T &nbsp; E I G H T</span>
     <span ng-if="vm.displayMode=='final-four'">T H E &nbsp; F I N A L &nbsp; F O U R</span>
+    <a ng-if="vm.displayMode=='nominating' && !vm.userCanVote()">✐ &nbsp; O P E N &nbsp; a &nbsp; N O M I N A T I O N</a>
+    <a ng-if="vm.displayMode=='nominating' && vm.userCanVote()" ui-sref="shell.nominate" class="highlight">✐ &nbsp; N O M I N A T E &nbsp; a &nbsp;  R E S T A U R A N T</a>
   </button>
 </span>
-
-<span ng-if="vm.displayMode == 'nominating'"><button ng-show="vm.userCanVote()" ui-sref="shell.nominate" class="buttonright tiny button expand"> ✐ &nbsp; N O M I N A T E &nbsp; a &nbsp;  R E S T A U R A N T </button></span>
 
 <br>
 
 <button id="trash-btn" ng-if="vm.getUser()" ng-click="vm.showTrash()" class="button tiny round">TALK TRASH</button>
 
 <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
-  <!-- <div ng-show="vm.displayMode=='great-eight'" id="greateight">- The Great Eight -</div> -->
   <ul class="large-block-grid-4 medium-block-grid-3 text-center">
     <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: vm.displayLimit() track by restaurant.id">
       <div class="battle-restaurants">
