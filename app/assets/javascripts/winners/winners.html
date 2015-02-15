@@ -1,18 +1,29 @@
-<h1>Winners</h1>
+<br>
+<br>
+<br>
+<div id="winners" class="row text-center winnerspage">
+<p class="center">CONGRATULATIONS!</p>
 <div class="row" ng-repeat="winner in vm.winners">
-  <div class="small-6 large-12 columns" style="text-align: center; margin: 0 auto; border: 1px solid #CCC; padding-bottom:25px">
-    <h3>Winner for {{winner.dish.cuisine}}: {{winner.dish.name}}</h3>
+  <div class="small-6 large-12 columns">
+    <span class="winner-announcement">{{winner.dish.cuisine}}: {{winner.dish.name}} WINNER</span>
     <h4>{{winner.year_month | date: 'MMMM yyyy'}}</h4>
     <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
-      Name: <a ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
+      <em>Name:</em><a ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
       Location: {{firstplace.location}}<br>
       Phone{{firstplace.phone}}<br>
       Votes: {{firstplace.votes.length}}<br>
     </div><br>
     Runner Ups:
-    <div ng-repeat="runnerUps in winner.restaurants">
+    <!-- <div ng-repeat="runnerUps in winner.restaurants">
       Name: <a ui-sref="shell.winner({id: runnerUps.id, battle_id: runnerUps.battle_id})">{{runnerUps.name}}</a><br>
-    </div>
+    </div> -->
+    <table>
+      <tr ng-repeat="runnerUps in winner.restaurants">
+        <td>Name</td>
+        <td><a ui-sref="shell.winner({id: runnerUps.id, battle_id: runnerUps.battle_id})">{{runnerUps.name}}</a></td>
+      </tr>
+    </table>
+
   </div>
 </div>
 
@@ -40,6 +51,8 @@
     </li>
   </ul>
 </div> -->
+
+</div> 
 
 
 
