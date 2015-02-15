@@ -43,6 +43,21 @@
         });
       };
 
+      vm.getDisplayMode = function () {
+        switch (vm.displayMode) {
+          case 'winner':
+            return 'Winner';
+          case 'final-four':
+            return 'The Final 4';
+          case 'great-eight':
+            return 'The Great 8';
+          case 'nominating':
+            return 'Open Nominations';
+          default:
+            return 'future';
+        }
+      };
+
     }
   ]);
 
