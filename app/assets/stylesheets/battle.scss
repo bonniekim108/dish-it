@@ -31,13 +31,15 @@
   .buttonright {
     background-color: $prime-blue; 
     border-right: 2px solid $prime-red;
-      border-left: 2px solid $prime-red; 
-        border-bottom: 2px solid $prime-red;  
+    border-left: 2px solid $prime-red; 
+    border-bottom: 2px solid $prime-red;  
     border-bottom-left-radius: 5px; 
     border-bottom-right-radius: 5px; 
-    font-size: 20px; 
+    font-size: 15px; 
+    font-family: futura; 
     color: $main-grey; 
     font-weight: bold; 
+    margin-bottom: 30px; 
   }
 
   .battle-restaurants {
@@ -45,7 +47,7 @@
     border: 1px solid $prime-blue; 
     border-radius: 5px; 
     float: left;
-    height: 350px;  
+    height: 100%;  
     margin: 0 10px;
     background: #ffffff;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -62,12 +64,13 @@
 
   .battle-restaurant-image {
     width: 350px; 
-    // height: 200px; 
   }
 
   .restname {
     background-color: $main-grey; 
-    text-align: center; 
+    vertical-align: middle; 
+    height: 115px; 
+
   }
 
   div.voting {
@@ -83,5 +86,50 @@
 
     }
   }
+
+  button.greateight {
+
+    background-color: $prime-blue; 
+    border-right: 2px solid $prime-red;
+    border-left: 2px solid $prime-red; 
+    border-bottom: 2px solid $prime-red;  
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    font-size: 15px; 
+    font-family: futura; 
+    color: $main-grey; 
+    font-weight: bold; 
+    margin-bottom: 30px; 
+  }
+
+  button.finalfour {
+    background-color: $prime-blue; 
+    border-right: 2px solid $prime-red;
+    border-left: 2px solid $prime-red; 
+    border-bottom: 2px solid $prime-red;  
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    font-size: 15px; 
+    font-family: futura; 
+    color: $main-grey; 
+    font-weight: bold; 
+    margin-bottom: 30px; 
+
+  }
+
+    h3.stitched {
+     margin-top: 30px;  
+     margin-bottom: -30px; 
+     background: $prime-red; 
+     padding: 10px; 
+     color: $main-grey;  
+     font-size: 20px;
+     border: 2px dashed $main-grey;
+     border-radius: 5px;
+     box-shadow: 0 0 0 4px $prime-red, 2px 1px 6px 4px $prime-blue;
+     text-shadow: 1px 1px $prime-blue; 
+     z-index: 5; 
+  }
+
 
 }
