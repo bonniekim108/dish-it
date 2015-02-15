@@ -2,8 +2,6 @@
 
 #about_container {
 
-margin-top: 30px;
-
 	.about {
 		font-family: futura;
 		margin-top: -50px;  
@@ -104,40 +102,40 @@ margin-top: 30px;
 
 	}
 
-	.abouttopleft {
-		position: absolute; 
-		left: -85px; 
-		top: -40px; 
-		z-index: 2; 
-
-	}
-
-	a#abouttopleft1 {
-		display: block; 
-		background-image: url("/breakfast1.svg");
-		background-size: 165px 165px; 
-		width: 165px; 
-		height: 165px; 
-	}
-
-	.aboutright {
-		position: absolute; 
-		right: -90px; 
-		bottom: -100px;
-		z-index: 1; 
-	}
-
-	a#aboutright1 {
-		display: block; 
-		background-image: url("/breakfast2.svg"); 
-		background-size: 165px 165px; 
-		width: 165px; 
-		height: 165px; 
-	}
-
 	.form {
 		width: 342px; 
 		height: 100%; 
     }
 
  }
+
+.abouttopleft {
+	position: absolute; 
+	left: -85px; 
+	top: -85px; 
+	z-index: 4; 
+
+}
+
+a#abouttopleft1 {
+	display: block; 
+	background-image: url("/breakfast1.svg");
+	background-size: 165px 165px; 
+	width: 165px; 
+	height: 165px; 
+}
+
+.aboutright {
+	position: absolute; 
+	right: -90px; 
+	bottom: 0;
+	z-index: 1; 
+}
+
+a#aboutright1 {
+	display: block; 
+	background-image: url("/breakfast2.svg"); 
+	background-size: 165px 165px; 
+	width: 165px; 
+	height: 165px;
+}

@@ -1,5 +1,9 @@
 @import 'colors';
 
+#routes {
+  height: 100%;
+}
+
 a.menu-icon {
   background: $main-black;  
 }
@@ -127,8 +131,8 @@ footer {
   bottom: 0;
   box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
   overflow: scroll; 
-  padding-top: 20px; 
-  padding-bottom: 40px; 
+  padding-top: 80px; 
+  padding-bottom: 30px; 
 }
 
 .icon {
