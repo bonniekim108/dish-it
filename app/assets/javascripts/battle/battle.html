@@ -14,7 +14,9 @@
 
 <span><button class="finalfour tiny button expand" ng-show="vm.displayMode=='final-four'">T H E &nbsp; F I N A L &nbsp; F O U R </button></span> 
 
-<br> 
+<br>
+
+<button id="trash-btn" ng-if="vm.getUser()" ng-click="vm.showTrash()" class="button tiny round">TALK TRASH</button>
 
 <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
   <!-- <div ng-show="vm.displayMode=='great-eight'" id="greateight">- The Great Eight -</div> -->
@@ -42,26 +44,47 @@
 <div class="row" ng-if="vm.displayMode == 'final-four'">
 <!-- 
  <span> the final four </span>  -->
-  <ul class="large-block-grid-4 medium-block-grid-3 text-center">
-    <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
-      <div class="battle-restaurants">
+ <ul class="large-block-grid-4 medium-block-grid-3 text-center">
+  <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
+    <div class="battle-restaurants">
 
-        <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+      <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
 
-        <div class="restname">
-          <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br>
-          <img ng-src="{{restaurant.yelp_rating_photo_url}}"> 
-        </div>
-
-        <div class="voting">
-          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
-          <span class="votes"> ( {{restaurant.votes.length}} votes )</span> 
-        </div> 
-
+      <div class="restname">
+        <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br>
+        <img ng-src="{{restaurant.yelp_rating_photo_url}}"> 
       </div>
-    </li>
-  </ul>
+
+      <div class="voting">
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
+        <span class="votes"> ( {{restaurant.votes.length}} votes )</span> 
+      </div> 
+
+    </div>
+  </li>
+</ul>
 </div> 
+
+<div id="trash-modal" class="reveal-modal medium" data-reveal>
+  <h3 class="trash-title">{{vm.curBattle.dish.name}} Trash Talk</h3>
+  <div class="row trash-list-wrap">
+    <div class="panel" ng-repeat="t in vm.curBattle.trash_talks" ng-class="{callout: $odd}">
+      <h6>{{t.user.name}}&nbsp;&nbsp;&nbsp;<small>{{t.created_at | date:'MMM dd hh:mm a'}}</small></h6>
+      <p>{{t.trash}}</p>
+    </div>
+  </div>
+  <div class="row trash-form-row">
+    <div class="small-10 columns">
+      <form name="trashForm" novalidate>
+        <textarea ng-model="vm.newTrash" placeholder="dish out some trash..."></textarea>
+      </form>
+    </div>
+    <div class="small-2 columns">
+      <a class="button tiny right" ng-click="vm.addTrash()">Send</a>
+    </div>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
 </div>
 
@@ -71,7 +94,4 @@
   <button ng-click="vm.finalizeUpvote()">Vote</button>
   <a class="close-reveal-modal">&#215;</a>
 </div>
-
-
-
 

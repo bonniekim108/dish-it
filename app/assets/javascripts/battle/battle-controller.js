@@ -58,6 +58,23 @@
         }
       };
 
+      vm.getUser = function () {
+        return BattleService.getUser();
+      };
+
+      vm.showTrash = function () {
+        $('#trash-modal').foundation('reveal', 'open');
+      };
+
+      vm.addTrash = function () {
+        BattleService.addTrash(vm.newTrash).then(function (battle) {
+          vm.curBattle = battle;
+          vm.newTrash = '';
+          $('#trash-modal').foundation('reveal', 'close');
+        });
+      };
+
+
     }
   ]);
 

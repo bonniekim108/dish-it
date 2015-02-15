@@ -93,6 +93,24 @@ class BattlesController < ApplicationController
     end   
   end
 
+  def add_trash
+    begin
+      user = current_user
+      raise error if !user
+      @battle = Battle.find_by(year_month: Date.today.end_of_month)
+      @battle.trash_talks << TrashTalk.new(user: user, trash: params[:trash])
+      @battle.save
+      render json: @battle, include: {
+        dish: { only: [ :cuisine, :name ] },
+        trash_talks: { include: {user: { only: :name } }, only: [ :created_at, :user, :trash ] },
+        restaurants: { include: {votes: { include: { user: { only: [:id, :name]} }, only: [ :created_at, :comment, :user ] } } }
+        },
+        status: :ok
+    rescue
+      render plain: 'Trash not added', status: :bad_request
+    end   
+  end
+
   private
 
   def nominate_params 

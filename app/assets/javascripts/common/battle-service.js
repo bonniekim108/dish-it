@@ -118,6 +118,27 @@
 			return _.find(battle.restaurants, function(r) { return r.name == restName; });
 		};
 
+		service.getUser = function () {
+			return UserService.user;
+		};
+
+		service.addTrash = function (trash) {
+			var def = $q.defer();
+			var config = {
+				url: '/api/battles/addtrash',
+				method: 'POST',
+				data: {
+					trash: trash
+				}
+			};
+			$http(config).success(function (battle) {
+				battle.restaurants = sortByVotes(battle);
+				service.curBattle = battle;
+				def.resolve(service.curBattle);
+			});
+			return def.promise;
+		};
+
 		/*  Private Functions  */
 
 		function userVoted (numRestToCheck) {

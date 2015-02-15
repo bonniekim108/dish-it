@@ -131,7 +131,12 @@
      z-index: 5; 
   }
 
+}
 
+#trash-btn {
+  background-color: $prime-red;
+  border: none;
+  float: right;
 }
 
 #upvote-modal {
@@ -141,5 +146,41 @@
   .upvote-title {
     color: $prime-red;
     float: left;
+  }
+}
+
+#trash-modal {
+  height: 70%;
+  overflow: scroll;
+  textarea {
+    font-size: 20px;
+  }
+  .trash-title {
+    color: $prime-red;
+    float: left;
+  }
+  .trash-list-wrap {
+    height: 70%;
+    overflow: scroll;
+  }
+  .trash-form-row {
+    margin-top: 5%;
+    a.button {
+      background-color: $prime-red;
+      border: none;
+      margin-top: 30%;
+    }
+  }
+  .panel {
+    border: none;
+    padding: 10px;
+    background-color: $prime-blue;
+    h6 { color: white; }
+    small { color: lightgrey;}
+  }
+  .panel.callout {
+    background-color: $main-grey;
+    h6 { color: $prime-red; }
+    small { color: grey;}
   }
 }
