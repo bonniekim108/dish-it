@@ -63,10 +63,14 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
+    a {
+      line-height: 18px;
+    }
     img {
       margin-top: 10px;
       display: block;
       float: right;
+      border: 1px solid $prime-red;
     }
   }
 
