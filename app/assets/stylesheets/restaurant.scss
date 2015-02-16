@@ -42,7 +42,6 @@
   .rest-location {
     background-color: $prime-red;
     color: white;
-    margin-right: 15px;
     padding: 15px;
     height: 200px
   }
@@ -62,5 +61,9 @@ a.return {
 	border: 1px dotted black;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.rest-img-wrap {
+  padding-left: 0;
 }
 

@@ -4,7 +4,7 @@
 
 
   <div id="rest-header">
-    <div class="small-4 columns">
+    <div class="small-4 columns rest-img-wrap">
       <img ng-src="{{vm.restaurant.yelp_photo_url}}" width="200" height="200">
     </div>
     <div class="small-3 columns rest-name">
@@ -12,9 +12,14 @@
       <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
     </div>
     <div class="small-4 columns rest-location">
-      <p>{{vm.restaurant.location}}<br>
-        {{vm.restaurant.phone}}
-      </p>
+      <div ng-if="vm.restaurant.location=='-multiple-'">
+        <p>{{vm.restaurant.location}}<br>
+          {{vm.restaurant.phone}}
+        </p>
+      </div>
+      <div ng-if="!vm.restaurant.location=='-multiple-'">
+        <p>Multiple Locations</p>
+      </div>
        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button vote-btn">Vote</button>
      </div>
    </div>
