@@ -47,6 +47,10 @@
         return $state.current.name === 'shell.home';
       };
 
+      $rootScope.$on('user-signedup', function () {
+        vm.user = UserService.user;
+      });
+
       // demo mode code
       vm.demoMode = null;
       vm.setDemoMode = function (mode) {
