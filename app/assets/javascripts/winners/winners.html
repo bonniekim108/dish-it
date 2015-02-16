@@ -1,34 +1,39 @@
-<br>
-<br>
-<br>
+<div class="row text-center battlepage">
+
+  <h3 class="stitched">
+   <strong>W I N N E R S</strong>
+  </h3><br>
 
 <div id="winners" class="row text-center winnerspage">
+
   <p class="center">CONGRATULATIONS!</p>
-  <br>
-  <br>
   <div class="row" ng-repeat="winner in vm.winners">
+
     <div class="small-6 large-12 columns">
-      <span class="winner-announcement">{{winner.dish.cuisine}}: {{winner.dish.name}} WINNER
-      <br>
-      <br>
-      <!-- Announces winner in the competition -->
+
+    <div class="style">
+     <span id="cuisine">{{winner.dish.cuisine}}</span>
+     <span id="dishname">:{{winner.dish.name}}</span>
+    </div>
+    <div class="mode-btn tiny button expand">
       <h4>{{winner.year_month | date: 'MMMM yyyy'}}</h4>
+    </div>
+      <!-- <span class="winner-announcement">{{winner.dish.cuisine}}: {{winner.dish.name}}
+      </span> -->
+      <!-- Announces winner in the competition -->
       <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
         <p class="winners-info">
-          <a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
-          <p>
+          <h3><a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a></h3>
+            <a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})"><img ng-src="{{firstplace.yelp_photo_url}}" width="179" height="179"></a><br>
           Location:&nbsp;&nbsp;{{firstplace.location}}<br>
           Phone:&nbsp;&nbsp;{{firstplace.phone}}<br>
           Votes:&nbsp;&nbsp;{{firstplace.votes.length}}<br>
-          </p>
         </p>
       </div>
-      </span>
-      <br>
-      <br>
       <!-- List of runners-up in the competition -->
-      <p class="runners-up">runners-up:</p>
-      <table class="center">
+
+      <p class="runners-up">runners-up: <a href="#" ng-click="showDetails = ! showDetails">show/hide</a></p>
+      <table class="center" ng-show="showDetails">
         <tr ng-repeat="runnerUps in winner.restaurants">
           <td><a ui-sref="shell.winner({id: runnerUps.id, battle_id: runnerUps.battle_id})">{{runnerUps.name}}</a></td>
         </tr>
@@ -37,4 +42,6 @@
       <br>
     </div>
   </div>
+</div>
+
 </div>

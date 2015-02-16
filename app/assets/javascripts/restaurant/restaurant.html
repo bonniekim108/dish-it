@@ -1,4 +1,42 @@
+<div id="nominate" class="row battlepage" style="background-color: white">
+<a ui-sref="shell.battle">return to Battle</a>
 
+  <div class="row" style="border-top: 1px solid #CCC;; border-bottom: 1px solid #CCC">
+    <div class="small-4 columns">
+      <img src="{{vm.restaurant.yelp_photo_url}}" width=200>
+    </div>
+    <div class="small-3 columns" style="background-color:#FFFFFF">
+      <h3>{{vm.restaurant.name}}</h3>
+      <img src="{{vm.restaurant.yelp_rating_photo_url}}">
+    </div>
+    <div class="small-4 columns" style="background-color:#BF4B37; color: #FFFFFF; margin-right: 15px; height: 200px">
+      <p>{{vm.restaurant.location}}<br>
+         {{vm.restaurant.phone}}</p>
+         <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
+    </div>
+  </div>
+  <div class="row" style="margin: 50px">
+    <h4>Votes</h4>
+    <div ng-repeat="vote in vm.restaurant.votes">
+      <p  style="border-top:1px dashed #CCC">
+        <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
+        <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- {{vm.restaurant}} -->
+
+
+
+
+
+
+<!-- 
 <div id="rest_container" class="row left">  
     <div class="small-2 columns"></div> 
       <div class="small-6 columns"></div> 
@@ -10,7 +48,7 @@
 
           </span>
     <div class="small-2 columns"></div> 
-</div> 
+</div>  -->
 
 <!--     </div> -->
     
@@ -20,7 +58,7 @@
            {{vm.restaurant.phone}}</p> -->
 
 
-    <div class="row right">
+   <!--  <div class="row right">
       <h4>Votes</h4>
       <div ng-repeat="vote in vm.restaurant.votes">
         <p  style="border-top:1px dashed #CCC">
@@ -36,4 +74,4 @@
     {{vm.restaurantId}}
     {{vm.curBattle.dish.name}}
 
-  </div> 
+  </div>  -->
