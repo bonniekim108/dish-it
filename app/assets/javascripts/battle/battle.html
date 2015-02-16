@@ -43,6 +43,31 @@
   </ul>
 </div>
 
+<div class="row" ng-if="vm.displayMode == 'final-four'">
+<!-- 
+ <span> the final four </span>  -->
+ <ul class="large-block-grid-4 medium-block-grid-3 text-center">
+  <li ng-repeat="restaurant in vm.curBattle.restaurants | limitTo: 4  track by restaurant.id">
+    <div class="battle-restaurants">
+
+      <a ui-sref="shell.restaurant({id:restaurant.id})"><img ng-src="{{restaurant.yelp_photo_url}}" class="battle-restaurant-image"></a><br>
+
+      <div class="restname">
+        <strong><a ui-sref="shell.restaurant({id:restaurant.id})">{{restaurant.name}}</a></strong><br>
+        <img ng-src="{{restaurant.yelp_rating_photo_url}}"> 
+      </div>
+
+      <div class="voting">
+        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
+        <span class="votes"> ( {{restaurant.votes.length}} votes )</span> 
+      </div> 
+
+    </div>
+  </li>
+</ul>
+</div> 
+<!-- user can add to "trash talks" modal -->
+
 <div id="trash-modal" class="reveal-modal medium" data-reveal>
   <h3 class="trash-title">{{vm.curBattle.dish.name}} - COMMENTS</h3>
   <div class="row trash-list-wrap">

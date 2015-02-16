@@ -17,7 +17,7 @@
         <div class="small-2 columns">&nbsp;</div>
           <div class="small-3 columns">
             <span id="search" class="prefix"> ✐ Search </span>
-           </div>
+          </div>
         <div class="small-5 columns">
            <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 200 }" ng-change="vm.updateSearch()">
         </div>
@@ -30,8 +30,22 @@
     <hr class="style-seven">
     <!-- Nominate -->
 
+    <div class="row collapse prefix-radius">
+      <div class="small-2 columns">&nbsp;</div>
+      <div class="small-3 columns">
+        <span class="prefix">Search Restaurants</span>
+      </div>
+      <div class="small-5 columns">
+        <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 100 }" ng-change="vm.updateSearch()">
+      </div>
+      <div class="small-2 columns">&nbsp;</div>
+    </div>
+    <hr>
+  <!--   User can nominate her own restaurant choice for the battle -->
+
 
     <!-- Nominees -->
+
     <div class="row">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="r in vm.searchResults" ng-animate class="nom-animate">
