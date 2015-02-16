@@ -43,11 +43,7 @@
     float: left;
     height: 361px; 
     margin: 0 10px;
-    background: $prime-blue;
-    // -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    // -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    background-color: $main-grey; 
+    background-color: $prime-blue;
   } 
 
   .battle-restaurants:hover {
@@ -69,6 +65,7 @@
   .restname-wrap {
     padding: 10px;
     height: 120px;
+    background-color: $main-grey;
   }
   .rest-name {
     position: relative;
