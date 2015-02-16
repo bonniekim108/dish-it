@@ -35,8 +35,10 @@
           </div>
         </div> 
         <div class="voting">
+
           <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
           <span class="votes primary round label">{{restaurant.votes.length}} Votes</span> 
+
         </div> 
       </div>
     </li>
