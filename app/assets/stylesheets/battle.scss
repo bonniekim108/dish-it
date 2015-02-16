@@ -41,7 +41,8 @@
     float: left;
     height: 353px; 
     margin: 0 10px;
-    // background-color: $prime-blue;
+    border: 1px solid $prime-blue;
+    border-radius: 5px;
   } 
 
   .battle-restaurants:hover {
@@ -80,6 +81,7 @@
   }
 
   div.voting {
+    height: 54px;
     padding-top: 10px; 
     padding-bottom: 0px; 
     background-color: $prime-red; 
