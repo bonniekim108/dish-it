@@ -1,29 +1,31 @@
+<div id="nominate" class="row battlepage" style="background-color: white">
+<a ui-sref="shell.winners">return to Winners</a>
 
-
-
-<div class="row" style="margin-top: 50px">
-  <div class="small-6 large-3 columns">
-    <img src="{{vm.restaurant.yelp_photo_url}}" width=200>
-    <img src="{{vm.restaurant.yelp_rating_photo_url}}">
+  <div class="row" style="border-top: 1px solid #CCC;; border-bottom: 1px solid #CCC">
+    <div class="small-4 columns">
+      <img src="{{vm.restaurant.yelp_photo_url}}" width=200>
+    </div>
+    <div class="small-3 columns" style="background-color:#FFFFFF">
+      <h3>{{vm.restaurant.name}}</h3>
+      <img src="{{vm.restaurant.yelp_rating_photo_url}}">
+    </div>
+    <div class="small-4 columns" style="background-color:#BF4B37; color: #FFFFFF; margin-right: 15px; height: 200px">
+      <p>{{vm.restaurant.location}}<br>
+         {{vm.restaurant.phone}}</p>
+    </div>
   </div>
-  <div class="small-6 large-9 columns">
-    <h1>{{vm.restaurant.name}}</h1>
-    <p>{{vm.restaurant.location}}<br>
-       {{vm.restaurant.phone}}</p>
-    <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
+  <div class="row" style="margin: 50px">
+    <h4>Votes</h4>
+    <div ng-repeat="vote in vm.restaurant.votes">
+      <p  style="border-top:1px dashed #CCC">
+        <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
+        <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span>
+      </p>
+    </div>
   </div>
+
 </div>
-<div class="row">
-  <h4>Votes</h4>
-  <div ng-repeat="vote in vm.restaurant.votes">
-    <p  style="border-top:1px dashed #CCC">
-      <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-      <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span>
-    </p>
-  </div>
-</div>
 
 
-<a ui-sref="shell.battle">return to Battle</a>
 
 <!-- {{vm.restaurant}} -->

@@ -1,37 +1,35 @@
+<a class="button tiny return" ui-sref="shell.battle">return to battle</a>
 
-<div class="rest_container"> 
-
-    <div>
-      <a ui-sref="shell.battle">return to Battle</a>
-    </div> 
-
-    <div id="rest_model">
-
-         <img id="img1" ng-src="{{vm.restaurant.yelp_photo_url}}">
-   
-        <div class="rest_info"> 
-          <p id="rest_name">{{vm.restaurant.name}}</p>
-          <p id="rest_location">{{vm.restaurant.location}}</p> 
-          <p id="rest_phone">{{vm.restaurant.phone}}</p>
-        </div>
-
-    </div> 
-
-         <div class="rest_vote"> 
-            <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button round">Vote</button>
-        </div> 
-
-    </div> 
+<div class="row rest-detail">
 
 
+  <div id="rest-header">
+    <div class="small-4 columns rest-img-wrap">
+      <img ng-src="{{vm.restaurant.yelp_photo_url}}" width="200" height="200">
+    </div>
+    <div class="small-3 columns rest-name">
+      <h3>{{vm.restaurant.name}}</h3>
+      <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
+    </div>
+    <div class="small-4 columns rest-location">
+      <div ng-if="vm.restaurant.location!='-multiple-'">
+        <p>{{vm.restaurant.location}}<br>
+          {{vm.restaurant.phone}}
+        </p>
+      </div>
+      <div ng-if="vm.restaurant.location=='-multiple-'">
+        <p>Multiple Locations</p>
+      </div>
+       <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button vote-btn">Vote</button>
+     </div>
+   </div>
 
-            <h4>Votes</h4>
+   <div class="row user-votes">
+    <h4>Votes</h4>
+    <div ng-repeat="vote in vm.restaurant.votes" class="user-vote">
+      <p class="user-name">{{vote.user.name}}&nbsp;&nbsp;&nbsp;<small class="user-timestamp">{{vote.created_at | date:'MMM dd h:mm a'}}</small></p>
+      <p class="vote-comment" ng-show="vote.comment.length > 0">{{vote.comment}}</p>
+    </div>
+  </div>
 
-            <div ng-repeat="vote in vm.restaurant.votes">
-              <p  style="border-top:1px dashed #CCC">
-              <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-              <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
-            </div>
-  
-</div> 
-
+</div>

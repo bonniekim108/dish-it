@@ -24,7 +24,6 @@
         abstract: true,
         url: '',
         templateUrl: 'shell/shell.html',
-          // template: "<p>test</p>",
           controller: 'ShellController',
           controllerAs: 'shell',
           resolve: {
@@ -47,21 +46,21 @@
       })
 
       .state('shell.signup', {
-        url: '/signup',
+        // url: '/signup',
         templateUrl: 'signup/signup.html',
         controller: 'SignupController',
         controllerAs: 'vm'
       })
 
       .state('shell.winners', {
-        url: '/winners',
+        // url: '/winners',
         templateUrl: 'winners/winners.html',
         controller: 'WinnersController',
         controllerAs: 'vm'
       })
 
       .state('shell.winner', {
-        url: '/winners',
+        // url: '/winners',
         templateUrl: 'winners/winner.html',
         controller: 'WinnersController',
         controllerAs: 'vm',
@@ -69,12 +68,12 @@
       })
 
       .state('shell.about', {
-        url: '/about',
+        // url: '/about',
         templateUrl: 'about/about.html'
       })
 
       .state('shell.battle', {
-        url: '/battle',
+        // url: '/battle',
         templateUrl: 'battle/battle.html',
         controller: 'BattleController',
         controllerAs: 'vm'
@@ -88,7 +87,7 @@
       })
 
       .state('shell.nominate', {
-        url: '/nominate',
+        // url: '/nominate',
         templateUrl: 'nominate/nominate.html',
         controller: 'NominateController',
         controllerAs: 'vm'

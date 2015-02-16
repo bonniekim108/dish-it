@@ -1,88 +1,72 @@
 @import 'colors';
 
 
-#rest_model { 
-	 vertical-align: middle; 
-     text-align: center; 
-     margin-top: 30px;  
-     margin-bottom: -30px; 
-     background: $main-grey; 
-     padding: 10px; 
-     color: $prime-red;  
-     font-size: 20px;
-     font-weight: bold; 
-     border: 2px solid $prime-red;
-     border-radius: 50px;
-     height: 240px; 
-	
-	          		
-		img#img1 {
-			width: 200px; 
-			padding: 0; 
-			margin: 0; 
-			border-radius: 50px; 
-			float: left; 
-					
-			}
-	
-		
-
-		div.rest_info {
-			background-color: $main-grey; 
-			background-radius: 10px; 
-			font-family: futura; 
-			float: left; 
-			text-align: center; 
-			vertical-align: middle; 
-			padding: 30px; 
-		
-
-
-						#rest_name {
-						color: $prime-red; 
-						font-size: 30px; 
-						font-weight: bold; 
-						text-align: center; 
-						vertical-align: middle; 
-
-						}
-
-					#rest_location {
-						color: $prime-blue; 
-						font-size: 15px; 
-						font-weight: bold; 
-					    }
-
-					#rest_phone {
-						color: $prime-blue;
-						font-size: 15px; 
-						font-weight: bold; 
-					}
-			}
-
-
-	div.rest_vote {
-		background-color: $prime-red; 
-		padding-right: 20px; 
-		padding-left: 20px;  
-		clear: both; 
-		margin-top: -20px; 
-			
-			button {
-				position: center; 
-				vertical-align: middle; 
-				width: 100px; 
-			}
-		}
-	}
-
-
-
-h4 {
-	clear: both; 
+.rest-detail {
+	margin-top: 20px;
+  background-color: white;
+  .user-votes {
+    margin: 50px;
+    clear:both;
+    padding-top: 30px;
+  }
+  .user-vote {
+    margin-top: 15px;
+    border-top: 1px dashed $main-grey;
+    padding-top: 5px;
+  }
+  .user-name {
+    color: $prime-red;
+    font-size: 16px;
+  }
+  .user-timestamp {
+    color: black;
+  }
 }
+
+.vote-odd {
+  background-color: lightgray;
+}
+
+.vote-comment {
+  margin-left: 15px;
+}
+
+#rest-header {
+  background-color: white;
+  border-top: 1px solid $main-grey;
+  border-bottom: 1px solid $main-grey;
+  .rest-name {
+    padding: 15px;
+  }
+  .rest-location {
+    background-color: $prime-red;
+    color: white;
+    padding: 15px;
+    height: 200px
+  }
+  .vote-btn {
+    float: right;
+  }
+}
+
+a.return {
+  background-color: $prime-red;
+  border: none;
+}
+
+.img1 {
+
 	
-
-
+	padding: 10px;
+	width: 300px;
+	border: 1px dotted black;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 	
+.rest-img-wrap {
+  padding-left: 0;
+}
+
+

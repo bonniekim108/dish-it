@@ -46,6 +46,8 @@ gem 'foundation-rails'
 
 gem 'faker', "~> 1.4.3"
 
+gem 'yelp', require: 'yelp'
+
 group :development, :test do
 
   gem 'rspec-rails'
