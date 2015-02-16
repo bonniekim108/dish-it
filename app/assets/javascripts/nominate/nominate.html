@@ -8,26 +8,32 @@
     <h1>Sorry, you are not eligible to nominate a restaurant at this time</h1>
   </div>
 
-
+   <!-- Nominate  -->
   <div ng-if="vm.BattleService.userCanVote()">
 
-    <div class="dish-title">
-      <h3>Nominate Your Favorite Restaurant for the Best</h3>
-      <h1>{{vm.battle.dish.name}}</h1>
-    </div>
+    <h3 class="nominate-stitched">
+      N O M I N A T E &nbsp; A &nbsp; R E S T A U R A N T &nbsp; T H A T &nbsp; H A S &nbsp; T H E &nbsp; B E S T 
+      <p class="dish-title"><u>{{vm.battle.dish.name}}</u></p>  
 
-    <div class="row collapse prefix-radius">
-      <div class="small-2 columns">&nbsp;</div>
-      <div class="small-3 columns">
-        <span class="prefix">Search Restaurants</span>
+      <div class="row collapse prefix-radius">
+        <div class="small-2 columns">&nbsp;</div>
+          <div class="small-3 columns">
+            <span id="search" class="prefix"> ✐ Search </span>
+           </div>
+        <div class="small-5 columns">
+           <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 100 }" ng-change="vm.updateSearch()">
+        </div>
+        <div class="small-2 columns">&nbsp;</div>
       </div>
-      <div class="small-5 columns">
-        <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 100 }" ng-change="vm.updateSearch()">
-      </div>
-      <div class="small-2 columns">&nbsp;</div>
-    </div>
-    <hr>
+    </h3> 
+    <br> 
+    <br> 
 
+    <hr class="style-seven">
+    <!-- Nominate -->
+
+
+    <!-- Nominees -->
     <div class="row">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="r in vm.searchResults" ng-animate class="nom-animate">
