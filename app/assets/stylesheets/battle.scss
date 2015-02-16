@@ -38,12 +38,12 @@
 
   .battle-restaurants {
     position: relative;
-    border: 4px solid $prime-blue; 
-    border-radius: 5px; 
+    // border: 4px solid $prime-blue; 
+    // border-radius: 5px; 
     float: left;
     height: 361px; 
     margin: 0 10px;
-    background-color: $prime-blue;
+    // background-color: $prime-blue;
   } 
 
   .battle-restaurants:hover {
@@ -56,10 +56,8 @@
     width: 179px;
     height: 179px;
     margin: 0;
-    background-color: $prime-blue;
-    img {
+    border-width: 5px;
     border-radius: 5px 5px 0 0;
-    }
   }
 
   .restname-wrap {
