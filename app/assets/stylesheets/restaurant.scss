@@ -1,17 +1,88 @@
 @import 'colors';
 
-#rest_container {
 
-	background-color: white; 
-	margin-top: 50px;
+#rest_model { 
+	 vertical-align: middle; 
+     text-align: center; 
+     margin-top: 30px;  
+     margin-bottom: -30px; 
+     background: $main-grey; 
+     padding: 10px; 
+     color: $prime-red;  
+     font-size: 20px;
+     font-weight: bold; 
+     border: 2px solid $prime-red;
+     border-radius: 50px;
+     height: 240px; 
+	
+	          		
+		img#img1 {
+			width: 200px; 
+			padding: 0; 
+			margin: 0; 
+			border-radius: 50px; 
+			float: left; 
+					
+			}
+	
+		
 
+		div.rest_info {
+			background-color: $main-grey; 
+			background-radius: 10px; 
+			font-family: futura; 
+			float: left; 
+			text-align: center; 
+			vertical-align: middle; 
+			padding: 30px; 
+		
+
+
+						#rest_name {
+						color: $prime-red; 
+						font-size: 30px; 
+						font-weight: bold; 
+						text-align: center; 
+						vertical-align: middle; 
+
+						}
+
+					#rest_location {
+						color: $prime-blue; 
+						font-size: 15px; 
+						font-weight: bold; 
+					    }
+
+					#rest_phone {
+						color: $prime-blue;
+						font-size: 15px; 
+						font-weight: bold; 
+					}
+			}
+
+
+	div.rest_vote {
+		background-color: $prime-red; 
+		padding-right: 20px; 
+		padding-left: 20px;  
+		clear: both; 
+		margin-top: -20px; 
+			
+			button {
+				position: center; 
+				vertical-align: middle; 
+				width: 100px; 
+			}
+		}
+	}
+
+
+
+h4 {
+	clear: both; 
 }
+	
 
-.img1 {
-	padding: 10px;
-	width: 300px;
-	border: 1px dotted black;
-	margin-right: auto;
-	margin-left: auto;
-}
 
+
+	
