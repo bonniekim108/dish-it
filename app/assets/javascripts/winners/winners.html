@@ -26,7 +26,7 @@
           <h3><a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a></h3>
             <a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})"><img ng-src="{{firstplace.yelp_photo_url}}" width="179" height="179"></a><br>
           Location:&nbsp;&nbsp;{{firstplace.location}}<br>
-          Phone:&nbsp;&nbsp;{{firstplace.phone}}<br>
+          Phone:&nbsp;&nbsp;{{firstplace.phone.substr(3)}}<br>
           Votes:&nbsp;&nbsp;{{firstplace.votes.length}}<br>
         </p>
       </div>
