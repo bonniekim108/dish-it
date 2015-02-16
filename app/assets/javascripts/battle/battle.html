@@ -35,7 +35,7 @@
           </div>
         </div> 
         <div class="voting">
-          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ☑ </strong></button>
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
           <span class="votes primary round label">{{restaurant.votes.length}} Votes</span> 
         </div> 
       </div>
@@ -44,7 +44,7 @@
 </div>
 
 <div id="trash-modal" class="reveal-modal medium" data-reveal>
-  <h3 class="trash-title">{{vm.curBattle.dish.name}} Trash Talk</h3>
+  <h3 class="trash-title">{{vm.curBattle.dish.name}} - COMMENTS</h3>
   <div class="row trash-list-wrap">
     <div class="panel" ng-repeat="t in vm.curBattle.trash_talks" ng-class="{callout: $odd}">
       <h6>{{t.user.name}}&nbsp;&nbsp;&nbsp;<small>{{t.created_at | date:'MMM dd hh:mm a'}}</small></h6>
