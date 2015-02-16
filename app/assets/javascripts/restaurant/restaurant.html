@@ -12,7 +12,7 @@
       <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
     </div>
     <div class="small-4 columns rest-location">
-      <div ng-if="!vm.restaurant.location=='-multiple-'">
+      <div ng-if="vm.restaurant.location!='-multiple-'">
         <p>{{vm.restaurant.location}}<br>
           {{vm.restaurant.phone}}
         </p>
