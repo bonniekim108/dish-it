@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/api/battles/upvote' => 'battles#upvote'
   post '/api/battles/nominate' => 'battles#nominate'
   post '/api/battles/addtrash' => 'battles#add_trash'
+  post '/api/yelp' => 'yelp#search'
 
 
   #----- county api routes -----#
