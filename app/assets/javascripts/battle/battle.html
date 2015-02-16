@@ -5,7 +5,9 @@
   </h3> 
 
   <div class="style">
-   <span id="cuisine">{{vm.curBattle.dish.cuisine}}</span> <span id="dishname">:<u>{{vm.curBattle.dish.name}}</u></span>
+   <span id="cuisine">{{vm.curBattle.dish.cuisine}}</span> <span id="dishname">:{{vm.curBattle.dish.name}}
+   </span>
+    <button id="trash-btn" ng-if="vm.getUser()" ng-click="vm.showTrash()" class="button tiny round">COMMENTS</button>
   </div> 
 
   <span>
@@ -17,9 +19,7 @@
     </button>
   </span>
 
-<br>
-
-    <button id="trash-btn" ng-if="vm.getUser()" ng-click="vm.showTrash()" class="button tiny round">TALK TRASH</button>
+<!-- <hr class="style-eight">  -->
 
 <div class="row" ng-if="vm.displayMode == 'nominating' || vm.displayMode == 'great-eight'">
   <ul class="large-block-grid-4 medium-block-grid-3 text-center">
@@ -34,7 +34,7 @@
         </div> 
 
         <div class="voting">
-          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ✔ </strong></button>
+          <button ng-show="vm.userCanVote()" ng-click="vm.upvote(restaurant)" class="tiny button"><strong> ☑ </strong></button>
           <span class="votes"> ( {{restaurant.votes.length}} votes ) </span> 
         </div> 
 

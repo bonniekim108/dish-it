@@ -42,27 +42,40 @@
 
   hr.style-seven {
     height: 30px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 0 0 0;
+    border-style: dashed;
+    border-color: $prime-blue;
+    border-width: 3px 0 0 0;
   }
 
   
 
   .panel {
+    font-family: futura; 
     min-height: 165px;
     width: 201px;
+    border: 2px solid $prime-blue; 
+    border-radius: 5px; 
+    font-weight: bold; 
     cursor: pointer;
-    h4 { color: $prime-blue}
+    background: $main-back; 
+
+    h4 { color: $prime-red}
     &:hover {
       background-color: white;
+
+          -webkit-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
+    box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
+ 
     }
+
+  
   }
 
   .nom-vote { color: $prime-red;}
 
   .panel.nominated {
-    background-color: white;
+    background-color: $main-grey; 
     cursor: default;
   }
 
@@ -79,6 +92,16 @@
         display: inline-block;
       }
     }
+  }
+
+  span.wording {
+    color: $prime-blue;  
+    font-family: futura; 
+  }
+
+  span.nominate {
+    color: $prime-blue; 
+    font-weight: bold; 
   }
 }
 

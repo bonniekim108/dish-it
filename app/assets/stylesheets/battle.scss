@@ -29,12 +29,24 @@
       }
 
       span#dishname {
+        display: inline-block;
         color: $prime-blue; 
         font-family: futura; 
         font-size: 35px; 
         font-weight: bold; 
+        margin-right: -90px; 
+        position: relative; 
       }
   }
+
+  //   hr.style-eight {
+  //   height: 30px;
+  //   border-style: dashed;
+  //   border-color: $prime-blue;
+  //   border-width: 3px 0 0 0;
+  //   margin-bottom: -20px;  
+  // }
+ 
 
   .battle-restaurants {
     position: relative;
@@ -121,10 +133,15 @@
 }
 
 #trash-btn {
+  display: inline-block; 
   background-color: $prime-red;
-  border: none;
-  float: right;
+  border: 1px dashed white;
+  float: right; 
+   &:hover {
+     box-shadow: 1px 1px 0.5px #888888; 
+  }
 }
+
 
 #upvote-modal {
   textarea {
@@ -170,4 +187,5 @@
     h6 { color: $prime-red; }
     small { color: grey;}
   }
+
 }
