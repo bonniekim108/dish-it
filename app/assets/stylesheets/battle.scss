@@ -38,33 +38,54 @@
 
   .battle-restaurants {
     position: relative;
-    border: 1px solid $prime-blue; 
+    border: 4px solid $prime-blue; 
     border-radius: 5px; 
     float: left;
-    height: 100%;  
+    height: 367px; 
     margin: 0 10px;
     background: #ffffff;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    background-color: $main-grey; 
   } 
 
   .battle-restaurants:hover {
-
     -webkit-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
     box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
   }
 
   .battle-restaurant-image {
-    width: 350px; 
+    width: 179px;
+    height: 185px;
+    margin: 0;
+    background-color: $prime-blue;
+    img {
+      margin-top: 6px;
+      border-radius: 5px;
+    }
   }
 
-  .restname {
-    background-color: $main-grey; 
-    vertical-align: middle; 
-    height: 115px; 
-
+  .restname-wrap {
+    padding: 10px;
+    height: 120px;
+  }
+  .rest-name {
+    position: relative;
+    margin-top: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    a {
+      display: block;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    img {
+      margin: 10px auto 0 auto;
+      display: block;
+    }
   }
 
   div.voting {
@@ -72,12 +93,18 @@
     padding-bottom: 0px; 
     background-color: $prime-red; 
     background-position: center; 
-    text-align: center; 
-
+    text-align: center;
+    border-radius: 0 0 2px 2px;
+    z-index: 20;
     span.votes {
-      color: white; 
-      font-size: 15px; 
-
+      display: inline-block;
+      background-color: $main-grey;
+      color: $prime-blue; 
+    }
+    button {
+      margin: 0 10px 10px 0;
+      border: none;
+      border-radius: 5px;
     }
   }
 
