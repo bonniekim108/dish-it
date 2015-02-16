@@ -23,10 +23,13 @@
       };
 
       vm.displayLimit = function () {
-        if (vm.displayMode == 'nominating') {
-          return vm.curBattle.restaurants.length;
-        } else {
-          return 8;
+        switch (vm.displayMode) {
+          case 'final-four':
+            return 4;
+          case 'great-eight':
+            return 8;
+          case 'nominating':
+            return vm.curBattle.restaurants.length;
         }
       };
 
