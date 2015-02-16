@@ -19,9 +19,6 @@
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 
-
-
-
       span#cuisine {
         color: $prime-red;
         font-family: futura; 
@@ -38,10 +35,8 @@
 
   .battle-restaurants {
     position: relative;
-    // border: 4px solid $prime-blue; 
-    // border-radius: 5px; 
     float: left;
-    height: 361px; 
+    height: 353px; 
     margin: 0 10px;
     // background-color: $prime-blue;
   } 
@@ -55,9 +50,9 @@
   .battle-restaurant-image {
     width: 179px;
     height: 179px;
-    margin: 0;
-    border-width: 5px;
-    border-radius: 5px 5px 0 0;
+    img {
+      border-radius: 5px 5px 0 0;
+    }
   }
 
   .restname-wrap {
