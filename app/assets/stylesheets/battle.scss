@@ -58,14 +58,13 @@
   .restname-wrap {
     padding: 10px;
     height: 120px;
-    background-color: $main-grey;
+    background-color: white;
   }
   .rest-name {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    background-color: white;
     a {
       display: block;
       font-size: 16px;
