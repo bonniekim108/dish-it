@@ -13,7 +13,7 @@
       var def = $q.defer();
       if (canceller) canceller.resolve(); // cancel pending request
       canceller = $q.defer();
-      $http({url: '/api/yelp/', method: 'POST', params: {county: getCounty(), term: name}, timeout: canceller.promise})
+      $http({url: '/api/yelp', method: 'POST', data: {county: getCounty(), term: name}, timeout: canceller.promise})
         .success(function (data) {
           data = consolidate(data);
           if (canceller) canceller.resolve();
