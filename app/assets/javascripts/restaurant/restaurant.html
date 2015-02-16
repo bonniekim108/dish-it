@@ -1,77 +1,31 @@
-<div id="nominate" class="row battlepage" style="background-color: white">
-<a ui-sref="shell.battle">return to Battle</a>
+<a class="button tiny return" ui-sref="shell.battle">return to battle</a>
 
-  <div class="row" style="border-top: 1px solid #CCC;; border-bottom: 1px solid #CCC">
+<div class="row rest-detail">
+
+
+  <div id="rest-header">
     <div class="small-4 columns">
-      <img src="{{vm.restaurant.yelp_photo_url}}" width=200>
+      <img ng-src="{{vm.restaurant.yelp_photo_url}}" width="200" height="200">
     </div>
-    <div class="small-3 columns" style="background-color:#FFFFFF">
+    <div class="small-3 columns rest-name">
       <h3>{{vm.restaurant.name}}</h3>
-      <img src="{{vm.restaurant.yelp_rating_photo_url}}">
+      <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
     </div>
-    <div class="small-4 columns" style="background-color:#BF4B37; color: #FFFFFF; margin-right: 15px; height: 200px">
+    <div class="small-4 columns rest-location">
       <p>{{vm.restaurant.location}}<br>
-         {{vm.restaurant.phone}}</p>
-         <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
-    </div>
-  </div>
-  <div class="row" style="margin: 50px">
-    <h4>Votes</h4>
-    <div ng-repeat="vote in vm.restaurant.votes">
-      <p  style="border-top:1px dashed #CCC">
-        <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-        <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span>
+        {{vm.restaurant.phone}}
       </p>
+       <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button vote-btn">Vote</button>
+     </div>
+   </div>
+
+   <div class="row user-votes">
+    <h4>Votes</h4>
+    <div ng-repeat="vote in vm.restaurant.votes" class="user-vote">
+      <p class="user-name">{{vote.user.name}}&nbsp;&nbsp;&nbsp;<small class="user-timestamp">{{vote.created_at | date:'MMM dd h:mm a'}}</small></p>
+      <p class="vote-comment" ng-show="vote.comment.length > 0">{{vote.comment}}</p>
     </div>
   </div>
 
 </div>
 
-
-
-<!-- {{vm.restaurant}} -->
-
-
-
-
-
-
-<!-- 
-<div id="rest_container" class="row left">  
-    <div class="small-2 columns"></div> 
-      <div class="small-6 columns"></div> 
-         <span>
-
-           <img class="img1" ng-src="{{vm.restaurant.yelp_photo_url}}"><img ng-src="{{vm.restaurant.yelp_rating_photo_url}}"><h1>{{vm.restaurant.name}}</h1><p>{{vm.restaurant.location}}
-           {{vm.restaurant.phone}}</p>
-           <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
-
-          </span>
-    <div class="small-2 columns"></div> 
-</div>  -->
-
-<!--     </div> -->
-    
-  <!--   <div class="small-6 large-9 columns"> -->
-<!--         <h1>{{vm.restaurant.name}}</h1>
-        <p>{{vm.restaurant.location}}<br>
-           {{vm.restaurant.phone}}</p> -->
-
-
-   <!--  <div class="row right">
-      <h4>Votes</h4>
-      <div ng-repeat="vote in vm.restaurant.votes">
-        <p  style="border-top:1px dashed #CCC">
-        <a href="#" style="font-size:16px;padding:0;font-weight:bold;">{{vote.user.name}}</a> - {{vote.created_at | date:fullDate}}
-        <span ng-if="vote.comment.length > 0"><br>Comment: {{vote.comment}}</span<</p>
-
-      </div>
-    </div>
-
-
-    <a ui-sref="shell.battle">return to Battle</a>
-
-    {{vm.restaurantId}}
-    {{vm.curBattle.dish.name}}
-
-  </div>  -->

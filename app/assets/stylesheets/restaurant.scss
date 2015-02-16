@@ -1,10 +1,57 @@
 @import 'colors';
 
-#rest_container {
 
-	background-color: white; 
-	margin-top: 50px;
 
+.rest-detail {
+	margin-top: 20px;
+  background-color: white;
+  .user-votes {
+    margin: 50px;
+  }
+  .user-vote {
+    margin-top: 15px;
+    border-top: 1px dashed $main-grey;
+    padding-top: 5px;
+  }
+  .user-name {
+    color: $prime-red;
+    font-size: 16px;
+  }
+  .user-timestamp {
+    color: black;
+  }
+}
+
+.vote-odd {
+  background-color: lightgray;
+}
+
+.vote-comment {
+  margin-left: 15px;
+}
+
+#rest-header {
+  background-color: white;
+  border-top: 1px solid $main-grey;
+  border-bottom: 1px solid $main-grey;
+  .rest-name {
+    padding: 15px;
+  }
+  .rest-location {
+    background-color: $prime-red;
+    color: white;
+    margin-right: 15px;
+    padding: 15px;
+    height: 200px
+  }
+  .vote-btn {
+    float: right;
+  }
+}
+
+a.return {
+  background-color: $prime-red;
+  border: none;
 }
 
 .img1 {
