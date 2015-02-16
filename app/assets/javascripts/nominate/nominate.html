@@ -1,17 +1,34 @@
 <div id="nominate" class="row text-center">
 
-
-    <!--   User should not be able to navigate to this page unless they can vote, 
+   <!--   User should not be able to navigate to this page unless they can vote, 
     however, we do a check just in case they type the route in address bar.
   -->
+  
   <div ng-if="!vm.BattleService.userCanVote()">
     <h1>Sorry, you are not eligible to nominate a restaurant at this time</h1>
   </div>
 
-
+   <!-- Nominate  -->
   <div ng-if="vm.BattleService.userCanVote()">
+      <h3 class="nominate-stitched">
+            N O M I N A T E &nbsp; A &nbsp; R E S T A U R A N T &nbsp; W I T H &nbsp; T H E &nbsp; B E S T 
+               <p class="dish-title">{{vm.battle.dish.name}}</p>  
+      <div class="row collapse prefix-radius">
+        <div class="small-2 columns">&nbsp;</div>
+          <div class="small-3 columns">
+            <span id="search" class="prefix"> ✐ Search </span>
+          </div>
+        <div class="small-5 columns">
+           <input type="text" ng-model="vm.searchName" ng-model-options="{ debounce: 200 }" ng-change="vm.updateSearch()">
+        </div>
+        <div class="small-2 columns">&nbsp;</div>
+      </div>
+    </h3> 
+    <br> 
+    <br> 
 
-    <h1>Nominate Your Favorite Restaurant for the Best <div class="dish-title">{{vm.battle.dish.name}}</div></h1>
+    <hr class="style-seven">
+    <!-- Nominate -->
 
     <div class="row collapse prefix-radius">
       <div class="small-2 columns">&nbsp;</div>
@@ -25,6 +42,10 @@
     </div>
     <hr>
   <!--   User can nominate her own restaurant choice for the battle -->
+
+
+    <!-- Nominees -->
+
     <div class="row">
       <ul class="large-block-grid-4 medium-block-grid-3 text-center">
         <li ng-repeat="r in vm.searchResults" ng-animate class="nom-animate">
@@ -32,11 +53,11 @@
             <h4>{{r.name}}</h4>
             <h5 class="subheader" ng-show="vm.hovering[{{$index}}]">
               <span class="nom-vote" ng-show="r.alreadyNominated">already nominated<br>CLICK TO VOTE !!!</span>
-              <span ng-hide="r.alreadyNominated">NOMINATE !!!</span>
+              <span class="nominate" ng-hide="r.alreadyNominated">NOMINATE!</span>
             </h5>
             <h6 class="subheader" ng-hide="vm.hovering[{{$index}}]">
-              <span ng-show="r.phone == '-multiple-'">Multiple Locations</span>
-              <span ng-hide="r.phone == '-multiple-'">{{r.location.city}}<br>{{r.display_phone.substr(3)}}</span>
+              <span class="wording" ng-show="r.phone == '-multiple-'">Multiple Locations</span>
+              <span class="wording" ng-hide="r.phone == '-multiple-'">{{r.location.city}}<br>{{r.display_phone.substr(3)}}</span>
             </h6>
           </div>
         </li>

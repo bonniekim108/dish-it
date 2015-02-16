@@ -15,7 +15,7 @@
       vm.updateSearch = function () {
         var curBattle = BattleService.curBattle;
         var restFound;
-        YelpService.search(vm.searchName, function (data) {
+        YelpService.search(vm.searchName).then(function (data) {
           _.forEach(data, function (yelpRest) {
             restFound = BattleService.lookupRestByName(curBattle, yelpRest.name);
             if (restFound) {

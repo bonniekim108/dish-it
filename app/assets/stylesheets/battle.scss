@@ -14,6 +14,11 @@
     border-top-left-radius: 8px;  
     border-top-right-radius: 8px;  
 
+    position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
       span#cuisine {
         color: $prime-red;
         font-family: futura; 
@@ -21,56 +26,66 @@
       }
 
       span#dishname {
+        display: inline-block;
         color: $prime-blue; 
         font-family: futura; 
         font-size: 35px; 
         font-weight: bold; 
+        margin-right: -90px; 
+        position: relative; 
       }
   }
 
-  .buttonright {
-    background-color: $prime-blue; 
-    border-right: 2px solid $prime-red;
-    border-left: 2px solid $prime-red; 
-    border-bottom: 2px solid $prime-red;  
-    border-bottom-left-radius: 5px; 
-    border-bottom-right-radius: 5px; 
-    font-size: 15px; 
-    font-family: futura; 
-    color: $main-grey; 
-    font-weight: bold; 
-    margin-bottom: 30px; 
-  }
+  //   hr.style-eight {
+  //   height: 30px;
+  //   border-style: dashed;
+  //   border-color: $prime-blue;
+  //   border-width: 3px 0 0 0;
+  //   margin-bottom: -20px;  
+  // }
+ 
 
   .battle-restaurants {
     position: relative;
-    border: 1px solid $prime-blue; 
-    border-radius: 5px; 
     float: left;
-    height: 100%;  
+    height: 353px; 
     margin: 0 10px;
-    background: #ffffff;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // background-color: $prime-blue;
   } 
 
   .battle-restaurants:hover {
-
     -webkit-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
     box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
   }
 
   .battle-restaurant-image {
-    width: 350px; 
+    width: 179px;
+    height: 179px;
+    img {
+      border-radius: 5px 5px 0 0;
+    }
   }
 
-  .restname {
-    background-color: $main-grey; 
-    vertical-align: middle; 
-    height: 115px; 
-
+  .restname-wrap {
+    padding: 10px;
+    height: 120px;
+    background-color: white;
+  }
+  .rest-name {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    a {
+      display: block;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    img {
+      margin: 10px auto 0 auto;
+      display: block;
+    }
   }
 
   div.voting {
@@ -78,17 +93,22 @@
     padding-bottom: 0px; 
     background-color: $prime-red; 
     background-position: center; 
-    text-align: center; 
-
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    z-index: 20;
     span.votes {
-      color: white; 
-      font-size: 15px; 
-
+      display: inline-block;
+      background-color: $main-grey;
+      color: $prime-blue; 
+    }
+    button {
+      margin: 0 10px 10px 0;
+      border: none;
+      border-radius: 5px;
     }
   }
 
-  button.greateight {
-
+  button.mode-btn {
     background-color: $prime-blue; 
     border-right: 2px solid $prime-red;
     border-left: 2px solid $prime-red; 
@@ -100,22 +120,16 @@
     color: $main-grey; 
     font-weight: bold; 
     margin-bottom: 30px; 
+    cursor: default;
+    .highlight {
+      color: $main-grey; 
+      cursor: pointer;
+      &:hover {
+      text-shadow: 2px 2px 1px black; 
+      }
+    }
   }
 
-  button.finalfour {
-    background-color: $prime-blue; 
-    border-right: 2px solid $prime-red;
-    border-left: 2px solid $prime-red; 
-    border-bottom: 2px solid $prime-red;  
-    border-bottom-left-radius: 5px; 
-    border-bottom-right-radius: 5px; 
-    font-size: 15px; 
-    font-family: futura; 
-    color: $main-grey; 
-    font-weight: bold; 
-    margin-bottom: 30px; 
-
-  }
 
     h3.stitched {
      margin-top: 30px;  
@@ -134,10 +148,15 @@
 }
 
 #trash-btn {
+  display: inline-block; 
   background-color: $prime-red;
-  border: none;
-  float: right;
+  border: 1px dashed white;
+  float: right; 
+   &:hover {
+     box-shadow: 1px 1px 0.5px #888888; 
+  }
 }
+
 
 #upvote-modal {
   textarea {
@@ -183,4 +202,5 @@
     h6 { color: $prime-red; }
     small { color: grey;}
   }
+
 }

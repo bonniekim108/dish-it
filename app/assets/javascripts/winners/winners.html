@@ -1,30 +1,29 @@
-  
 <br>
 <br>
 <br>
+
 <div id="winners" class="row text-center winnerspage">
   <p class="center">CONGRATULATIONS!</p>
   <br>
   <br>
   <div class="row" ng-repeat="winner in vm.winners">
-    
     <div class="small-6 large-12 columns">
-      <div class="winner-winner">
-        <h4>{{winner.year_month | date: 'MMMM yyyy'}} WINNER</h4>
-        <br>
-        <span class="winning-dish-info">{{winner.dish.cuisine}}: {{winner.dish.name}}</span>
-        <!-- Announces winner in the competition -->
-        <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
-          <a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
-          <p class="winners-info">
-          {{firstplace.location}}<br>
-          {{firstplace.phone}}<br>
-          {{firstplace.votes.length}} votes<br>
-          </p>
-        </div>  
-      </div>
-    </div>
+      <span class="winner-announcement">{{winner.dish.cuisine}}: {{winner.dish.name}} WINNER
       <br>
+      <br>
+      <!-- Announces winner in the competition -->
+      <h4>{{winner.year_month | date: 'MMMM yyyy'}}</h4>
+      <div ng-repeat="firstplace in winner.restaurants | limitTo: 1">
+        <p class="winners-info">
+          <a class="winners-link" ui-sref="shell.winner({id: firstplace.id, battle_id: firstplace.battle_id})">{{firstplace.name}}</a><br>
+          <p>
+          Location:&nbsp;&nbsp;{{firstplace.location}}<br>
+          Phone:&nbsp;&nbsp;{{firstplace.phone}}<br>
+          Votes:&nbsp;&nbsp;{{firstplace.votes.length}}<br>
+          </p>
+        </p>
+      </div>
+      </span>
       <br>
       <br>
       <!-- List of runners-up in the competition -->
@@ -36,9 +35,6 @@
       </table>
       <br>
       <br>
+    </div>
   </div>
 </div>
-
-
-
-  

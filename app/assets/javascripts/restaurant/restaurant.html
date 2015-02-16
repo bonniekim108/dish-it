@@ -1,23 +1,26 @@
 
-<div id="rest_container"> 
+<div id="rest_container" class="row left">  
+    <div class="small-2 columns"></div> 
+      <div class="small-6 columns"></div> 
+         <span>
 
-   <div class="restaurant row"> 
-
-      <div class="medium-3 large-3 columns">
-          <img class="img1" ng-src="{{vm.restaurant.yelp_photo_url}}">
-         <img ng-src="{{vm.restaurant.yelp_rating_photo_url}}">
-      </div>
-
-      <div class="small-6 large-9 columns">
-        <h1>{{vm.restaurant.name}}</h1>
-        <p>{{vm.restaurant.location}}<br>
+           <img class="img1" ng-src="{{vm.restaurant.yelp_photo_url}}"><img ng-src="{{vm.restaurant.yelp_rating_photo_url}}"><h1>{{vm.restaurant.name}}</h1><p>{{vm.restaurant.location}}
            {{vm.restaurant.phone}}</p>
-        <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
-      </div>
+           <button ng-show="vm.userCanVote()" ng-click="vm.upvote(vm.restaurant.id, '')" class="button">Vote</button>
 
-    </div>
+          </span>
+    <div class="small-2 columns"></div> 
+</div> 
 
-    <div class="row">
+<!--     </div> -->
+    
+  <!--   <div class="small-6 large-9 columns"> -->
+<!--         <h1>{{vm.restaurant.name}}</h1>
+        <p>{{vm.restaurant.location}}<br>
+           {{vm.restaurant.phone}}</p> -->
+
+
+    <div class="row right">
       <h4>Votes</h4>
       <div ng-repeat="vote in vm.restaurant.votes">
         <p  style="border-top:1px dashed #CCC">
