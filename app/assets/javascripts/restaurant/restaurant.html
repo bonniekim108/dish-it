@@ -14,7 +14,7 @@
     <div class="small-4 columns rest-location">
       <div ng-if="vm.restaurant.location!='-multiple-'">
         <p>{{vm.restaurant.location}}<br>
-          {{vm.restaurant.phone}}
+          {{vm.restaurant.phone.substr(3)}}
         </p>
       </div>
       <div ng-if="vm.restaurant.location=='-multiple-'">
