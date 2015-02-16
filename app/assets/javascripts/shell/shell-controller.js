@@ -12,7 +12,7 @@
       var vm = this;
 
       vm.user = UserService.user;
-
+      // timer that counts down days, hours, minutes, seconds
       vm.countdown = {};
       var eom = moment().endOf("month");
       $interval(function () {
@@ -32,7 +32,7 @@
           });
         vm.email = vm.password = '';
       };
-
+      // user is directed to the home page upon logout
       vm.logout = function() {
         UserService.logout();
         vm.user = null;

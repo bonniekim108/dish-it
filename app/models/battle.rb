@@ -16,7 +16,7 @@ class Battle < ActiveRecord::Base
       end
     end
   end
-
+  
   def display_mode
     if self.year_month
       countdown = (self.year_month.day - Date.today.day)

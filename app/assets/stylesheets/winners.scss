@@ -1,56 +1,58 @@
 @import 'colors';
 
-// .example-orbit-content li div {
-//     color: white;
-//     background: #0F1D24;
-//     padding: 30px 40px; }
-
-// .example-orbit-content li div h1, .example-orbit-content li div h2, .example-orbit-content li div h3 {
-//     color: white;
-// }
 
 .winnerspage {
-  width: 100%; 
-  height: 100%; 
+  // width: 100%; 
+  // height: 100%; 
   background: white;
+  margin-left: auto;
+  margin-right: auto;
 
   p.center {
-
-    font-size: 60px;
-    color: $prime-red;
+    font-size: 65px;
+    color: #585858;
+    text-shadow: shadow1, shadow2, shadow3;
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
     font-family: futura;
     font-weight: bold;
     right: 100px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
   }
 
-  .winner-announcement {
+  .winner-winner {
     font-size: 30px;
     font-family: futura;
     font-weight: bold;
+    background-color: white;  
     text-align: center;
-    text-decoration: underline;
-    background-color: $main-grey;  
-    margin-top: 45px;  
-    text-align: center;
-    padding: 20px; 
-    // border: 2px solid $prime-red; 
-
+    padding: 10px; 
+    border: 2px dashed #87CEFA; 
     border-top-left-radius: 8px;  
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px; 
-  }
+    border-bottom-right-radius: 8px;
+    width: 70%; 
+    margin-left: auto;
+    margin-right: auto;
 
-  p.winners-info {
-    font-weight: bold;
-    font-size: 25px;
-    color: #708090;
-    line-height: 150%;
+    h4 {     
+      color: black bold;
+      font-size: 35px;
+      line-height: 150%;
+    }
+
+    .winning-dish-info {
+      font-size: 35px;
+    }
+
+    .winners-info {
+      font-size: 25px;
+      color: $prime-red;
+    }
   }
 
   table.center {
-    width: 600px;
+    width: 300px;
     color: black;
     margin-left: auto;
     margin-right: auto;
