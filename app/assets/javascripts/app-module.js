@@ -80,7 +80,7 @@
       })
 
       .state('shell.restaurant', {
-        // url: '/restaurant/:id',
+        url: '/restaurant/:id',
         templateUrl: 'restaurant/restaurant.html',
         controller: 'RestaurantController',
         controllerAs: 'vm'
