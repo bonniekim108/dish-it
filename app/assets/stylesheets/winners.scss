@@ -75,5 +75,14 @@
     color: black;
   }
 
+  .win-btm-head {
+    border-radius: 0 0 8px 8px;
+    border: 2px solid $prime-red;
+    border-top: none;
+    h4 {
+      color: white;
+    }
+  }
+
 
 }
