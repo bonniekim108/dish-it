@@ -15,6 +15,7 @@
 		margin-top: -110px;
 		top: 50%;
 	  transform: translateY(-50%);
+	  text-shadow: 1px 1px 0px #EEEEEE; 
 	}
 
 	.abouttext {
@@ -32,6 +33,7 @@
 		  top: 270px; 
 	}
 
+
 	strong {
 		color: $prime-red; 
 	}
@@ -42,13 +44,13 @@
 		background-color: white;
 	}
 
-	.aboutinfobox:hover {
+	// .aboutinfobox:hover {
 	
-    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+ //    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	// -moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	// box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 
-	}
+	// }
 
 	p.aboutinfo {
 		position: center; 
@@ -85,13 +87,13 @@
 
 	}
 
-	.rulesbox:hover {
+	// .rulesbox:hover {
 	
-    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+ //    -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	// -moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	// box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 
-	}
+	// }
 
 	.rulesinfo {
 		font-size: 17px; 
