@@ -4,33 +4,66 @@
 
 	height: 100%; 
 
-		// bottom left styling
-		.bottomleft {
-			position: absolute; 
-			left: -95px;
-			bottom: -30px;    
-			a.showdown1 {
-				display: block; 
-				background-image: url("/finalshow1.svg");  
-				width: 380px; 
-				height: 365px; 
-				opacity: 0.9;
-			}
-		}
-
-	.righttop {
+	.red {
 		position: absolute; 
-		right: -90px; 
-		top: -85px; 
+		display: block;
+		background-image: url("/red.svg");
+		background-repeat: no-repeat;
+		width: 300px; 
+		height: 100px; 
+		right: -30px; 
+		top: 80px; 
+		left: 320px; 
+		clear: both; 
+		z-index: 300; 
+
+
 	}
 
-	a.showdown2 {
+	.blue {
+		position: absolute; 
 		display: block; 
-		background-image: url("/finalshow2.svg"); 
-		width: 380px; 
-		height: 365px; 
-		opacity: 0.9;  
+		background-image: url("/blue.svg"); 
+		background-repeat: no-repeat; 
+		width: 300px; 
+		height: 100px; 
+		left: 400px; 
+		top: 70px; 
+		right: 300px; 
+		clear: both; 
+		z-index: 209; 
+
 	}
+
+
+
+	// 	// bottom left styling
+	// 	.bottomleft {
+	// 		position: absolute; 
+	// 		left: -95px;
+	// 		bottom: -30px;    
+	// 		a.showdown1 {
+	// 			display: block; 
+	// 			background-image: url("/finalshow1.svg");  
+	// 			width: 380px; 
+	// 			height: 365px; 
+	// 			opacity: 0.5;
+	// 		}
+	// 	}
+
+	// .righttop {
+	// 	position: absolute; 
+	// 	right: -90px; 
+	// 	top: -85px; 
+	// }
+
+	// a.showdown2 {
+	// 	display: block; 
+	// 	background-image: url("/finalshow2.svg"); 
+	// 	width: 380px; 
+	// 	height: 365px; 
+	// 	opacity: 0.5;  
+	// }
 
 	// middle styling
 
@@ -39,7 +72,7 @@
 	  width: 600px;
 	  height: 300px;
 	  margin-top: -30px;
-	  background-image: url("/dishit1.svg"); 
+	  background-image: url("/dishitok1.svg"); 
 	  background-repeat: no-repeat;
 	  background-size: 600px 250px;  
 	  position: relative; 

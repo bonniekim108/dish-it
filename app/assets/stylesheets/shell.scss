@@ -25,8 +25,9 @@ header {
   right: 0;
   height: 50px;
   width: 100%; 
-  border-bottom: solid $prime-blue;
-  border-bottom-width: 5px; 
+  box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
+  // border-bottom: solid $prime-blue;
+  // border-bottom-width: 5px; 
   z-index: 5;
 
   a.active {
@@ -44,14 +45,18 @@ p strong {
 
 body {
   color: $prime-blue; 
-  background-color: $main-grey; 
+  background: url("/background5.jpg"); 
+  background-repeat: repeat; 
+
+  background-size: 350px; 
+
 }
 
 a.logo {
   display: inline-block;
   width: 170px;
   height: 90px;
-  background: url("/dishit5.svg"); 
+  background: url("/dishit6.svg"); 
   background-size: 130px 90px;
   background-repeat: no-repeat;
   margin-right: auto; 
@@ -59,6 +64,11 @@ a.logo {
   margin-top: 5px; 
   padding: 0;
   overflow: visible;
+
+  &:hover {
+   opacity: 0.9;
+  }
+
   div.lefttime {
     margin-top: 50px;
     margin-left: -75px;
@@ -73,6 +83,7 @@ a.logo {
       width: 100px;
       margin: 0;
       text-align: center;
+      text-shadow: 0px 1px 0px #EEEEEE; 
       span {
         padding: 1px;
         display: inline-block; 
@@ -103,6 +114,7 @@ a.logo {
       width: 100px;
       margin: 0;
       text-align: center;
+      text-shadow: 0px 1px 0px #EEEEEE; 
       span {
         padding: 1px;
         display: inline-block; 
@@ -124,8 +136,9 @@ a.logo {
 footer {
   background-color: $main-black; 
   position: absolute; 
-  border-top: solid $prime-red; 
-  border-top-width: 5px; 
+  box-shadow: 2px 1px 25px -4px rgba(0,0,0,0.75);
+  // border-top: solid $prime-red; 
+  // border-top-width: 5px; 
   bottom: 0;
   left: 0;
   right: 0;
@@ -135,7 +148,7 @@ footer {
 
 .wrap {
 
-  background-image: url("/background3.jpg");
+  background-image: url("/woodbackground.jpg");
   background-size: cover;
   position: absolute;
   top: 30px;
@@ -143,7 +156,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 30px;
-  box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 10px 0.5px rgba(0,0,0,0.8);
   overflow: scroll; 
   padding-top: 80px; 
   padding-bottom: 30px; 
@@ -154,7 +167,7 @@ footer {
   position: absolute; 
   float: right; 
   right: 30px;   
-  bottom: -2px; 
+  bottom: 3px; 
   margin: 0px; 
 
 }
@@ -171,7 +184,7 @@ p.copyright {
   display: block; 
   font-family: arial; 
   font-weight: bold; 
-  color: grey; 
+  color: #EEEEEE; 
   font-size: 11px; 
   margin-top: 7px;
   margin-right: 170px; 
@@ -225,7 +238,7 @@ header {
     font-weight: normal;
   }
   a:hover {
-    color: $prime-red;
+    color: yellow;  
   }
 }
 
@@ -239,7 +252,7 @@ header {
     margin-right: 20px;
   }
   a.active {
-    color: $prime-blue;
+    color: yellow; 
     display: inline-block;
   }
 }
