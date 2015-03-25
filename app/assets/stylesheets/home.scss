@@ -4,6 +4,39 @@
 
 	height: 100%; 
 
+	.red {
+		position: absolute; 
+		display: block;
+		background-image: url("/red.svg");
+		background-repeat: no-repeat;
+		width: 300px; 
+		height: 100px; 
+		right: -30px; 
+		top: 80px; 
+		left: 320px; 
+		clear: both; 
+		z-index: 300; 
+
+
+	}
+
+	.blue {
+		position: absolute; 
+		display: block; 
+		background-image: url("/blue.svg"); 
+		background-repeat: no-repeat; 
+		width: 300px; 
+		height: 100px; 
+		left: 400px; 
+		top: 70px; 
+		right: 300px; 
+		clear: both; 
+		z-index: 209; 
+
+	}
+
+
+
 		// bottom left styling
 		.bottomleft {
 			position: absolute; 
@@ -39,7 +72,7 @@
 	  width: 600px;
 	  height: 300px;
 	  margin-top: -30px;
-	  background-image: url("/dishitok.svg"); 
+	  background-image: url("/dishitok1.svg"); 
 	  background-repeat: no-repeat;
 	  background-size: 600px 250px;  
 	  position: relative; 
