@@ -1,17 +1,4 @@
-Simply Vocab is a website where its users can search for vocabulary and then create their own
-vocabulary flashcards. The vocabulary search returns the definition of the word, as well as an example of the word found 
-in various sources, including literature and slang. Simply Vocab was inspired by the desire to create a resource that would 
-enable English learners, especially, to learn vocabulary effectively and easily. 
 
-Simply Vocab can be found here: https://simplyvocab.herokuapp.com/
-
-This project was build as a Ruby on Rails website with a Mongo database. It also includes some jQuery.
-
-File structure overview: 
-Most of the code is located in the "app" folder. 
-All controllers were placed into their own files in /app/controllers.
-All models were placed into their own files in /app/models. 
-All html templates can be found in /app/views.
 
 
 
