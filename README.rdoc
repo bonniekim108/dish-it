@@ -1,4 +1,20 @@
 
+  Dish-it is a social app that encourages interaction between users. A new dish is nominated each month. Users may either nominate the 
+restaurants they believe have the best rendition of that dish or vote for restaurants that have already received nominations. Two weeks 
+before the end of the month, the restaurants with the highest number of votes are whittled down to just 8 choices, also known as the 
+"Great Eight." If the restaurants that users first nominated are no longer in the running, they may place their votes for one of the 
+remaining eight restaurants. Then one week later, only the 4 restaurants with the highest number of votes remain in the competition. 
+Again, users whose nominatd restaurants are not among the remaining choices may vote for one of the "Final Four". Users may leave
+comments or "trash talk" other users' choices.
+
+
+Dish-it can be found here: dish-it.herokuapp.com.
+
+Dish-it was a group project and the result of collaboration among the group members - Jim Clark, Edwin Alegre, Ben Sam, and Bonnie Kim.
+
+The project was built as an AngularJS app with a postgres database and is powered by the Yelp API. 
+
+
 
 
 
