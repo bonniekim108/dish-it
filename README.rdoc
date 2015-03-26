@@ -1,28 +1,18 @@
-== README
+Simply Vocab is a website where its users can search for vocabulary and then create their own
+vocabulary flashcards. The vocabulary search returns the definition of the word, as well as an example of the word found 
+in various sources, including literature and slang. Simply Vocab was inspired by the desire to create a resource that would 
+enable English learners, especially, to learn vocabulary effectively and easily. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simply Vocab can be found here: https://simplyvocab.herokuapp.com/
 
-Things you may want to cover:
+This project was build as a Ruby on Rails website with a Mongo database. It also includes some jQuery.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+File structure overview: 
+Most of the code is located in the "app" folder. 
+All controllers were placed into their own files in /app/controllers.
+All models were placed into their own files in /app/models. 
+All html templates can be found in /app/views.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
